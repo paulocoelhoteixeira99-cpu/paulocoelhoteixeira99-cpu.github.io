@@ -7,6 +7,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css">
+  <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.4/dist/chart.umd.min.js"></script>
 </head>
 <body>
 
@@ -125,6 +126,332 @@
                 <span class="metric-label">Best single-day ROI</span>
               </div>
             </div>
+          </div>
+
+          <!-- CHARTS SECTION -->
+          <div class="project-section">
+            <h4>Growth & Scale</h4>
+            <p class="section-desc">Monthly evolution across 7 months of operation, from cold start to scale.</p>
+
+            <!-- Chart Row 1: SMS Volume + Clicks -->
+            <div class="chart-grid">
+              <div class="chart-card">
+                <h5 class="chart-title">SMS Dispatches vs Clicks</h5>
+                <p class="chart-subtitle">Monthly volume showing campaign scaling</p>
+                <div class="chart-wrapper">
+                  <canvas id="chartDispatches"></canvas>
+                </div>
+              </div>
+              <div class="chart-card">
+                <h5 class="chart-title">Click-Through Rate (CTR)</h5>
+                <p class="chart-subtitle">Unique CTR per month</p>
+                <div class="chart-wrapper">
+                  <canvas id="chartCTR"></canvas>
+                </div>
+              </div>
+            </div>
+
+            <!-- Chart Row 2: VSL Funnel + Sales -->
+            <div class="chart-grid">
+              <div class="chart-card">
+                <h5 class="chart-title">VSL Engagement Funnel</h5>
+                <p class="chart-subtitle">User progression through video stages</p>
+                <div class="chart-wrapper">
+                  <canvas id="chartVSL"></canvas>
+                </div>
+              </div>
+              <div class="chart-card">
+                <h5 class="chart-title">Sales & Revenue</h5>
+                <p class="chart-subtitle">Monthly confirmed conversions</p>
+                <div class="chart-wrapper">
+                  <canvas id="chartSales"></canvas>
+                </div>
+              </div>
+            </div>
+
+            <!-- Chart Row 3: Lead Growth + Score Distribution -->
+            <div class="chart-grid">
+              <div class="chart-card">
+                <h5 class="chart-title">Cumulative Lead Growth</h5>
+                <p class="chart-subtitle">Database scaling from 0 to 170K+</p>
+                <div class="chart-wrapper">
+                  <canvas id="chartLeadGrowth"></canvas>
+                </div>
+              </div>
+              <div class="chart-card">
+                <h5 class="chart-title">Lead Score Distribution</h5>
+                <p class="chart-subtitle">Automated scoring across 170K leads</p>
+                <div class="chart-wrapper">
+                  <canvas id="chartScoreDist"></canvas>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- TABLES SECTION -->
+          <div class="project-section">
+            <h4>Detailed Performance</h4>
+
+            <!-- Table 1: Monthly Operations -->
+            <div class="table-card">
+              <h5 class="table-title">Monthly Operations Summary</h5>
+              <div class="table-scroll">
+                <table class="data-table">
+                  <thead>
+                    <tr>
+                      <th>Month</th>
+                      <th>SMS Sent</th>
+                      <th>Unique Clicks</th>
+                      <th>CTR</th>
+                      <th>VSL Plays</th>
+                      <th>Pitch Views</th>
+                      <th>Sales</th>
+                      <th>Revenue</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <td>Feb 2026</td>
+                      <td>601</td>
+                      <td>103</td>
+                      <td>17.1%</td>
+                      <td>47</td>
+                      <td>11</td>
+                      <td>-</td>
+                      <td>-</td>
+                    </tr>
+                    <tr class="row-highlight">
+                      <td>Mar 2026</td>
+                      <td>45,828</td>
+                      <td>3,323</td>
+                      <td>7.3%</td>
+                      <td>1,866</td>
+                      <td>559</td>
+                      <td>41</td>
+                      <td>$8,600</td>
+                    </tr>
+                    <tr>
+                      <td>Apr 2026</td>
+                      <td>27,931</td>
+                      <td>3,189</td>
+                      <td>11.4%</td>
+                      <td>1,233</td>
+                      <td>261</td>
+                      <td>7</td>
+                      <td>$1,540</td>
+                    </tr>
+                    <tr>
+                      <td>May 2026</td>
+                      <td>43,193</td>
+                      <td>3,936</td>
+                      <td>9.1%</td>
+                      <td>2,143</td>
+                      <td>241</td>
+                      <td>11</td>
+                      <td>$2,420</td>
+                    </tr>
+                    <tr>
+                      <td>Jun 2026</td>
+                      <td>14,942</td>
+                      <td>1,141</td>
+                      <td>7.6%</td>
+                      <td>669</td>
+                      <td>75</td>
+                      <td>5</td>
+                      <td>$156</td>
+                    </tr>
+                    <tr>
+                      <td>Jul 2026</td>
+                      <td>4,254</td>
+                      <td>467</td>
+                      <td>11.0%</td>
+                      <td>1,655</td>
+                      <td>270</td>
+                      <td>14</td>
+                      <td>$294</td>
+                    </tr>
+                    <tr class="row-highlight">
+                      <td>Aug 2026</td>
+                      <td>34,615</td>
+                      <td>2,384</td>
+                      <td>6.9%</td>
+                      <td>2,228</td>
+                      <td>485</td>
+                      <td>23</td>
+                      <td>$2,372</td>
+                    </tr>
+                    <tr>
+                      <td>Sep 2026</td>
+                      <td>12,020</td>
+                      <td>1,080</td>
+                      <td>9.0%</td>
+                      <td>567</td>
+                      <td>71</td>
+                      <td>-</td>
+                      <td>-</td>
+                    </tr>
+                  </tbody>
+                  <tfoot>
+                    <tr>
+                      <td><strong>Total</strong></td>
+                      <td><strong>183,384</strong></td>
+                      <td><strong>14,648</strong></td>
+                      <td><strong>13.9%</strong></td>
+                      <td><strong>10,408</strong></td>
+                      <td><strong>1,973</strong></td>
+                      <td><strong>101</strong></td>
+                      <td><strong>$15,382</strong></td>
+                    </tr>
+                  </tfoot>
+                </table>
+              </div>
+            </div>
+
+            <!-- Table 2: Lead Segmentation -->
+            <div class="table-card">
+              <h5 class="table-title">Lead Scoring Segmentation</h5>
+              <div class="table-scroll">
+                <table class="data-table">
+                  <thead>
+                    <tr>
+                      <th>Score Range</th>
+                      <th>Label</th>
+                      <th>Leads</th>
+                      <th>% of Total</th>
+                      <th>Strategy</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <td><span class="score-badge score-hot">90-100</span></td>
+                      <td>Hot</td>
+                      <td>59,776</td>
+                      <td>35.3%</td>
+                      <td>Direct offer, priority dispatch</td>
+                    </tr>
+                    <tr>
+                      <td><span class="score-badge score-warm">70-89</span></td>
+                      <td>Warm</td>
+                      <td>21,476</td>
+                      <td>12.7%</td>
+                      <td>Short nurturing before offer</td>
+                    </tr>
+                    <tr>
+                      <td><span class="score-badge score-mid">45-69</span></td>
+                      <td>Engaged</td>
+                      <td>9,612</td>
+                      <td>5.7%</td>
+                      <td>Behavioral nurturing</td>
+                    </tr>
+                    <tr>
+                      <td><span class="score-badge score-cold">20-44</span></td>
+                      <td>Cold</td>
+                      <td>44,738</td>
+                      <td>26.4%</td>
+                      <td>Re-qualification sequence</td>
+                    </tr>
+                    <tr>
+                      <td><span class="score-badge score-inactive">1-19</span></td>
+                      <td>Inactive</td>
+                      <td>5,576</td>
+                      <td>3.3%</td>
+                      <td>Paused, await re-engagement</td>
+                    </tr>
+                    <tr>
+                      <td><span class="score-badge score-blacklist">0</span></td>
+                      <td>Blacklist</td>
+                      <td>28,354</td>
+                      <td>16.7%</td>
+                      <td>Opt-out / never contact</td>
+                    </tr>
+                  </tbody>
+                  <tfoot>
+                    <tr>
+                      <td colspan="2"><strong>Total</strong></td>
+                      <td><strong>169,532</strong></td>
+                      <td><strong>100%</strong></td>
+                      <td></td>
+                    </tr>
+                  </tfoot>
+                </table>
+              </div>
+            </div>
+
+            <!-- Table 3: Database Structure -->
+            <div class="table-card">
+              <h5 class="table-title">Database Infrastructure</h5>
+              <div class="table-scroll">
+                <table class="data-table">
+                  <thead>
+                    <tr>
+                      <th>Table</th>
+                      <th>Records</th>
+                      <th>Purpose</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <td><code>lead_score_audit</code></td>
+                      <td>688,829</td>
+                      <td>Score change history with full audit trail</td>
+                    </tr>
+                    <tr>
+                      <td><code>disparos_sms</code></td>
+                      <td>183,384</td>
+                      <td>SMS dispatch records with campaign metadata</td>
+                    </tr>
+                    <tr>
+                      <td><code>leads_nutra</code></td>
+                      <td>169,532</td>
+                      <td>Processed leads with scores and groups</td>
+                    </tr>
+                    <tr>
+                      <td><code>clicks_link</code></td>
+                      <td>29,015</td>
+                      <td>Link click tracking with UTM parameters</td>
+                    </tr>
+                    <tr>
+                      <td><code>eventos_vsl</code></td>
+                      <td>21,100</td>
+                      <td>Video engagement events (play, progress, pitch)</td>
+                    </tr>
+                    <tr>
+                      <td><code>email_events</code></td>
+                      <td>14,859</td>
+                      <td>Email interaction tracking</td>
+                    </tr>
+                    <tr>
+                      <td><code>sms_stop</code></td>
+                      <td>4,578</td>
+                      <td>Opt-out registry (TCPA compliance)</td>
+                    </tr>
+                    <tr>
+                      <td><code>ligacoes_status</code></td>
+                      <td>3,724</td>
+                      <td>AI voice call outcomes</td>
+                    </tr>
+                    <tr>
+                      <td><code>carrinho_abandonado</code></td>
+                      <td>803</td>
+                      <td>Checkout abandonment for recovery</td>
+                    </tr>
+                    <tr>
+                      <td><code>vendas</code></td>
+                      <td>101</td>
+                      <td>Confirmed purchase records</td>
+                    </tr>
+                  </tbody>
+                  <tfoot>
+                    <tr>
+                      <td><strong>Total (all tables)</strong></td>
+                      <td><strong>1.1M+ rows</strong></td>
+                      <td><strong>30+ tables, 14 functions/triggers</strong></td>
+                    </tr>
+                  </tfoot>
+                </table>
+              </div>
+            </div>
+
           </div>
 
           <!-- What I Built -->
@@ -375,5 +702,6 @@
     </div>
   </footer>
 
+  <script src="charts.js"></script>
 </body>
 </html>
