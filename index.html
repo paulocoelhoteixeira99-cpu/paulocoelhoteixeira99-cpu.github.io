@@ -74,6 +74,30 @@
     <div class="container">
       <h2 class="section-title">Projects</h2>
 
+      <!-- Project Index Cards -->
+      <div class="project-index">
+        <a href="#project-leads-nutra" class="index-card">
+          <div class="index-tag">Case Study 01</div>
+          <h3 class="index-name">SMS Direct Response Pipeline</h3>
+          <p class="index-desc">End-to-end data infrastructure for a DTC health product operation targeting the US market</p>
+          <div class="index-stats">
+            <span>170K+ leads</span>
+            <span>183K+ SMS</span>
+            <span>21x ROI</span>
+          </div>
+        </a>
+        <a href="#project-scale-path" class="index-card">
+          <div class="index-tag">Case Study 02</div>
+          <h3 class="index-name">AI-Powered Cart Recovery SaaS</h3>
+          <p class="index-desc">B2B platform with AI voice agents, multi-channel recovery, and credit-based billing engine</p>
+          <div class="index-stats">
+            <span>26K+ AI calls</span>
+            <span>$92K recovered</span>
+            <span>383 sales</span>
+          </div>
+        </a>
+      </div>
+
       <!-- PROJECT 1: Leads Nutra -->
       <article class="project-card" id="project-leads-nutra">
         <div class="project-header">
@@ -673,8 +697,8 @@
                 <span class="metric-label">Revenue recovered</span>
               </div>
               <div class="metric">
-                <span class="metric-value">18.1%</span>
-                <span class="metric-label">Conversion rate (target: 15%)</span>
+                <span class="metric-value">6.0%</span>
+                <span class="metric-label">Overall conversion rate</span>
               </div>
               <div class="metric">
                 <span class="metric-value">38,280</span>
@@ -842,9 +866,9 @@
                       <td>All leads including discarded</td>
                     </tr>
                     <tr class="row-highlight">
-                      <td>Valid Lead Conversion</td>
+                      <td>Best Month Conversion</td>
                       <td><strong>18.1%</strong></td>
-                      <td>Exceeded 15% target by +3.1pp</td>
+                      <td>October 2025 peak on valid leads</td>
                     </tr>
                     <tr>
                       <td>Average Ticket</td>
@@ -879,12 +903,6 @@
                     </tr>
                   </thead>
                   <tbody>
-                    <tr>
-                      <td>Already Bought</td>
-                      <td>50</td>
-                      <td>13</td>
-                      <td><span class="score-badge score-hot">26.0%</span></td>
-                    </tr>
                     <tr>
                       <td>Technical Issue</td>
                       <td>460</td>
@@ -979,14 +997,6 @@
                 <span class="gallery-caption">Client Portal: Credit-based billing with Stripe integration</span>
               </div>
               <div class="gallery-item">
-                <img src="img/scalepath-metabase.png" alt="Internal Metabase Dashboard" loading="lazy">
-                <span class="gallery-caption">Internal Analytics: Metabase dashboard for operational monitoring</span>
-              </div>
-              <div class="gallery-item">
-                <img src="img/scalepath-conversao.png" alt="Conversion Analytics Dashboard" loading="lazy">
-                <span class="gallery-caption">Conversion Analytics: Sales by call attempts, checkout platform, and classification</span>
-              </div>
-              <div class="gallery-item">
                 <img src="img/scalepath-n8n-calls.png" alt="n8n Call Automation Workflow" loading="lazy">
                 <span class="gallery-caption">n8n Workflow: Automated AI call scheduling with time validation and dual VoIP routing</span>
               </div>
@@ -1019,7 +1029,7 @@
                   <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 1v22"/><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg>
                 </div>
                 <h5>Credit-Based Billing Engine</h5>
-                <p>Designed a fully automated billing system: each action (call, SMS, email) triggers a PostgreSQL function that applies the client's custom markup, converts to credits, debits the balance, and logs the transaction. 38,280 transactions processed across 7 functions. Integrated with Stripe for credit purchases ($0.01/credit).</p>
+                <p>Designed the full SaaS monetization layer from scratch. Each operational action (call, SMS, email) fires a PostgreSQL trigger that: (1) looks up the client's negotiated markup percentage, (2) applies it to the raw cost, (3) converts the marked-up value to internal credits (100 credits = $1), (4) debits the client's balance, and (5) logs the full transaction with audit metadata. Stripe handles credit purchases via a $0.01/unit product, enabling seamless top-ups from $10 to $1,000. The system processed 38,280 transactions across 4 clients with zero manual intervention.</p>
               </div>
 
               <div class="deliverable">
