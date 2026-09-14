@@ -629,6 +629,505 @@
         </div>
       </article>
 
+      <!-- PROJECT 2: Scale Path - Cart Recovery SaaS -->
+      <article class="project-card" id="project-scale-path">
+        <div class="project-header">
+          <div class="project-tag">Case Study</div>
+          <h3 class="project-name">AI-Powered Cart Recovery SaaS</h3>
+          <p class="project-subtitle">B2B platform for abandoned cart recovery using AI voice agents, SMS drip campaigns, and automated email sequences with a credit-based billing system</p>
+        </div>
+
+        <div class="project-body">
+          <!-- Overview -->
+          <div class="project-section">
+            <h4>Overview</h4>
+            <p>Built the complete data infrastructure and billing engine for a B2B SaaS that recovers abandoned carts for direct marketing clients. The platform combines AI-powered phone calls (VAPI), SMS drip sequences (Twilio), and email campaigns (ActiveCampaign) into a single automated recovery pipeline. Each client gets a dedicated webhook, a real-time analytics portal, and a credit-based billing system integrated with Stripe.</p>
+          </div>
+
+          <!-- Key Metrics -->
+          <div class="project-section">
+            <h4>Key Metrics</h4>
+            <div class="metrics-grid">
+              <div class="metric">
+                <span class="metric-value">4,157</span>
+                <span class="metric-label">Leads processed</span>
+              </div>
+              <div class="metric">
+                <span class="metric-value">26,728</span>
+                <span class="metric-label">AI calls executed</span>
+              </div>
+              <div class="metric">
+                <span class="metric-value">6,870</span>
+                <span class="metric-label">SMS dispatched</span>
+              </div>
+              <div class="metric">
+                <span class="metric-value">4,567</span>
+                <span class="metric-label">Emails sent</span>
+              </div>
+              <div class="metric">
+                <span class="metric-value">383</span>
+                <span class="metric-label">Sales recovered</span>
+              </div>
+              <div class="metric">
+                <span class="metric-value">$92K</span>
+                <span class="metric-label">Revenue recovered</span>
+              </div>
+              <div class="metric">
+                <span class="metric-value">18.1%</span>
+                <span class="metric-label">Conversion rate (target: 15%)</span>
+              </div>
+              <div class="metric">
+                <span class="metric-value">38,280</span>
+                <span class="metric-label">Billing transactions processed</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Charts -->
+          <div class="project-section">
+            <h4>Growth & Performance</h4>
+            <p class="section-desc">Operational metrics across 5 months of service delivery to 4 B2B clients.</p>
+
+            <div class="chart-grid">
+              <div class="chart-card">
+                <h5 class="chart-title">Channel Volume by Month</h5>
+                <p class="chart-subtitle">AI calls, SMS, and emails executed per month</p>
+                <div class="chart-wrapper">
+                  <canvas id="chartChannelVolume"></canvas>
+                </div>
+              </div>
+              <div class="chart-card">
+                <h5 class="chart-title">Operational Cost vs Billed (Markup)</h5>
+                <p class="chart-subtitle">Revenue generated through per-client markup system</p>
+                <div class="chart-wrapper">
+                  <canvas id="chartCostMarkup"></canvas>
+                </div>
+              </div>
+            </div>
+
+            <div class="chart-grid">
+              <div class="chart-card">
+                <h5 class="chart-title">Credit Consumption by Channel</h5>
+                <p class="chart-subtitle">How clients consumed credits across channels</p>
+                <div class="chart-wrapper">
+                  <canvas id="chartCreditsByChannel"></canvas>
+                </div>
+              </div>
+              <div class="chart-card">
+                <h5 class="chart-title">Sales by Call Attempts</h5>
+                <p class="chart-subtitle">Conversion efficiency per number of call attempts</p>
+                <div class="chart-wrapper">
+                  <canvas id="chartSalesByAttempts"></canvas>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Tables -->
+          <div class="project-section">
+            <h4>Detailed Performance</h4>
+
+            <div class="table-card">
+              <h5 class="table-title">Monthly Operations by Channel</h5>
+              <div class="table-scroll">
+                <table class="data-table">
+                  <thead>
+                    <tr>
+                      <th>Month</th>
+                      <th>AI Calls</th>
+                      <th>SMS</th>
+                      <th>Emails</th>
+                      <th>Cost ($)</th>
+                      <th>Billed ($)</th>
+                      <th>Margin</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <td>Dec 2025</td>
+                      <td>10,358</td>
+                      <td>2,874</td>
+                      <td>1,008</td>
+                      <td>$724</td>
+                      <td>$985</td>
+                      <td>36%</td>
+                    </tr>
+                    <tr class="row-highlight">
+                      <td>Jan 2026</td>
+                      <td>13,735</td>
+                      <td>3,661</td>
+                      <td>2,624</td>
+                      <td>$1,023</td>
+                      <td>$3,035</td>
+                      <td>197%</td>
+                    </tr>
+                    <tr>
+                      <td>Feb 2026</td>
+                      <td>2,635</td>
+                      <td>335</td>
+                      <td>703</td>
+                      <td>$209</td>
+                      <td>$645</td>
+                      <td>209%</td>
+                    </tr>
+                    <tr>
+                      <td>Mar 2026</td>
+                      <td>-</td>
+                      <td>-</td>
+                      <td>163</td>
+                      <td>$1</td>
+                      <td>$3</td>
+                      <td>-</td>
+                    </tr>
+                    <tr>
+                      <td>Apr 2026</td>
+                      <td>-</td>
+                      <td>-</td>
+                      <td>69</td>
+                      <td>$0.4</td>
+                      <td>$1</td>
+                      <td>-</td>
+                    </tr>
+                  </tbody>
+                  <tfoot>
+                    <tr>
+                      <td><strong>Total</strong></td>
+                      <td><strong>26,728</strong></td>
+                      <td><strong>6,870</strong></td>
+                      <td><strong>4,567</strong></td>
+                      <td><strong>$1,958</strong></td>
+                      <td><strong>$4,669</strong></td>
+                      <td><strong>138%</strong></td>
+                    </tr>
+                  </tfoot>
+                </table>
+              </div>
+            </div>
+
+            <div class="table-card">
+              <h5 class="table-title">Recovery Performance (from internal dashboard)</h5>
+              <div class="table-scroll">
+                <table class="data-table">
+                  <thead>
+                    <tr>
+                      <th>Metric</th>
+                      <th>Value</th>
+                      <th>Detail</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <td>Total Leads</td>
+                      <td><strong>2,911</strong></td>
+                      <td>Unique leads entered into recovery pipeline</td>
+                    </tr>
+                    <tr>
+                      <td>Contact Rate</td>
+                      <td><strong>52.9%</strong></td>
+                      <td>Leads reached via AI call (weekly range: 45-64%)</td>
+                    </tr>
+                    <tr>
+                      <td>Total Sales</td>
+                      <td><strong>357</strong></td>
+                      <td>Confirmed purchases from recovered carts</td>
+                    </tr>
+                    <tr>
+                      <td>Revenue Recovered</td>
+                      <td><strong>$92,000</strong></td>
+                      <td>Total GMV recovered for clients</td>
+                    </tr>
+                    <tr>
+                      <td>Overall Conversion</td>
+                      <td><strong>6.0%</strong></td>
+                      <td>All leads including discarded</td>
+                    </tr>
+                    <tr class="row-highlight">
+                      <td>Valid Lead Conversion</td>
+                      <td><strong>18.1%</strong></td>
+                      <td>Exceeded 15% target by +3.1pp</td>
+                    </tr>
+                    <tr>
+                      <td>Average Ticket</td>
+                      <td><strong>$251</strong></td>
+                      <td>Mean order value from recovered carts</td>
+                    </tr>
+                    <tr>
+                      <td>1st Call Closes</td>
+                      <td><strong>45.2%</strong></td>
+                      <td>Nearly half of all sales closed on the first call</td>
+                    </tr>
+                    <tr>
+                      <td>Leads Discarded</td>
+                      <td><strong>539</strong></td>
+                      <td>Invalid phone numbers filtered via Twilio Lookup</td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+
+            <div class="table-card">
+              <h5 class="table-title">Conversion by Call Outcome Classification</h5>
+              <div class="table-scroll">
+                <table class="data-table">
+                  <thead>
+                    <tr>
+                      <th>Call Outcome</th>
+                      <th>Occurrences</th>
+                      <th>Sales</th>
+                      <th>Conversion</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <td>Already Bought</td>
+                      <td>50</td>
+                      <td>13</td>
+                      <td><span class="score-badge score-hot">26.0%</span></td>
+                    </tr>
+                    <tr>
+                      <td>Technical Issue</td>
+                      <td>460</td>
+                      <td>91</td>
+                      <td><span class="score-badge score-warm">19.8%</span></td>
+                    </tr>
+                    <tr>
+                      <td>Sent Purchase Link</td>
+                      <td>328</td>
+                      <td>48</td>
+                      <td><span class="score-badge score-mid">14.6%</span></td>
+                    </tr>
+                    <tr>
+                      <td>Reflecting / Deciding</td>
+                      <td>136</td>
+                      <td>10</td>
+                      <td><span class="score-badge score-cold">7.4%</span></td>
+                    </tr>
+                    <tr>
+                      <td>Family Objection</td>
+                      <td>32</td>
+                      <td>2</td>
+                      <td><span class="score-badge score-cold">6.3%</span></td>
+                    </tr>
+                    <tr>
+                      <td>Price Objection</td>
+                      <td>47</td>
+                      <td>2</td>
+                      <td><span class="score-badge score-inactive">4.3%</span></td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+
+            <div class="table-card">
+              <h5 class="table-title">Billing Engine (PostgreSQL Functions)</h5>
+              <div class="table-scroll">
+                <table class="data-table">
+                  <thead>
+                    <tr>
+                      <th>Function</th>
+                      <th>Role</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <td><code>debit_credit_transaction</code></td>
+                      <td>Core engine: fetches per-client markup, calculates cost with markup, converts to credits, inserts transaction, updates balance</td>
+                    </tr>
+                    <tr>
+                      <td><code>process_call_cost</code></td>
+                      <td>Trigger on <code>call_costs</code> INSERT: auto-debits credits for each AI call</td>
+                    </tr>
+                    <tr>
+                      <td><code>process_sms_cost</code></td>
+                      <td>Trigger on <code>sms_costs</code> INSERT: auto-debits credits for each SMS</td>
+                    </tr>
+                    <tr>
+                      <td><code>process_email_cost</code></td>
+                      <td>Trigger on <code>email_costs</code> INSERT: auto-debits credits for each email</td>
+                    </tr>
+                    <tr>
+                      <td><code>apply_credit_topup</code></td>
+                      <td>Processes Stripe payments: adds credits to client balance with audit trail</td>
+                    </tr>
+                    <tr>
+                      <td><code>apply_credit_debit</code></td>
+                      <td>Manual admin debit with balance validation and insufficient-funds protection</td>
+                    </tr>
+                    <tr>
+                      <td><code>get_customer_by_auth_id</code></td>
+                      <td>Portal authentication: maps Supabase Auth user to client record</td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+          </div>
+
+          <!-- Screenshots Gallery -->
+          <div class="project-section">
+            <h4>Product Screenshots</h4>
+            <p class="section-desc">Client-facing portal, internal dashboards, automation workflows, and billing integration.</p>
+            <div class="gallery">
+              <div class="gallery-item">
+                <img src="img/scalepath-dashboard.png" alt="Scale Path Executive Dashboard" loading="lazy">
+                <span class="gallery-caption">Client Portal: Executive Dashboard with real-time KPIs</span>
+              </div>
+              <div class="gallery-item">
+                <img src="img/scalepath-billing.png" alt="Scale Path Billing Portal" loading="lazy">
+                <span class="gallery-caption">Client Portal: Credit-based billing with Stripe integration</span>
+              </div>
+              <div class="gallery-item">
+                <img src="img/scalepath-metabase.png" alt="Internal Metabase Dashboard" loading="lazy">
+                <span class="gallery-caption">Internal Analytics: Metabase dashboard for operational monitoring</span>
+              </div>
+              <div class="gallery-item">
+                <img src="img/scalepath-conversao.png" alt="Conversion Analytics Dashboard" loading="lazy">
+                <span class="gallery-caption">Conversion Analytics: Sales by call attempts, checkout platform, and classification</span>
+              </div>
+              <div class="gallery-item">
+                <img src="img/scalepath-n8n-calls.png" alt="n8n Call Automation Workflow" loading="lazy">
+                <span class="gallery-caption">n8n Workflow: Automated AI call scheduling with time validation and dual VoIP routing</span>
+              </div>
+              <div class="gallery-item">
+                <img src="img/scalepath-n8n-sms.png" alt="n8n SMS Cadence Workflow" loading="lazy">
+                <span class="gallery-caption">n8n Workflow: 5-step SMS drip recovery cadence from BigQuery</span>
+              </div>
+              <div class="gallery-item">
+                <img src="img/scalepath-stripe.png" alt="Stripe Product Configuration" loading="lazy">
+                <span class="gallery-caption">Stripe: $0.01/credit product for seamless billing conversion</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- What I Built -->
+          <div class="project-section">
+            <h4>What I Built</h4>
+            <div class="deliverables-grid">
+
+              <div class="deliverable">
+                <div class="deliverable-icon">
+                  <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+                </div>
+                <h5>AI Voice Agent System</h5>
+                <p>Built the complete call automation pipeline: scheduled outbound calls via VAPI with time-zone validation, dual VoIP routing, GPT-powered post-call analysis, and automatic outcome classification. 26,728 calls executed with 52.9% contact rate.</p>
+              </div>
+
+              <div class="deliverable">
+                <div class="deliverable-icon">
+                  <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 1v22"/><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg>
+                </div>
+                <h5>Credit-Based Billing Engine</h5>
+                <p>Designed a fully automated billing system: each action (call, SMS, email) triggers a PostgreSQL function that applies the client's custom markup, converts to credits, debits the balance, and logs the transaction. 38,280 transactions processed across 7 functions. Integrated with Stripe for credit purchases ($0.01/credit).</p>
+              </div>
+
+              <div class="deliverable">
+                <div class="deliverable-icon">
+                  <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="3" width="20" height="14" rx="2"/><path d="M8 21h8"/><path d="M12 17v4"/></svg>
+                </div>
+                <h5>Client Portal</h5>
+                <p>Built a real-time client portal with Supabase Auth: executive dashboard with KPIs (leads, contact rate, sales, revenue, conversion vs target), billing page with credit packages, auto-recharge config, payment history, and Stripe card management.</p>
+              </div>
+
+              <div class="deliverable">
+                <div class="deliverable-icon">
+                  <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 12h-4l-3 9L9 3l-3 9H2"/></svg>
+                </div>
+                <h5>Lead Ingestion & Validation Pipeline</h5>
+                <p>Engineered per-client webhooks that receive abandoned cart payloads, normalize the data, and validate phone numbers via Twilio Lookup API before entering the pipeline. Saved costs by discarding 539 invalid phones that would have wasted SMS and call credits.</p>
+              </div>
+
+              <div class="deliverable">
+                <div class="deliverable-icon">
+                  <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
+                </div>
+                <h5>Multi-Channel Recovery Cadence</h5>
+                <p>Orchestrated a 3-channel recovery flow: AI calls for high-intent leads, a 5-step SMS drip sequence for re-engagement, and email follow-ups via ActiveCampaign. Calls convert at ~50%, and 45% of sales close on the first attempt.</p>
+              </div>
+
+              <div class="deliverable">
+                <div class="deliverable-icon">
+                  <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 3v18h18"/><path d="M18.7 8l-5.1 5.2-2.8-2.7L7 14.3"/></svg>
+                </div>
+                <h5>Dual Analytics Layer</h5>
+                <p>Created both an internal Metabase dashboard (volumetrics, contact rates, conversion by source/checkout/classification) and a client-facing portal dashboard with real-time metrics. Tracked across 3 checkout platforms (Digistore, CartPanda, Spiffy/Stripe).</p>
+              </div>
+
+            </div>
+          </div>
+
+          <!-- Architecture -->
+          <div class="project-section">
+            <h4>System Architecture</h4>
+            <div class="architecture">
+              <div class="arch-flow">
+                <div class="arch-node">
+                  <span class="arch-label">Client Webhook</span>
+                  <span class="arch-detail">Per-client ingestion</span>
+                </div>
+                <div class="arch-arrow"></div>
+                <div class="arch-node">
+                  <span class="arch-label">Validation</span>
+                  <span class="arch-detail">Twilio Lookup API</span>
+                </div>
+                <div class="arch-arrow"></div>
+                <div class="arch-node">
+                  <span class="arch-label">BigQuery + Supabase</span>
+                  <span class="arch-detail">Storage & functions</span>
+                </div>
+                <div class="arch-arrow"></div>
+                <div class="arch-node">
+                  <span class="arch-label">n8n Orchestration</span>
+                  <span class="arch-detail">Cron + webhooks</span>
+                </div>
+              </div>
+              <div class="arch-flow arch-flow-secondary">
+                <div class="arch-node">
+                  <span class="arch-label">VAPI AI Calls</span>
+                  <span class="arch-detail">26.7K calls, GPT analysis</span>
+                </div>
+                <div class="arch-arrow"></div>
+                <div class="arch-node">
+                  <span class="arch-label">Twilio SMS</span>
+                  <span class="arch-detail">5-step drip cadence</span>
+                </div>
+                <div class="arch-arrow"></div>
+                <div class="arch-node">
+                  <span class="arch-label">Billing Engine</span>
+                  <span class="arch-detail">Triggers + Stripe</span>
+                </div>
+                <div class="arch-arrow"></div>
+                <div class="arch-node">
+                  <span class="arch-label">Client Portal</span>
+                  <span class="arch-detail">Supabase Auth + Metabase</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Tech Stack -->
+          <div class="project-section">
+            <h4>Tech Stack</h4>
+            <div class="tech-tags">
+              <span class="tag">PostgreSQL (triggers, functions)</span>
+              <span class="tag">Supabase (DB + Auth)</span>
+              <span class="tag">BigQuery</span>
+              <span class="tag">Stripe API</span>
+              <span class="tag">VAPI (AI voice)</span>
+              <span class="tag">Twilio (SMS + Lookup)</span>
+              <span class="tag">ActiveCampaign</span>
+              <span class="tag">n8n</span>
+              <span class="tag">Metabase</span>
+              <span class="tag">JavaScript / Node.js</span>
+              <span class="tag">REST APIs / Webhooks</span>
+              <span class="tag">Lovable (portal frontend)</span>
+            </div>
+          </div>
+
+        </div>
+      </article>
+
       <!-- Placeholder for future projects -->
       <div class="projects-coming">
         <p>More projects coming soon.</p>

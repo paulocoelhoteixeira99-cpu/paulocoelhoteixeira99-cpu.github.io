@@ -331,3 +331,183 @@ new Chart(document.getElementById('chartScoreDist'), {
     }
   }
 });
+
+// =============================================
+// PROJECT 2: SCALE PATH - CART RECOVERY SAAS
+// =============================================
+
+const SP_MONTHS = ['Dec 25', 'Jan 26', 'Feb 26'];
+
+// ===== 7. Channel Volume by Month =====
+new Chart(document.getElementById('chartChannelVolume'), {
+  type: 'bar',
+  data: {
+    labels: SP_MONTHS,
+    datasets: [
+      {
+        label: 'AI Calls',
+        data: [10358, 13735, 2635],
+        backgroundColor: BLUE,
+        borderRadius: 4
+      },
+      {
+        label: 'SMS',
+        data: [2874, 3661, 335],
+        backgroundColor: GREEN,
+        borderRadius: 4
+      },
+      {
+        label: 'Emails',
+        data: [1008, 2624, 703],
+        backgroundColor: PURPLE,
+        borderRadius: 4
+      }
+    ]
+  },
+  options: {
+    responsive: true,
+    maintainAspectRatio: false,
+    interaction: { mode: 'index', intersect: false },
+    scales: {
+      y: {
+        beginAtZero: true,
+        grid: { color: 'rgba(30, 35, 48, 0.4)' },
+        ticks: {
+          callback: v => v >= 1000 ? (v / 1000).toFixed(0) + 'K' : v
+        }
+      },
+      x: { grid: { display: false } }
+    },
+    plugins: {
+      tooltip: {
+        callbacks: {
+          label: ctx => ctx.dataset.label + ': ' + ctx.parsed.y.toLocaleString()
+        }
+      }
+    }
+  }
+});
+
+// ===== 8. Cost vs Billed (Markup) =====
+new Chart(document.getElementById('chartCostMarkup'), {
+  type: 'bar',
+  data: {
+    labels: SP_MONTHS,
+    datasets: [
+      {
+        label: 'Actual Cost ($)',
+        data: [724, 1023, 209],
+        backgroundColor: 'rgba(248, 113, 113, 0.7)',
+        borderRadius: 4
+      },
+      {
+        label: 'Billed to Client ($)',
+        data: [985, 3035, 645],
+        backgroundColor: 'rgba(52, 211, 153, 0.7)',
+        borderRadius: 4
+      }
+    ]
+  },
+  options: {
+    responsive: true,
+    maintainAspectRatio: false,
+    interaction: { mode: 'index', intersect: false },
+    scales: {
+      y: {
+        beginAtZero: true,
+        grid: { color: 'rgba(30, 35, 48, 0.4)' },
+        ticks: { callback: v => '$' + v }
+      },
+      x: { grid: { display: false } }
+    },
+    plugins: {
+      tooltip: {
+        callbacks: {
+          label: ctx => ctx.dataset.label + ': $' + ctx.parsed.y.toLocaleString()
+        }
+      }
+    }
+  }
+});
+
+// ===== 9. Credit Consumption by Channel (Doughnut) =====
+new Chart(document.getElementById('chartCreditsByChannel'), {
+  type: 'doughnut',
+  data: {
+    labels: ['AI Calls', 'SMS', 'Email'],
+    datasets: [{
+      data: [4135140, 285765, 259165],
+      backgroundColor: [BLUE, GREEN, PURPLE],
+      borderColor: '#161a24',
+      borderWidth: 3,
+      hoverOffset: 6
+    }]
+  },
+  options: {
+    responsive: true,
+    maintainAspectRatio: false,
+    cutout: '60%',
+    plugins: {
+      legend: {
+        position: 'bottom',
+        labels: { padding: 12, font: { size: 11 } }
+      },
+      tooltip: {
+        callbacks: {
+          label: ctx => {
+            const total = ctx.dataset.data.reduce((a, b) => a + b, 0);
+            const pct = ((ctx.parsed / total) * 100).toFixed(1);
+            return ctx.label + ': ' + ctx.parsed.toLocaleString() + ' credits (' + pct + '%)';
+          }
+        }
+      }
+    }
+  }
+});
+
+// ===== 10. Sales by Call Attempts =====
+new Chart(document.getElementById('chartSalesByAttempts'), {
+  type: 'bar',
+  data: {
+    labels: ['1st Call', '2nd Call', '3rd Call', '4th Call', '5th Call', '6th Call'],
+    datasets: [
+      {
+        label: 'Sales',
+        data: [85, 45, 23, 14, 4, 5],
+        backgroundColor: [
+          'rgba(79, 142, 255, 1)',
+          'rgba(79, 142, 255, 0.8)',
+          'rgba(79, 142, 255, 0.65)',
+          'rgba(79, 142, 255, 0.5)',
+          'rgba(79, 142, 255, 0.35)',
+          'rgba(79, 142, 255, 0.25)'
+        ],
+        borderRadius: 4
+      }
+    ]
+  },
+  options: {
+    responsive: true,
+    maintainAspectRatio: false,
+    indexAxis: 'y',
+    scales: {
+      x: {
+        beginAtZero: true,
+        grid: { color: 'rgba(30, 35, 48, 0.4)' }
+      },
+      y: { grid: { display: false } }
+    },
+    plugins: {
+      legend: { display: false },
+      tooltip: {
+        callbacks: {
+          label: ctx => {
+            const total = ctx.dataset.data.reduce((a, b) => a + b, 0);
+            const pct = ((ctx.parsed.x / total) * 100).toFixed(1);
+            return ctx.parsed.x + ' sales (' + pct + '%)';
+          }
+        }
+      }
+    }
+  }
+});
