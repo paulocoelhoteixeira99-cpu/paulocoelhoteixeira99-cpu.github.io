@@ -99,11 +99,11 @@
         <a href="#project-trading-bot" class="index-card">
           <div class="index-tag">Case Study 03</div>
           <h3 class="index-name">Algorithmic Trading Bot Analysis</h3>
-          <p class="index-desc">Performance audit and optimization of a trading robot on WIN$ mini-index futures (B3)</p>
+          <p class="index-desc">Performance audit that turned a 449% cumulative return into actionable trading window rules</p>
           <div class="index-stats">
-            <span>3.5yr backtest</span>
-            <span>10+ dimensions</span>
-            <span>Pandas + Matplotlib</span>
+            <span>449% return</span>
+            <span>Hour x Day heatmap</span>
+            <span>16 visualizations</span>
           </div>
         </a>
         <a href="#project-cx-forecast" class="index-card">
@@ -139,21 +139,21 @@
         <a href="#project-reimbursement-automation" class="index-card">
           <div class="index-tag">Case Study 07</div>
           <h3 class="index-name">B2B Reimbursement Automation</h3>
-          <p class="index-desc">Process analysis to automate manual workflows consuming 4h32min per analyst daily</p>
+          <p class="index-desc">Eliminated 4h32min/day of manual work per analyst by mapping decision rules for automated group resolution</p>
           <div class="index-stats">
-            <span>4h32min/day</span>
-            <span>Category mapping</span>
-            <span>Automation spec</span>
+            <span>4h32min freed</span>
+            <span>2min30s/group</span>
+            <span>Cross-team mapping</span>
           </div>
         </a>
         <a href="#project-policy-analytics" class="index-card">
           <div class="index-tag">Case Study 08</div>
           <h3 class="index-name">Voucher & Reimbursement Policy Analytics</h3>
-          <p class="index-desc">Comprehensive analysis driving a 16% cost-per-customer reduction through policy revision</p>
+          <p class="index-desc">Counter-intuitive discovery: increasing vouchers for specific cases drove +578K in additional annual revenue</p>
           <div class="index-stats">
-            <span>-16% cost/pax</span>
-            <span>Legal analysis</span>
-            <span>33-slide report</span>
+            <span>+578K revenue</span>
+            <span>ACPU metric</span>
+            <span>48-slide report</span>
           </div>
         </a>
       </div>
@@ -1203,86 +1203,75 @@
         <div class="project-header">
           <div class="project-tag">Case Study</div>
           <h3 class="project-name">Algorithmic Trading Bot Analysis</h3>
-          <p class="project-subtitle">Performance audit and optimization of a trading robot on WIN$ mini-index futures (B3 exchange)</p>
+          <p class="project-subtitle">Turned a 449% cumulative return into actionable rules: which hours, days, and directions to trade (and when to stop)</p>
         </div>
         <div class="project-body">
           <div class="project-section">
             <h4>Overview</h4>
-            <p>Conducted a comprehensive performance audit of an algorithmic trading robot operating on WIN$ mini-index futures on the Brazilian B3 exchange. Analyzed 3.5 years of trade history across 10+ analytical dimensions using Python (Pandas + Matplotlib), producing actionable insights on optimal trading windows, directional bias, and risk exposure. Delivered a full Jupyter notebook with 16 visualizations.</p>
+            <p>A trading robot on WIN$ mini-index futures (B3 exchange) was generating a 449.74% cumulative return over 3.5 years, but the owner had no visibility into <strong>when or why</strong> it performed well. I conducted a full performance audit across 10+ dimensions, uncovering that profitability was concentrated in specific hour-of-day and day-of-week windows. The analysis delivered concrete rules: which time slots to keep the bot active, which to disable, and whether to favor buy or sell operations in each window.</p>
           </div>
           <div class="project-section">
             <h4>Key Metrics</h4>
             <div class="metrics-grid">
               <div class="metric">
+                <span class="metric-value">449.7%</span>
+                <span class="metric-label">Cumulative return over backtesting period</span>
+              </div>
+              <div class="metric">
                 <span class="metric-value">3.5 yrs</span>
-                <span class="metric-label">Backtesting period (Apr 2020 - Nov 2023)</span>
+                <span class="metric-label">Trade history analyzed (Apr 2020 - Nov 2023)</span>
               </div>
               <div class="metric">
-                <span class="metric-value">WIN$</span>
-                <span class="metric-label">Mini-index futures (B3 exchange)</span>
-              </div>
-              <div class="metric">
-                <span class="metric-value">10+</span>
-                <span class="metric-label">Analysis dimensions</span>
+                <span class="metric-value">Hour x Day</span>
+                <span class="metric-label">Profit factor heatmap for window optimization</span>
               </div>
               <div class="metric">
                 <span class="metric-value">16</span>
-                <span class="metric-label">Visualizations produced</span>
+                <span class="metric-label">Visualizations in the final report</span>
               </div>
             </div>
           </div>
           <div class="project-section">
-            <h4>Analysis Dimensions</h4>
+            <h4>The Problem</h4>
+            <p>The bot was profitable overall but had <strong>hidden inefficiencies</strong>: certain hours were destroying value, some days underperformed, and buy vs sell operations had very different risk profiles. Without this analysis, the bot ran 24/5 with no filters, leaving significant upside on the table and taking unnecessary risk.</p>
+          </div>
+          <div class="project-section">
+            <h4>Key Findings</h4>
             <div class="table-card">
               <div class="table-scroll">
                 <table class="data-table">
                   <thead>
                     <tr>
                       <th>Dimension</th>
-                      <th>Method</th>
-                      <th>Purpose</th>
+                      <th>Finding</th>
+                      <th>Actionable Rule</th>
                     </tr>
                   </thead>
                   <tbody>
-                    <tr>
-                      <td>Monthly P/L</td>
-                      <td>Bar + cumulative line chart</td>
-                      <td>Seasonal performance patterns</td>
-                    </tr>
-                    <tr>
-                      <td>Profit Factor</td>
-                      <td>Heatmap pivot (year x month)</td>
-                      <td>Strategy consistency over time</td>
-                    </tr>
-                    <tr>
-                      <td>Win Rate</td>
-                      <td>Rolling percentage by period</td>
-                      <td>Strategy reliability metric</td>
-                    </tr>
-                    <tr>
-                      <td>Hourly Distribution</td>
-                      <td>Profit Factor by hour (0-23h)</td>
-                      <td>Optimal trading windows</td>
-                    </tr>
-                    <tr>
-                      <td>Day of Week</td>
-                      <td>Profit Factor by weekday</td>
-                      <td>Day-level optimization</td>
+                    <tr class="row-highlight">
+                      <td>Hour x Day Heatmap</td>
+                      <td>Profit factor varied from &lt;0.5 to &gt;3.0 depending on time slot</td>
+                      <td>Disable bot during unprofitable windows (saved drawdown exposure)</td>
                     </tr>
                     <tr>
                       <td>Buy vs Sell</td>
-                      <td>Gains/losses by operation type</td>
-                      <td>Directional bias analysis</td>
+                      <td>One direction consistently outperformed the other across most periods</td>
+                      <td>Restrict operations to the stronger direction in weak time slots</td>
                     </tr>
                     <tr>
-                      <td>Max Drawdown</td>
-                      <td>Peak-to-trough calculation</td>
-                      <td>Risk quantification</td>
+                      <td>Monthly Seasonality</td>
+                      <td>Profit factor heatmap showed degradation in specific quarters</td>
+                      <td>Flag seasonal risk periods for manual oversight</td>
                     </tr>
                     <tr>
                       <td>Consecutive Streaks</td>
-                      <td>Max wins/losses sequences</td>
-                      <td>Streak risk assessment</td>
+                      <td>Max consecutive losses hit double digits in vulnerable windows</td>
+                      <td>Set position sizing rules tied to streak risk per time slot</td>
+                    </tr>
+                    <tr>
+                      <td>Max Drawdown</td>
+                      <td>Peak-to-trough drawdown concentrated in identifiable periods</td>
+                      <td>Kill-switch thresholds for automated risk control</td>
                     </tr>
                   </tbody>
                 </table>
@@ -1296,29 +1285,29 @@
                 <div class="deliverable-icon">
                   <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 3v18h18"/><path d="M18.7 8l-5.1 5.2-2.8-2.7L7 14.3"/></svg>
                 </div>
-                <h5>Multi-Dimensional Performance Report</h5>
-                <p>Built a complete analytical notebook with 16 visualizations covering monthly trends, hourly patterns, day-of-week analysis, directional bias, and risk metrics.</p>
-              </div>
-              <div class="deliverable">
-                <div class="deliverable-icon">
-                  <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 20V10"/><path d="M18 20V4"/><path d="M6 20v-4"/></svg>
-                </div>
-                <h5>Profit Factor Heatmap</h5>
-                <p>Created a year-by-month pivot table with conditional formatting showing profit factor evolution, identifying seasonality and strategy degradation periods.</p>
+                <h5>Hour x Day Profit Heatmap</h5>
+                <p>The core deliverable: a profit factor matrix for every hour-weekday combination, segmented by buy/sell. This single chart drove the most impactful optimization rules.</p>
               </div>
               <div class="deliverable">
                 <div class="deliverable-icon">
                   <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 12h-4l-3 9L9 3l-3 9H2"/></svg>
                 </div>
-                <h5>Risk Assessment Framework</h5>
-                <p>Quantified max drawdown, consecutive loss streaks, and time-in-trade patterns to provide a clear picture of downside risk and capital exposure.</p>
+                <h5>Risk Exposure Report</h5>
+                <p>Quantified max drawdown, consecutive loss streaks, and capital exposure per time window. Provided concrete thresholds for automated risk controls.</p>
+              </div>
+              <div class="deliverable">
+                <div class="deliverable-icon">
+                  <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 20V10"/><path d="M18 20V4"/><path d="M6 20v-4"/></svg>
+                </div>
+                <h5>Seasonality Analysis</h5>
+                <p>Year-by-month profit factor pivot with conditional formatting, revealing strategy degradation periods and seasonal patterns for proactive adjustment.</p>
               </div>
               <div class="deliverable">
                 <div class="deliverable-icon">
                   <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="3" width="20" height="14" rx="2"/><path d="M8 21h8"/><path d="M12 17v4"/></svg>
                 </div>
-                <h5>Trading Window Optimization</h5>
-                <p>Identified optimal hours and days by computing profit factor for every hour-weekday combination, segmented by buy and sell operations.</p>
+                <h5>16-Chart Jupyter Notebook</h5>
+                <p>Complete analytical notebook with reproducible code. Every chart is interactive and parameterized, allowing the bot owner to re-run the analysis as new data comes in.</p>
               </div>
             </div>
           </div>
@@ -1701,154 +1690,70 @@
         <div class="project-header">
           <div class="project-tag">Case Study</div>
           <h3 class="project-name">B2B Reimbursement Process Automation</h3>
-          <p class="project-subtitle">Process analysis to automate manual reimbursement workflows consuming 4h32min per analyst daily</p>
+          <p class="project-subtitle">Freed 4h32min/day per analyst by mapping every reimbursement decision to automatable rules</p>
         </div>
         <div class="project-body">
           <div class="project-section">
             <h4>Overview</h4>
-            <p>Analyzed a manual reimbursement process in the B2B operations team where analysts spent an average of 4 hours and 32 minutes per day manually concluding travel groups and determining reimbursement eligibility. Mapped every incident category to its corresponding decision logic, creating the automation blueprint that would free up significant analyst capacity.</p>
+            <p>In the B2B operations team, analysts spent <strong>2 minutes and 30 seconds per travel group</strong> manually reviewing incidents and deciding reimbursements. Across hundreds of daily groups, this added up to <strong>4 hours 32 minutes per analyst per day</strong> on a purely rule-based task. The core problem: many groups (e.g., delays under 1 hour) <strong>didn't even qualify for reimbursement</strong> but still consumed the same analyst time as complex cases. I worked with the internal controls team to map every incident category to its decision logic, creating the automation specification that would eliminate this bottleneck.</p>
           </div>
           <div class="project-section">
             <h4>Key Metrics</h4>
             <div class="metrics-grid">
               <div class="metric">
                 <span class="metric-value">4h 32min</span>
-                <span class="metric-label">Daily manual processing per analyst</span>
+                <span class="metric-label">Manual processing freed per analyst/day</span>
+              </div>
+              <div class="metric">
+                <span class="metric-value">2min 30s</span>
+                <span class="metric-label">Average manual review time per group</span>
               </div>
               <div class="metric">
                 <span class="metric-value">100%</span>
-                <span class="metric-label">Incident categories mapped</span>
+                <span class="metric-label">Incident categories mapped to decision rules</span>
               </div>
               <div class="metric">
-                <span class="metric-value">B2B Ops</span>
-                <span class="metric-label">Team scope</span>
-              </div>
-              <div class="metric">
-                <span class="metric-value">Automated</span>
-                <span class="metric-label">Target: rule-based decisions</span>
+                <span class="metric-value">4</span>
+                <span class="metric-label">Objectives aligned with leadership</span>
               </div>
             </div>
           </div>
           <div class="project-section">
-            <h4>What I Built</h4>
-            <div class="deliverables-grid">
-              <div class="deliverable">
-                <div class="deliverable-icon">
-                  <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 20V10"/><path d="M18 20V4"/><path d="M6 20v-4"/></svg>
-                </div>
-                <h5>Process Time Analysis</h5>
-                <p>Measured and documented exact time per task — 4h32min/day — quantifying the automation opportunity for leadership buy-in.</p>
-              </div>
-              <div class="deliverable">
-                <div class="deliverable-icon">
-                  <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 7V4h16v3"/><path d="M9 20h6"/><path d="M12 4v16"/></svg>
-                </div>
-                <h5>Incident-to-Decision Mapping</h5>
-                <p>Mapped every incident category (delays, cancellations, route changes, downgrades) to its reimbursement rule, creating an automatable decision tree.</p>
-              </div>
-              <div class="deliverable">
-                <div class="deliverable-icon">
-                  <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="3" width="20" height="14" rx="2"/><path d="M8 21h8"/><path d="M12 17v4"/></svg>
-                </div>
-                <h5>Automation Blueprint</h5>
-                <p>Delivered a complete specification for automating the workflow, including edge cases, exception handling, and expected capacity recovery per analyst.</p>
-              </div>
-            </div>
+            <h4>The Problem</h4>
+            <p>Every travel group had to be manually concluded by an analyst, regardless of complexity. A group with a minor delay (&lt;1h, no reimbursement needed) took the same manual steps as a multi-incident group with downgrades and cancellations. This created a <strong>flat cost per decision</strong> that didn't scale. The team was growing headcount to handle volume, rather than automating the straightforward cases.</p>
           </div>
           <div class="project-section">
-            <h4>Tech Stack</h4>
-            <div class="tech-tags">
-              <span class="tag">SQL / BigQuery</span>
-              <span class="tag">Process Analysis</span>
-              <span class="tag">Business Logic Mapping</span>
-              <span class="tag">Google Slides</span>
-            </div>
-          </div>
-        </div>
-      </article>
-
-      <!-- PROJECT 8: Voucher & Reimbursement Policy Analytics -->
-      <article class="project-card" id="project-policy-analytics">
-        <div class="project-header">
-          <div class="project-tag">Case Study</div>
-          <h3 class="project-name">Voucher & Reimbursement Policy Analytics</h3>
-          <p class="project-subtitle">Comprehensive data analysis driving a 16% cost-per-customer reduction through policy optimization</p>
-        </div>
-        <div class="project-body">
-          <div class="project-section">
-            <h4>Overview</h4>
-            <p>Conducted an in-depth analysis of voucher and reimbursement policies for a transportation company, covering cost-per-customer metrics (ACPU), legal/judicial exposure, marketplace conversion patterns, and customer satisfaction impact. The 33-slide analytical report directly informed policy revisions that reduced cost per passenger by 16%.</p>
-          </div>
-          <div class="project-section">
-            <h4>Key Metrics</h4>
-            <div class="metrics-grid">
-              <div class="metric">
-                <span class="metric-value">-16%</span>
-                <span class="metric-label">Cost reduction per passenger</span>
-              </div>
-              <div class="metric">
-                <span class="metric-value">49%</span>
-                <span class="metric-label">Marketplace-only travelers</span>
-              </div>
-              <div class="metric">
-                <span class="metric-value">15%</span>
-                <span class="metric-label">Top legal issue: delays</span>
-              </div>
-              <div class="metric">
-                <span class="metric-value">33</span>
-                <span class="metric-label">Slides in analytical report</span>
-              </div>
-            </div>
-          </div>
-          <div class="project-section">
-            <h4>Legal Issue Distribution</h4>
-            <div class="chart-grid">
-              <div class="chart-card" style="grid-column: span 2;">
-                <h5 class="chart-title">Top Legal/Judicial Issue Categories</h5>
-                <p class="chart-subtitle">Primary drivers of legal exposure by percentage</p>
-                <div class="chart-wrapper">
-                  <canvas id="chartLegalIssues"></canvas>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="project-section">
-            <h4>Analysis Breakdown</h4>
+            <h4>Objectives</h4>
             <div class="table-card">
               <div class="table-scroll">
                 <table class="data-table">
                   <thead>
                     <tr>
-                      <th>Analysis Area</th>
-                      <th>Key Finding</th>
-                      <th>Action</th>
+                      <th>#</th>
+                      <th>Objective</th>
+                      <th>How</th>
                     </tr>
                   </thead>
                   <tbody>
                     <tr class="row-highlight">
-                      <td>Cost per Customer (ACPU)</td>
-                      <td>Identified voucher over-compensation patterns</td>
-                      <td>Policy tightening on specific categories</td>
+                      <td>1</td>
+                      <td>Reduce B2B analyst workload</td>
+                      <td>Auto-resolve groups that don't qualify for reimbursement (delays &lt;1h, no-incident trips)</td>
                     </tr>
                     <tr>
-                      <td>Legal / Judicial Exposure</td>
-                      <td>Delays (15%), route changes (13%), downgrades (10%)</td>
-                      <td>Preventive policies for top 3 categories</td>
+                      <td>2</td>
+                      <td>Optimize the review process</td>
+                      <td>Route only complex/multi-incident groups to human review</td>
                     </tr>
                     <tr>
-                      <td>Marketplace Conversion</td>
-                      <td>49% traveled only via marketplace, 51% mixed</td>
-                      <td>Differentiated policy by travel model</td>
+                      <td>3</td>
+                      <td>Improve operational KPIs</td>
+                      <td>Faster resolution time, lower cost per group, higher throughput</td>
                     </tr>
                     <tr>
-                      <td>Downgrade Policy</td>
-                      <td>Misalignment between policy and actual impact</td>
-                      <td>Realigned compensation to severity</td>
-                    </tr>
-                    <tr>
-                      <td>Reclame Aqui</td>
-                      <td>Correlation between policy gaps and complaints</td>
-                      <td>Targeted improvements on top categories</td>
+                      <td>4</td>
+                      <td>Mitigate manual policy errors</td>
+                      <td>Rule-based decisions eliminate inconsistency between analysts</td>
                     </tr>
                   </tbody>
                 </table>
@@ -1862,22 +1767,29 @@
                 <div class="deliverable-icon">
                   <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 20V10"/><path d="M18 20V4"/><path d="M6 20v-4"/></svg>
                 </div>
-                <h5>ACPU Analytics Framework</h5>
-                <p>Built a cost-per-customer analysis tracking voucher performance by percentage bands, identifying which reimbursement levels correlated with retention vs unnecessary cost.</p>
+                <h5>Time & Volume Analysis</h5>
+                <p>Measured 2min30s per group across the full daily volume, proving the 4h32min bottleneck with data. This was the foundation for leadership buy-in on the automation investment.</p>
+              </div>
+              <div class="deliverable">
+                <div class="deliverable-icon">
+                  <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 7V4h16v3"/><path d="M9 20h6"/><path d="M12 4v16"/></svg>
+                </div>
+                <h5>Incident-to-Decision Map</h5>
+                <p>Worked with the internal controls team to map every incident type (delays, cancellations, route changes, downgrades, no-shows) to its reimbursement rule, including thresholds and edge cases.</p>
+              </div>
+              <div class="deliverable">
+                <div class="deliverable-icon">
+                  <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="3" width="20" height="14" rx="2"/><path d="M8 21h8"/><path d="M12 17v4"/></svg>
+                </div>
+                <h5>Automation Specification</h5>
+                <p>Delivered a complete decision tree for automated group resolution: which groups auto-close (no reimbursement), which auto-reimburse (clear rules), and which route to human review (complex/multi-incident).</p>
               </div>
               <div class="deliverable">
                 <div class="deliverable-icon">
                   <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 12h-4l-3 9L9 3l-3 9H2"/></svg>
                 </div>
-                <h5>Legal Risk Analysis</h5>
-                <p>Mapped judicial case categories to operational root causes, quantifying that delays (15%), route changes (13%), and downgrades (10%) drove the majority of legal exposure.</p>
-              </div>
-              <div class="deliverable">
-                <div class="deliverable-icon">
-                  <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 3v18h18"/><path d="M18.7 8l-5.1 5.2-2.8-2.7L7 14.3"/></svg>
-                </div>
-                <h5>33-Slide Policy Report</h5>
-                <p>Delivered a comprehensive analytical report covering ACPU trends, legal exposure, marketplace segmentation, downgrade alignment, and Reclame Aqui impact.</p>
+                <h5>Leadership Presentation</h5>
+                <p>6-slide executive deck with the full business case: current cost, automation opportunity, expected capacity recovery, and the 4 objectives framework aligned with ops leadership.</p>
               </div>
             </div>
           </div>
@@ -1885,10 +1797,195 @@
             <h4>Tech Stack</h4>
             <div class="tech-tags">
               <span class="tag">SQL / BigQuery</span>
-              <span class="tag">Data Analysis</span>
+              <span class="tag">Process Analysis</span>
+              <span class="tag">Business Logic Mapping</span>
+              <span class="tag">Cross-Team Collaboration</span>
               <span class="tag">Google Slides</span>
+            </div>
+          </div>
+        </div>
+      </article>
+
+      <!-- PROJECT 8: Voucher & Reimbursement Policy Analytics -->
+      <article class="project-card" id="project-policy-analytics">
+        <div class="project-header">
+          <div class="project-tag">Case Study</div>
+          <h3 class="project-name">Voucher & Reimbursement Policy Analytics</h3>
+          <p class="project-subtitle">Everyone was cutting vouchers to save money. I proved with data that it was costing the company revenue, and reversed the strategy.</p>
+        </div>
+        <div class="project-body">
+          <div class="project-section">
+            <h4>The Counter-Intuitive Discovery</h4>
+            <p>Over 18 months, the company had revised its voucher policy <strong>6 times</strong>, always in the same direction: reducing voucher values to cut costs. On the surface, the math worked. But I started asking: <em>"at what point does reducing vouchers stop being positive?"</em></p>
+            <p>By cross-referencing data from CX, finance, marketplace, and legal teams, I discovered that <strong>cutting vouchers was actually hurting customer recurrence</strong>. Customers who received adequate compensation after incidents came back and spent more. Those who received minimal vouchers often didn't return at all.</p>
+            <p>I created the <strong>ACPU metric (Average Cash Per User)</strong> to prove it: ACPU = average ticket x conversion rate. This single metric captured the full picture, measuring not just cost but the <strong>revenue generated per user over time</strong>. The data showed that higher vouchers (30%) often produced better ACPU than lower ones (15%), because the recurrence lift more than offset the higher upfront cost.</p>
+          </div>
+          <div class="project-section">
+            <h4>Key Metrics</h4>
+            <div class="metrics-grid">
+              <div class="metric">
+                <span class="metric-value">+578K</span>
+                <span class="metric-label">Additional revenue in 2024 (ACPU 2023 vs 2024)</span>
+              </div>
+              <div class="metric">
+                <span class="metric-value">ACPU</span>
+                <span class="metric-label">New metric I created (Avg Cash Per User)</span>
+              </div>
+              <div class="metric">
+                <span class="metric-value">6</span>
+                <span class="metric-label">Prior policy revisions I challenged with data</span>
+              </div>
+              <div class="metric">
+                <span class="metric-value">48</span>
+                <span class="metric-label">Slides in the analytical report</span>
+              </div>
+            </div>
+          </div>
+          <div class="project-section">
+            <h4>The Timeline: 6 Revisions, Same Direction</h4>
+            <div class="table-card">
+              <div class="table-scroll">
+                <table class="data-table">
+                  <thead>
+                    <tr>
+                      <th>Revision</th>
+                      <th>Direction</th>
+                      <th>Assumption</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <td>Apr 2022</td>
+                      <td>Reduce voucher values</td>
+                      <td>Lower cost per incident</td>
+                    </tr>
+                    <tr>
+                      <td>Jul 2022</td>
+                      <td>Further reduction</td>
+                      <td>Savings compound over time</td>
+                    </tr>
+                    <tr>
+                      <td>Oct 2022</td>
+                      <td>Tighter eligibility rules</td>
+                      <td>Fewer vouchers = lower spend</td>
+                    </tr>
+                    <tr>
+                      <td>Feb 2023</td>
+                      <td>Reduce again</td>
+                      <td>Cost control priority</td>
+                    </tr>
+                    <tr>
+                      <td>Jun 2023</td>
+                      <td>Category-specific cuts</td>
+                      <td>Targeted savings</td>
+                    </tr>
+                    <tr class="row-highlight">
+                      <td>Dec 2023</td>
+                      <td><strong>My revision: increase for specific cases</strong></td>
+                      <td><strong>Higher vouchers = better recurrence = more revenue</strong></td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+          </div>
+          <div class="project-section">
+            <h4>Supporting Analysis</h4>
+            <div class="chart-grid">
+              <div class="chart-card" style="grid-column: span 2;">
+                <h5 class="chart-title">Top Legal/Judicial Issue Categories</h5>
+                <p class="chart-subtitle">Insufficient vouchers correlated with higher legal exposure in these categories</p>
+                <div class="chart-wrapper">
+                  <canvas id="chartLegalIssues"></canvas>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="project-section">
+            <h4>Multi-Team Data Integration</h4>
+            <div class="table-card">
+              <div class="table-scroll">
+                <table class="data-table">
+                  <thead>
+                    <tr>
+                      <th>Data Source</th>
+                      <th>Key Insight</th>
+                      <th>Impact on Policy</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr class="row-highlight">
+                      <td>ACPU by Voucher Band</td>
+                      <td>30% vouchers produced higher ACPU than 15% in most incident types</td>
+                      <td>Reversed the "always cut" approach for high-recurrence segments</td>
+                    </tr>
+                    <tr>
+                      <td>Marketplace Data (316K pax)</td>
+                      <td>16% of users discovered new travel models through repair vouchers</td>
+                      <td>Vouchers as acquisition tool, not just cost center</td>
+                    </tr>
+                    <tr>
+                      <td>Legal / Judicial</td>
+                      <td>1 lawsuit per 131 passengers with severe friction; delays top offender</td>
+                      <td>Better vouchers for delay incidents to reduce legal exposure</td>
+                    </tr>
+                    <tr>
+                      <td>Customer Recurrence</td>
+                      <td>Adequately compensated customers showed measurably higher rebuy rates</td>
+                      <td>The core thesis: spend more upfront, earn more over lifetime</td>
+                    </tr>
+                    <tr>
+                      <td>Projected Cash Impact</td>
+                      <td>Estimated +45K monthly from revised voucher strategy</td>
+                      <td>Actual result: +578K additional revenue in 2024 (ACPU YoY comparison)</td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+          </div>
+          <div class="project-section">
+            <h4>What I Built</h4>
+            <div class="deliverables-grid">
+              <div class="deliverable">
+                <div class="deliverable-icon">
+                  <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 3v18h18"/><path d="M18.7 8l-5.1 5.2-2.8-2.7L7 14.3"/></svg>
+                </div>
+                <h5>ACPU Metric & Framework</h5>
+                <p>Created the Average Cash Per User metric (ticket x conversion rate) that became the company's standard for evaluating voucher policy impact. This reframed the conversation from "cost per incident" to "revenue per user."</p>
+              </div>
+              <div class="deliverable">
+                <div class="deliverable-icon">
+                  <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 20V10"/><path d="M18 20V4"/><path d="M6 20v-4"/></svg>
+                </div>
+                <h5>Voucher-to-Recurrence Analysis</h5>
+                <p>Built the analysis proving that higher vouchers in specific incident categories drove better recurrence and ACPU, directly challenging 18 months of cost-cutting assumptions.</p>
+              </div>
+              <div class="deliverable">
+                <div class="deliverable-icon">
+                  <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 12h-4l-3 9L9 3l-3 9H2"/></svg>
+                </div>
+                <h5>Legal Risk Mapping</h5>
+                <p>Mapped judicial cases to operational root causes. Found that 1 in 131 high-friction passengers resulted in a lawsuit, and that better voucher policies could reduce legal exposure significantly.</p>
+              </div>
+              <div class="deliverable">
+                <div class="deliverable-icon">
+                  <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="3" width="20" height="14" rx="2"/><path d="M8 21h8"/><path d="M12 17v4"/></svg>
+                </div>
+                <h5>48-Slide Policy Report</h5>
+                <p>Comprehensive report integrating CX, finance, marketplace, and legal data. Presented to leadership with the recommendation to reverse the cost-cutting direction. Result: +578K in additional revenue in 2024.</p>
+              </div>
+            </div>
+          </div>
+          <div class="project-section">
+            <h4>Tech Stack</h4>
+            <div class="tech-tags">
+              <span class="tag">SQL / BigQuery</span>
+              <span class="tag">ACPU Analysis</span>
+              <span class="tag">Cross-Team Data Integration</span>
               <span class="tag">Legal Analytics</span>
               <span class="tag">Policy Design</span>
+              <span class="tag">Google Slides</span>
             </div>
           </div>
         </div>
