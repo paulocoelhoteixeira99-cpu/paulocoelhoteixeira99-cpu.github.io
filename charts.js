@@ -511,3 +511,251 @@ new Chart(document.getElementById('chartSalesByAttempts'), {
     }
   }
 });
+
+// =============================================
+// PROJECT 4: CX DEMAND FORECAST
+// =============================================
+
+// ===== 11. Channel Distribution =====
+new Chart(document.getElementById('chartChannelDist'), {
+  type: 'doughnut',
+  data: {
+    labels: ['WhatsApp Bot (B2C)', 'Live Chat', 'Tickets', 'Social Media', 'Phone (Receptive)', 'Phone (Active)', 'WhatsApp Bot (B2B)', 'Parcels'],
+    datasets: [{
+      data: [35, 18, 15, 10, 8, 5, 6, 3],
+      backgroundColor: [BLUE, GREEN, PURPLE, ORANGE, RED, CYAN, '#6b7280', '#a78bfa'],
+      borderColor: '#161a24',
+      borderWidth: 3,
+      hoverOffset: 6
+    }]
+  },
+  options: {
+    responsive: true,
+    maintainAspectRatio: false,
+    cutout: '55%',
+    plugins: {
+      legend: {
+        position: 'right',
+        labels: { padding: 10, font: { size: 11 } }
+      },
+      tooltip: {
+        callbacks: {
+          label: ctx => ctx.label + ': ' + ctx.parsed + '% of volume'
+        }
+      }
+    }
+  }
+});
+
+// =============================================
+// PROJECT 5: SUPPORT EFFICIENCY OKR
+// =============================================
+
+// ===== 12. Incoming/Pax Ratio: Before vs After =====
+new Chart(document.getElementById('chartOKRResult'), {
+  type: 'bar',
+  data: {
+    labels: ['Before', 'OKR Target', 'Achieved'],
+    datasets: [{
+      label: 'Incoming/Pax Ratio (%)',
+      data: [31, 28, 22.6],
+      backgroundColor: [
+        'rgba(248, 113, 113, 0.7)',
+        'rgba(245, 158, 11, 0.7)',
+        'rgba(52, 211, 153, 0.7)'
+      ],
+      borderRadius: 4,
+      barPercentage: 0.6
+    }]
+  },
+  options: {
+    responsive: true,
+    maintainAspectRatio: false,
+    scales: {
+      y: {
+        beginAtZero: true,
+        max: 35,
+        grid: { color: 'rgba(30, 35, 48, 0.4)' },
+        ticks: { callback: v => v + '%' }
+      },
+      x: { grid: { display: false } }
+    },
+    plugins: {
+      legend: { display: false },
+      tooltip: {
+        callbacks: {
+          label: ctx => ctx.parsed.y + '%'
+        }
+      }
+    }
+  }
+});
+
+// ===== 13. Help Center Contact Rate =====
+new Chart(document.getElementById('chartHelpCenter'), {
+  type: 'bar',
+  data: {
+    labels: ['Before', 'After'],
+    datasets: [{
+      label: 'Contact Rate (%)',
+      data: [18, 14],
+      backgroundColor: [
+        'rgba(248, 113, 113, 0.7)',
+        'rgba(52, 211, 153, 0.7)'
+      ],
+      borderRadius: 4,
+      barPercentage: 0.45
+    }]
+  },
+  options: {
+    responsive: true,
+    maintainAspectRatio: false,
+    scales: {
+      y: {
+        beginAtZero: true,
+        max: 22,
+        grid: { color: 'rgba(30, 35, 48, 0.4)' },
+        ticks: { callback: v => v + '%' }
+      },
+      x: { grid: { display: false } }
+    },
+    plugins: {
+      legend: { display: false },
+      tooltip: {
+        callbacks: {
+          label: ctx => 'Contact Rate: ' + ctx.parsed.y + '%'
+        }
+      }
+    }
+  }
+});
+
+// =============================================
+// PROJECT 6: TIME SERIES FORECASTING - PROPHET
+// =============================================
+
+// ===== 14. Prophet MAPE Comparison =====
+new Chart(document.getElementById('chartProphetMAPE'), {
+  type: 'bar',
+  data: {
+    labels: ['Model A (Baseline)', 'Model B (Tuned)'],
+    datasets: [{
+      label: 'MAPE (%)',
+      data: [33.0, 20.4],
+      backgroundColor: [
+        'rgba(248, 113, 113, 0.7)',
+        'rgba(52, 211, 153, 0.7)'
+      ],
+      borderRadius: 4,
+      barPercentage: 0.45
+    }]
+  },
+  options: {
+    responsive: true,
+    maintainAspectRatio: false,
+    scales: {
+      y: {
+        beginAtZero: true,
+        max: 40,
+        grid: { color: 'rgba(30, 35, 48, 0.4)' },
+        ticks: { callback: v => v + '%' }
+      },
+      x: { grid: { display: false } }
+    },
+    plugins: {
+      legend: { display: false },
+      tooltip: {
+        callbacks: {
+          label: ctx => 'MAPE: ' + ctx.parsed.y + '%'
+        }
+      }
+    }
+  }
+});
+
+// ===== 15. Prophet Error Metrics =====
+new Chart(document.getElementById('chartProphetErrors'), {
+  type: 'bar',
+  data: {
+    labels: ['RMSE', 'MAE'],
+    datasets: [
+      {
+        label: 'Model A (Baseline)',
+        data: [794, 701],
+        backgroundColor: 'rgba(248, 113, 113, 0.7)',
+        borderRadius: 4
+      },
+      {
+        label: 'Model B (Tuned)',
+        data: [551, 432],
+        backgroundColor: 'rgba(52, 211, 153, 0.7)',
+        borderRadius: 4
+      }
+    ]
+  },
+  options: {
+    responsive: true,
+    maintainAspectRatio: false,
+    interaction: { mode: 'index', intersect: false },
+    scales: {
+      y: {
+        beginAtZero: true,
+        grid: { color: 'rgba(30, 35, 48, 0.4)' }
+      },
+      x: { grid: { display: false } }
+    },
+    plugins: {
+      tooltip: {
+        callbacks: {
+          label: ctx => ctx.dataset.label + ': ' + ctx.parsed.y
+        }
+      }
+    }
+  }
+});
+
+// =============================================
+// PROJECT 8: POLICY ANALYTICS
+// =============================================
+
+// ===== 16. Legal Issue Categories =====
+new Chart(document.getElementById('chartLegalIssues'), {
+  type: 'bar',
+  data: {
+    labels: ['Delays', 'Route Changes', 'Downgrades', 'Cancellations', 'Luggage Issues', 'Other'],
+    datasets: [{
+      label: 'Share of Legal Cases',
+      data: [15, 13, 10, 9, 7, 46],
+      backgroundColor: [
+        'rgba(248, 113, 113, 0.8)',
+        'rgba(245, 158, 11, 0.8)',
+        'rgba(167, 139, 250, 0.8)',
+        'rgba(79, 142, 255, 0.8)',
+        'rgba(52, 211, 153, 0.8)',
+        'rgba(107, 114, 128, 0.5)'
+      ],
+      borderRadius: 4
+    }]
+  },
+  options: {
+    responsive: true,
+    maintainAspectRatio: false,
+    indexAxis: 'y',
+    scales: {
+      x: {
+        beginAtZero: true,
+        grid: { color: 'rgba(30, 35, 48, 0.4)' },
+        ticks: { callback: v => v + '%' }
+      },
+      y: { grid: { display: false } }
+    },
+    plugins: {
+      legend: { display: false },
+      tooltip: {
+        callbacks: {
+          label: ctx => ctx.parsed.x + '% of legal cases'
+        }
+      }
+    }
+  }
+});
