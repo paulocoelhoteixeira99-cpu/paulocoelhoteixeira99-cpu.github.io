@@ -591,44 +591,7 @@ new Chart(document.getElementById('chartOKRResult'), {
   }
 });
 
-// ===== 13. Help Center Contact Rate =====
-new Chart(document.getElementById('chartHelpCenter'), {
-  type: 'bar',
-  data: {
-    labels: ['Before', 'After'],
-    datasets: [{
-      label: 'Contact Rate (%)',
-      data: [18, 14],
-      backgroundColor: [
-        'rgba(248, 113, 113, 0.7)',
-        'rgba(52, 211, 153, 0.7)'
-      ],
-      borderRadius: 4,
-      barPercentage: 0.45
-    }]
-  },
-  options: {
-    responsive: true,
-    maintainAspectRatio: false,
-    scales: {
-      y: {
-        beginAtZero: true,
-        max: 22,
-        grid: { color: 'rgba(30, 35, 48, 0.4)' },
-        ticks: { callback: v => v + '%' }
-      },
-      x: { grid: { display: false } }
-    },
-    plugins: {
-      legend: { display: false },
-      tooltip: {
-        callbacks: {
-          label: ctx => 'Contact Rate: ' + ctx.parsed.y + '%'
-        }
-      }
-    }
-  }
-});
+// ===== 13. (Removed) =====
 
 // =============================================
 // PROJECT 6: TIME SERIES FORECASTING - PROPHET
