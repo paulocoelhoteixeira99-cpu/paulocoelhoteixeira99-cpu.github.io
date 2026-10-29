@@ -87,7 +87,27 @@ strong {
 
 .nav-links {
   display: flex;
+  align-items: center;
   gap: 32px;
+}
+
+.lang-toggle {
+  background: transparent;
+  border: 1px solid var(--border);
+  color: var(--text-secondary);
+  font-family: var(--mono);
+  font-size: 0.8rem;
+  font-weight: 500;
+  padding: 4px 10px;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: color 0.2s, border-color 0.2s;
+  letter-spacing: 0.5px;
+}
+
+.lang-toggle:hover {
+  color: var(--text);
+  border-color: var(--accent);
 }
 
 .nav-links a {
@@ -829,6 +849,14 @@ strong {
 @media (max-width: 768px) {
   .nav-links {
     display: none;
+  }
+
+  .lang-toggle {
+    display: block;
+    position: fixed;
+    top: 16px;
+    right: 16px;
+    z-index: 101;
   }
 
   .about-grid {

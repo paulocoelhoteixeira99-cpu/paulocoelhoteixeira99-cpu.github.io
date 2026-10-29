@@ -16,10 +16,11 @@
     <div class="nav-inner">
       <a href="#" class="nav-logo">Paulo Teixeira<span class="accent">.</span></a>
       <div class="nav-links">
-        <a href="#about">About</a>
-        <a href="#projects">Projects</a>
-        <a href="#stack">Stack</a>
-        <a href="#contact">Contact</a>
+        <a href="#about" data-i18n="nav-about">About</a>
+        <a href="#projects" data-i18n="nav-projects">Projects</a>
+        <a href="#stack" data-i18n="nav-stack">Stack</a>
+        <a href="#contact" data-i18n="nav-contact">Contact</a>
+        <button id="lang-toggle" class="lang-toggle" onclick="toggleLang()" aria-label="Mudar para Português">PT</button>
       </div>
     </div>
   </nav>
@@ -27,13 +28,13 @@
   <!-- HERO -->
   <section class="hero">
     <div class="container">
-      <p class="hero-greeting">Hi, I'm</p>
+      <p class="hero-greeting" data-i18n="hero-greeting">Hi, I'm</p>
       <h1 class="hero-name">Paulo Vitor<br>Coelho Teixeira</h1>
-      <p class="hero-title">Data Analyst <span class="accent">/</span> Analytics Engineer</p>
-      <p class="hero-desc">I build data pipelines, scoring systems, and automated marketing infrastructure that drive real revenue. Currently working with 170K+ leads and $15K+ in tracked conversions.</p>
+      <p class="hero-title" data-i18n="hero-role">Data Analyst <span class="accent">/</span> Analytics Engineer</p>
+      <p class="hero-desc" data-i18n="hero-desc">I build data pipelines, scoring systems, and automated marketing infrastructure that drive real revenue. Currently working with 170K+ leads and $15K+ in tracked conversions.</p>
       <div class="hero-cta">
-        <a href="#projects" class="btn btn-primary">View Projects</a>
-        <a href="#contact" class="btn btn-ghost">Get in Touch</a>
+        <a href="#projects" class="btn btn-primary" data-i18n="hero-btn-projects">View Projects</a>
+        <a href="#contact" class="btn btn-ghost" data-i18n="hero-btn-contact">Get in Touch</a>
       </div>
     </div>
   </section>
@@ -41,29 +42,29 @@
   <!-- ABOUT -->
   <section id="about" class="section">
     <div class="container">
-      <h2 class="section-title">About</h2>
+      <h2 class="section-title" data-i18n="section-about">About</h2>
       <div class="about-grid">
         <div class="about-text">
-          <p>I'm a data and systems professional who works across the full stack of turning data into business results: from <strong>SQL pipelines and database architecture</strong> to <strong>ML models, automated campaigns, and strategic analysis</strong> that changes how companies make decisions.</p>
-          <p>My work ranges from building a 170K+ lead SMS operation with AI voice recovery and lead scoring (6.5x ROI), to creating ML forecasting models with Prophet that cut prediction error by 38%, to discovering through cross-team data analysis that a company's cost-cutting strategy was actually destroying revenue (+578K recovered by reversing it).</p>
-          <p>I'm most valuable when the problem requires <strong>connecting data from multiple teams</strong>, building something that didn't exist before, or challenging assumptions with evidence. Whether it's architecting a SaaS platform, optimizing a trading bot's time windows, or automating 4h32min of daily manual work, I focus on measurable outcomes.</p>
+          <p data-i18n="about-p1">I'm a data and systems professional who works across the full stack of turning data into business results: from <strong>SQL pipelines and database architecture</strong> to <strong>ML models, automated campaigns, and strategic analysis</strong> that changes how companies make decisions.</p>
+          <p data-i18n="about-p2">My work ranges from building a 170K+ lead SMS operation with AI voice recovery and lead scoring (6.5x ROI), to creating ML forecasting models with Prophet that cut prediction error by 38%, to discovering through cross-team data analysis that a company's cost-cutting strategy was actually destroying revenue (+578K recovered by reversing it).</p>
+          <p data-i18n="about-p3">I'm most valuable when the problem requires <strong>connecting data from multiple teams</strong>, building something that didn't exist before, or challenging assumptions with evidence. Whether it's architecting a SaaS platform, optimizing a trading bot's time windows, or automating 4h32min of daily manual work, I focus on measurable outcomes.</p>
         </div>
         <div class="about-stats">
           <div class="stat-card">
             <span class="stat-number">8</span>
-            <span class="stat-label">Case Studies Shipped</span>
+            <span class="stat-label" data-i18n="stat-1">Case Studies Shipped</span>
           </div>
           <div class="stat-card">
             <span class="stat-number">+578K</span>
-            <span class="stat-label">Revenue from Policy Reversal</span>
+            <span class="stat-label" data-i18n="stat-2">Revenue from Policy Reversal</span>
           </div>
           <div class="stat-card">
             <span class="stat-number">6.5x</span>
-            <span class="stat-label">Overall Campaign ROI</span>
+            <span class="stat-label" data-i18n="stat-3">Overall Campaign ROI</span>
           </div>
           <div class="stat-card">
             <span class="stat-number">-38%</span>
-            <span class="stat-label">Forecast Error Reduction (ML)</span>
+            <span class="stat-label" data-i18n="stat-4">Forecast Error Reduction (ML)</span>
           </div>
         </div>
       </div>
@@ -73,88 +74,88 @@
   <!-- PROJECTS -->
   <section id="projects" class="section section-alt">
     <div class="container">
-      <h2 class="section-title">Projects</h2>
+      <h2 class="section-title" data-i18n="section-projects">Projects</h2>
 
       <!-- Project Index Cards -->
       <div class="project-index">
         <a href="#project-policy-analytics" class="index-card">
-          <div class="index-tag">Case Study 01</div>
-          <h3 class="index-name">Voucher & Reimbursement Policy Analytics</h3>
-          <p class="index-desc">Counter-intuitive discovery: increasing vouchers for specific cases drove +578K in additional annual revenue</p>
+          <div class="index-tag" data-i18n="case-study">Case Study 01</div>
+          <h3 class="index-name" data-i18n="p8-idx-name">Voucher & Reimbursement Policy Analytics</h3>
+          <p class="index-desc" data-i18n="p8-idx-desc">Counter-intuitive discovery: increasing vouchers for specific cases drove +578K in additional annual revenue</p>
           <div class="index-stats">
-            <span>+578K revenue</span>
-            <span>ACPU metric</span>
-            <span>48-slide report</span>
+            <span data-i18n="p8-idx-s1">+578K revenue</span>
+            <span data-i18n="p8-idx-s2">ACPU metric</span>
+            <span data-i18n="p8-idx-s3">48-slide report</span>
           </div>
         </a>
         <a href="#project-scale-path" class="index-card">
-          <div class="index-tag">Case Study 02</div>
-          <h3 class="index-name">AI-Powered Cart Recovery SaaS</h3>
-          <p class="index-desc">B2B platform with AI voice agents, multi-channel recovery, and credit-based billing engine</p>
+          <div class="index-tag" data-i18n="case-study">Case Study 02</div>
+          <h3 class="index-name" data-i18n="p2-idx-name">AI-Powered Cart Recovery SaaS</h3>
+          <p class="index-desc" data-i18n="p2-idx-desc">B2B platform with AI voice agents, multi-channel recovery, and credit-based billing engine</p>
           <div class="index-stats">
-            <span>26K+ AI calls</span>
-            <span>$92K recovered</span>
-            <span>383 sales</span>
+            <span data-i18n="p2-idx-s1">26K+ AI calls</span>
+            <span data-i18n="p2-idx-s2">$92K recovered</span>
+            <span data-i18n="p2-idx-s3">383 sales</span>
           </div>
         </a>
         <a href="#project-leads-nutra" class="index-card">
-          <div class="index-tag">Case Study 03</div>
-          <h3 class="index-name">SMS Direct Response Pipeline</h3>
-          <p class="index-desc">End-to-end data infrastructure for a DTC health product operation targeting the US market</p>
+          <div class="index-tag" data-i18n="case-study">Case Study 03</div>
+          <h3 class="index-name" data-i18n="p1-idx-name">SMS Direct Response Pipeline</h3>
+          <p class="index-desc" data-i18n="p1-idx-desc">End-to-end data infrastructure for a DTC health product operation targeting the US market</p>
           <div class="index-stats">
-            <span>170K+ leads</span>
-            <span>183K+ SMS</span>
-            <span>6.5x ROI</span>
+            <span data-i18n="p1-idx-s1">170K+ leads</span>
+            <span data-i18n="p1-idx-s2">183K+ SMS</span>
+            <span data-i18n="p1-idx-s3">6.5x ROI</span>
           </div>
         </a>
         <a href="#project-prophet" class="index-card">
-          <div class="index-tag">Case Study 04</div>
-          <h3 class="index-name">Time Series Forecasting with Prophet</h3>
-          <p class="index-desc">ML model for customer support demand prediction with 38% accuracy improvement</p>
+          <div class="index-tag" data-i18n="case-study">Case Study 04</div>
+          <h3 class="index-name" data-i18n="p6-idx-name">Time Series Forecasting with Prophet</h3>
+          <p class="index-desc" data-i18n="p6-idx-desc">ML model for customer support demand prediction with 38% accuracy improvement</p>
           <div class="index-stats">
-            <span>664 days data</span>
-            <span>MAPE 20.4%</span>
-            <span>-38% error</span>
+            <span data-i18n="p6-idx-s1">664 days data</span>
+            <span data-i18n="p6-idx-s2">MAPE 20.4%</span>
+            <span data-i18n="p6-idx-s3">-38% error</span>
           </div>
         </a>
         <a href="#project-incoming-okr" class="index-card">
-          <div class="index-tag">Case Study 05</div>
-          <h3 class="index-name">Support Efficiency OKR</h3>
-          <p class="index-desc">Data-driven initiative that reduced contact ratio from 31% to 22.6%, exceeding target by 19%</p>
+          <div class="index-tag" data-i18n="case-study">Case Study 05</div>
+          <h3 class="index-name" data-i18n="p5-idx-name">Support Efficiency OKR</h3>
+          <p class="index-desc" data-i18n="p5-idx-desc">Data-driven initiative that reduced contact ratio from 31% to 22.6%, exceeding target by 19%</p>
           <div class="index-stats">
-            <span>31% to 22.6%</span>
-            <span>~R$150K/mo saved</span>
-            <span>19% over target</span>
+            <span data-i18n="p5-idx-s1">31% to 22.6%</span>
+            <span data-i18n="p5-idx-s2">~R$150K/mo saved</span>
+            <span data-i18n="p5-idx-s3">19% over target</span>
           </div>
         </a>
         <a href="#project-trading-bot" class="index-card">
-          <div class="index-tag">Case Study 06</div>
-          <h3 class="index-name">Algorithmic Trading Bot Analysis</h3>
-          <p class="index-desc">Performance audit that turned a 449% cumulative return into actionable trading window rules</p>
+          <div class="index-tag" data-i18n="case-study">Case Study 06</div>
+          <h3 class="index-name" data-i18n="p3-idx-name">Algorithmic Trading Bot Analysis</h3>
+          <p class="index-desc" data-i18n="p3-idx-desc">Performance audit that turned a 449% cumulative return into actionable trading window rules</p>
           <div class="index-stats">
-            <span>449% return</span>
-            <span>Hour x Day heatmap</span>
-            <span>16 visualizations</span>
+            <span data-i18n="p3-idx-s1">449% return</span>
+            <span data-i18n="p3-idx-s2">Hour x Day heatmap</span>
+            <span data-i18n="p3-idx-s3">16 visualizations</span>
           </div>
         </a>
         <a href="#project-reimbursement-automation" class="index-card">
-          <div class="index-tag">Case Study 07</div>
-          <h3 class="index-name">B2B Group Conclusion Automation</h3>
-          <p class="index-desc">Reduced manual group conclusions from 18.2% to 3.4%, exceeding OKR target by 79%</p>
+          <div class="index-tag" data-i18n="case-study">Case Study 07</div>
+          <h3 class="index-name" data-i18n="p7-idx-name">B2B Group Conclusion Automation</h3>
+          <p class="index-desc" data-i18n="p7-idx-desc">Reduced manual group conclusions from 18.2% to 3.4%, exceeding OKR target by 79%</p>
           <div class="index-stats">
-            <span>183 to 29/day</span>
-            <span>-84% workload</span>
-            <span>OKR: 3.4% vs 16%</span>
+            <span data-i18n="p7-idx-s1">183 to 29/day</span>
+            <span data-i18n="p7-idx-s2">-84% workload</span>
+            <span data-i18n="p7-idx-s3">OKR: 3.4% vs 16%</span>
           </div>
         </a>
         <a href="#project-cx-forecast" class="index-card">
-          <div class="index-tag">Case Study 08</div>
-          <h3 class="index-name">CX Demand Forecast & Capacity Planning</h3>
-          <p class="index-desc">Workforce planning and channel analysis for a major Brazilian mobility company</p>
+          <div class="index-tag" data-i18n="case-study">Case Study 08</div>
+          <h3 class="index-name" data-i18n="p4-idx-name">CX Demand Forecast & Capacity Planning</h3>
+          <p class="index-desc" data-i18n="p4-idx-desc">Workforce planning and channel analysis for a major Brazilian mobility company</p>
           <div class="index-stats">
-            <span>8+ channels</span>
-            <span>14.4% growth</span>
-            <span>WFM Moavi</span>
+            <span data-i18n="p4-idx-s1">8+ channels</span>
+            <span data-i18n="p4-idx-s2">14.4% growth</span>
+            <span data-i18n="p4-idx-s3">WFM Moavi</span>
           </div>
         </a>
       </div>
@@ -162,133 +163,133 @@
       <!-- PROJECT 1: Voucher & Reimbursement Policy Analytics -->
       <article class="project-card" id="project-policy-analytics">
         <div class="project-header">
-          <div class="project-tag">Case Study</div>
-          <h3 class="project-name">Voucher & Reimbursement Policy Analytics</h3>
-          <p class="project-subtitle">Everyone was cutting vouchers to save money. I proved with data that it was costing the company revenue, and reversed the strategy.</p>
+          <div class="project-tag" data-i18n="case-study">Case Study</div>
+          <h3 class="project-name" data-i18n="p8-name">Voucher & Reimbursement Policy Analytics</h3>
+          <p class="project-subtitle" data-i18n="p8-subtitle">Everyone was cutting vouchers to save money. I proved with data that it was costing the company revenue, and reversed the strategy.</p>
         </div>
         <div class="project-body">
           <div class="project-section">
-            <h4>The Counter-Intuitive Discovery</h4>
-            <p>Over 18 months, the company had revised its voucher policy <strong>6 times</strong>, always in the same direction: reducing voucher values to cut costs. On the surface, the math worked. But I started asking: <em>"at what point does reducing vouchers stop being positive?"</em></p>
-            <p>By cross-referencing data from CX, finance, marketplace, and legal teams, I discovered that <strong>cutting vouchers was actually hurting customer recurrence</strong>. Customers who received adequate compensation after incidents came back and spent more. Those who received minimal vouchers often didn't return at all.</p>
-            <p>I created the <strong>ACPU metric (Average Cash Per User)</strong> to prove it: ACPU = average ticket x conversion rate. This single metric captured the full picture, measuring not just cost but the <strong>revenue generated per user over time</strong>. The data showed that higher vouchers (30%) often produced better ACPU than lower ones (15%), because the recurrence lift more than offset the higher upfront cost.</p>
+            <h4 data-i18n="p8-discovery">The Counter-Intuitive Discovery</h4>
+            <p data-i18n="p8-discovery-p1">Over 18 months, the company had revised its voucher policy <strong>6 times</strong>, always in the same direction: reducing voucher values to cut costs. On the surface, the math worked. But I started asking: <em>"at what point does reducing vouchers stop being positive?"</em></p>
+            <p data-i18n="p8-discovery-p2">By cross-referencing data from CX, finance, marketplace, and legal teams, I discovered that <strong>cutting vouchers was actually hurting customer recurrence</strong>. Customers who received adequate compensation after incidents came back and spent more. Those who received minimal vouchers often didn't return at all.</p>
+            <p data-i18n="p8-discovery-p3">I created the <strong>ACPU metric (Average Cash Per User)</strong> to prove it: ACPU = average ticket x conversion rate. This single metric captured the full picture, measuring not just cost but the <strong>revenue generated per user over time</strong>. The data showed that higher vouchers (30%) often produced better ACPU than lower ones (15%), because the recurrence lift more than offset the higher upfront cost.</p>
           </div>
           <div class="project-section">
-            <h4>Key Metrics</h4>
+            <h4 data-i18n="heading-metrics">Key Metrics</h4>
             <div class="metrics-grid">
               <div class="metric">
                 <span class="metric-value">+578K</span>
-                <span class="metric-label">Additional revenue in 2024 (ACPU 2023 vs 2024)</span>
+                <span class="metric-label" data-i18n="p8-m1">Additional revenue in 2024 (ACPU 2023 vs 2024)</span>
               </div>
               <div class="metric">
                 <span class="metric-value">ACPU</span>
-                <span class="metric-label">New metric I created (Avg Cash Per User)</span>
+                <span class="metric-label" data-i18n="p8-m2">New metric I created (Avg Cash Per User)</span>
               </div>
               <div class="metric">
                 <span class="metric-value">6</span>
-                <span class="metric-label">Prior policy revisions I challenged with data</span>
+                <span class="metric-label" data-i18n="p8-m3">Prior policy revisions I challenged with data</span>
               </div>
               <div class="metric">
                 <span class="metric-value">48</span>
-                <span class="metric-label">Slides in the analytical report</span>
+                <span class="metric-label" data-i18n="p8-m4">Slides in the analytical report</span>
               </div>
             </div>
           </div>
           <div class="project-section">
-            <h4>Impact: Before vs After</h4>
+            <h4 data-i18n="heading-impact-ba">Impact: Before vs After</h4>
             <div class="table-card">
               <div class="table-scroll">
                 <table class="data-table">
                   <thead>
                     <tr>
-                      <th>Metric</th>
-                      <th>2023 (Before)</th>
-                      <th>2024 (After)</th>
-                      <th>Change</th>
+                      <th data-i18n="th-metric-impact">Metric</th>
+                      <th data-i18n="th-before">2023 (Before)</th>
+                      <th data-i18n="th-after">2024 (After)</th>
+                      <th data-i18n="th-change-col">Change</th>
                     </tr>
                   </thead>
                   <tbody>
                     <tr class="row-highlight">
-                      <td>ACPU (Avg Cash Per User)</td>
-                      <td>Baseline</td>
-                      <td>Higher</td>
-                      <td><span class="score-badge score-hot">+13.6%</span></td>
+                      <td data-i18n="p8-ba-r1-m">ACPU (Avg Cash Per User)</td>
+                      <td data-i18n="p8-ba-r1-b">Baseline</td>
+                      <td data-i18n="p8-ba-r1-a">Higher</td>
+                      <td data-i18n="p8-ba-r1-c"><span class="score-badge score-hot">+13.6%</span></td>
                     </tr>
                     <tr>
-                      <td>Customer return rate</td>
-                      <td>57%</td>
-                      <td>60%</td>
-                      <td><span class="score-badge score-hot">+3pp</span></td>
+                      <td data-i18n="p8-ba-r2-m">Customer return rate</td>
+                      <td data-i18n="p8-ba-r2-b">57%</td>
+                      <td data-i18n="p8-ba-r2-a">60%</td>
+                      <td data-i18n="p8-ba-r2-c"><span class="score-badge score-hot">+3pp</span></td>
                     </tr>
                     <tr>
-                      <td>Compensated users</td>
-                      <td colspan="2" style="text-align: center;">Fewer compensations, but higher value each</td>
-                      <td>Quality over quantity</td>
+                      <td data-i18n="p8-ba-r3-m">Compensated users</td>
+                      <td colspan="2" style="text-align: center;" data-i18n="p8-ba-r3-b">Fewer compensations, but higher value each</td>
+                      <td data-i18n="p8-ba-r3-c">Quality over quantity</td>
                     </tr>
                     <tr>
-                      <td>Revenue uplift (ACPU gain)</td>
-                      <td colspan="2" style="text-align: center;">Higher ACPU x returning user base</td>
-                      <td><span class="score-badge score-hot">+R$789K</span></td>
+                      <td data-i18n="p8-ba-r4-m">Revenue uplift (ACPU gain)</td>
+                      <td colspan="2" style="text-align: center;" data-i18n="p8-ba-r4-b">Higher ACPU x returning user base</td>
+                      <td data-i18n="p8-ba-r4-c"><span class="score-badge score-hot">+R$789K</span></td>
                     </tr>
                     <tr>
-                      <td>Additional voucher cost</td>
-                      <td colspan="2" style="text-align: center;">Marginal increase from revised policy</td>
-                      <td><span class="score-badge score-cold">+R$210K</span></td>
+                      <td data-i18n="p8-ba-r5-m">Additional voucher cost</td>
+                      <td colspan="2" style="text-align: center;" data-i18n="p8-ba-r5-b">Marginal increase from revised policy</td>
+                      <td data-i18n="p8-ba-r5-c"><span class="score-badge score-cold">+R$210K</span></td>
                     </tr>
                     <tr class="row-highlight">
-                      <td><strong>Net impact</strong></td>
-                      <td colspan="2" style="text-align: center;">Revenue uplift minus additional cost</td>
-                      <td><span class="score-badge score-hot">+R$578K</span></td>
+                      <td data-i18n="p8-ba-r6-m"><strong>Net impact</strong></td>
+                      <td colspan="2" style="text-align: center;" data-i18n="p8-ba-r6-b">Revenue uplift minus additional cost</td>
+                      <td data-i18n="p8-ba-r6-c"><span class="score-badge score-hot">+R$578K</span></td>
                     </tr>
                   </tbody>
                 </table>
               </div>
             </div>
-            <p style="margin-top: 16px; color: var(--text-secondary); font-size: 0.9rem;">The key insight: the marginal increase in voucher spend was far outweighed by the revenue uplift from better customer recurrence, netting <strong>+R$578K</strong> in 2024.</p>
+            <p style="margin-top: 16px; color: var(--text-secondary); font-size: 0.9rem;" data-i18n="p8-ba-insight">The key insight: the marginal increase in voucher spend was far outweighed by the revenue uplift from better customer recurrence, netting <strong>+R$578K</strong> in 2024.</p>
           </div>
 
           <div class="project-section">
-            <h4>The Timeline: 6 Revisions, Same Direction</h4>
+            <h4 data-i18n="p8-timeline">The Timeline: 6 Revisions, Same Direction</h4>
             <div class="table-card">
               <div class="table-scroll">
                 <table class="data-table">
                   <thead>
                     <tr>
-                      <th>Revision</th>
-                      <th>Direction</th>
-                      <th>Assumption</th>
+                      <th data-i18n="th-date">Revision</th>
+                      <th data-i18n="th-change">Direction</th>
+                      <th data-i18n="th-logic">Assumption</th>
                     </tr>
                   </thead>
                   <tbody>
                     <tr>
                       <td>Apr 2022</td>
-                      <td>Reduce voucher values</td>
-                      <td>Lower cost per incident</td>
+                      <td data-i18n="p8-t1-c">Reduce voucher values</td>
+                      <td data-i18n="p8-t1-l">Lower cost per incident</td>
                     </tr>
                     <tr>
                       <td>Jul 2022</td>
-                      <td>Further reduction</td>
-                      <td>Savings compound over time</td>
+                      <td data-i18n="p8-t2-c">Further reduction</td>
+                      <td data-i18n="p8-t2-l">Savings compound over time</td>
                     </tr>
                     <tr>
                       <td>Oct 2022</td>
-                      <td>Tighter eligibility rules</td>
-                      <td>Fewer vouchers = lower spend</td>
+                      <td data-i18n="p8-t3-c">Tighter eligibility rules</td>
+                      <td data-i18n="p8-t3-l">Fewer vouchers = lower spend</td>
                     </tr>
                     <tr>
                       <td>Feb 2023</td>
-                      <td>Reduce again</td>
-                      <td>Cost control priority</td>
+                      <td data-i18n="p8-t4-c">Reduce again</td>
+                      <td data-i18n="p8-t4-l">Cost control priority</td>
                     </tr>
                     <tr>
                       <td>Jun 2023</td>
-                      <td>Category-specific cuts</td>
-                      <td>Targeted savings</td>
+                      <td data-i18n="p8-t5-c">Category-specific cuts</td>
+                      <td data-i18n="p8-t5-l">Targeted savings</td>
                     </tr>
                     <tr class="row-highlight">
                       <td>Dec 2023</td>
-                      <td><strong>My revision: increase for specific cases</strong></td>
-                      <td><strong>Higher vouchers = better recurrence = more revenue</strong></td>
+                      <td data-i18n="p8-t6-c"><strong>My revision: increase for specific cases</strong></td>
+                      <td data-i18n="p8-t6-l"><strong>Higher vouchers = better recurrence = more revenue</strong></td>
                     </tr>
                   </tbody>
                 </table>
@@ -296,7 +297,7 @@
             </div>
           </div>
           <div class="project-section">
-            <h4>Supporting Analysis</h4>
+            <h4 data-i18n="heading-supporting">Supporting Analysis</h4>
             <div class="chart-grid">
               <div class="chart-card" style="grid-column: span 2;">
                 <h5 class="chart-title">Top Legal/Judicial Issue Categories</h5>
@@ -308,42 +309,42 @@
             </div>
           </div>
           <div class="project-section">
-            <h4>Multi-Team Data Integration</h4>
+            <h4 data-i18n="p8-integration">Multi-Team Data Integration</h4>
             <div class="table-card">
               <div class="table-scroll">
                 <table class="data-table">
                   <thead>
                     <tr>
-                      <th>Data Source</th>
-                      <th>Key Insight</th>
-                      <th>Impact on Policy</th>
+                      <th data-i18n="th-analysis">Data Source</th>
+                      <th data-i18n="th-discovery-h">Key Insight</th>
+                      <th data-i18n="th-impact-result">Impact on Policy</th>
                     </tr>
                   </thead>
                   <tbody>
                     <tr class="row-highlight">
-                      <td>ACPU by Voucher Band</td>
-                      <td>30% vouchers produced higher ACPU than 15% in most incident types</td>
-                      <td>Reversed the "always cut" approach for high-recurrence segments</td>
+                      <td data-i18n="p8-find1">ACPU by Voucher Band</td>
+                      <td data-i18n="p8-find1-d">30% vouchers produced higher ACPU than 15% in most incident types</td>
+                      <td data-i18n="p8-find1-i">Reversed the "always cut" approach for high-recurrence segments</td>
                     </tr>
                     <tr>
-                      <td>Marketplace Data (316K pax)</td>
-                      <td>16% of users discovered new travel models through repair vouchers</td>
-                      <td>Vouchers as acquisition tool, not just cost center</td>
+                      <td data-i18n="p8-find2">Marketplace Data (316K pax)</td>
+                      <td data-i18n="p8-find2-d">16% of users discovered new travel models through repair vouchers</td>
+                      <td data-i18n="p8-find2-i">Vouchers as acquisition tool, not just cost center</td>
                     </tr>
                     <tr>
-                      <td>Legal / Judicial</td>
-                      <td>1 lawsuit per 131 passengers with severe friction; delays top offender</td>
-                      <td>Better vouchers for delay incidents to reduce legal exposure</td>
+                      <td data-i18n="p8-find3">Legal / Judicial</td>
+                      <td data-i18n="p8-find3-d">1 lawsuit per 131 passengers with severe friction; delays top offender</td>
+                      <td data-i18n="p8-find3-i">Better vouchers for delay incidents to reduce legal exposure</td>
                     </tr>
                     <tr>
-                      <td>Customer Recurrence</td>
-                      <td>Adequately compensated customers showed measurably higher rebuy rates</td>
-                      <td>The core thesis: spend more upfront, earn more over lifetime</td>
+                      <td data-i18n="p8-find4">Customer Recurrence</td>
+                      <td data-i18n="p8-find4-d">Adequately compensated customers showed measurably higher rebuy rates</td>
+                      <td data-i18n="p8-find4-i">The core thesis: spend more upfront, earn more over lifetime</td>
                     </tr>
                     <tr>
-                      <td>Projected Cash Impact</td>
-                      <td>Estimated +45K monthly from revised voucher strategy</td>
-                      <td>Actual result: +578K additional revenue in 2024 (ACPU YoY comparison)</td>
+                      <td data-i18n="p8-find5">Projected Cash Impact</td>
+                      <td data-i18n="p8-find5-d">Estimated +45K monthly from revised voucher strategy</td>
+                      <td data-i18n="p8-find5-i">Actual result: +578K additional revenue in 2024 (ACPU YoY comparison)</td>
                     </tr>
                   </tbody>
                 </table>
@@ -351,40 +352,40 @@
             </div>
           </div>
           <div class="project-section">
-            <h4>What I Built</h4>
+            <h4 data-i18n="heading-what-built">What I Built</h4>
             <div class="deliverables-grid">
               <div class="deliverable">
                 <div class="deliverable-icon">
                   <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 3v18h18"/><path d="M18.7 8l-5.1 5.2-2.8-2.7L7 14.3"/></svg>
                 </div>
-                <h5>ACPU Metric & Framework</h5>
-                <p>Created the Average Cash Per User metric (ticket x conversion rate) that became the company's standard for evaluating voucher policy impact. This reframed the conversation from "cost per incident" to "revenue per user."</p>
+                <h5 data-i18n="p8-d1-t">ACPU Metric & Framework</h5>
+                <p data-i18n="p8-d1-d">Created the Average Cash Per User metric (ticket x conversion rate) that became the company's standard for evaluating voucher policy impact. This reframed the conversation from "cost per incident" to "revenue per user."</p>
               </div>
               <div class="deliverable">
                 <div class="deliverable-icon">
                   <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 20V10"/><path d="M18 20V4"/><path d="M6 20v-4"/></svg>
                 </div>
-                <h5>Voucher-to-Recurrence Analysis</h5>
-                <p>Built the analysis proving that higher vouchers in specific incident categories drove better recurrence and ACPU, directly challenging 18 months of cost-cutting assumptions.</p>
+                <h5 data-i18n="p8-d2-t">Voucher-to-Recurrence Analysis</h5>
+                <p data-i18n="p8-d2-d">Built the analysis proving that higher vouchers in specific incident categories drove better recurrence and ACPU, directly challenging 18 months of cost-cutting assumptions.</p>
               </div>
               <div class="deliverable">
                 <div class="deliverable-icon">
                   <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 12h-4l-3 9L9 3l-3 9H2"/></svg>
                 </div>
-                <h5>Legal Risk Mapping</h5>
-                <p>Mapped judicial cases to operational root causes. Found that 1 in 131 high-friction passengers resulted in a lawsuit, and that better voucher policies could reduce legal exposure significantly.</p>
+                <h5 data-i18n="p8-d3-t">Legal Risk Mapping</h5>
+                <p data-i18n="p8-d3-d">Mapped judicial cases to operational root causes. Found that 1 in 131 high-friction passengers resulted in a lawsuit, and that better voucher policies could reduce legal exposure significantly.</p>
               </div>
               <div class="deliverable">
                 <div class="deliverable-icon">
                   <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="3" width="20" height="14" rx="2"/><path d="M8 21h8"/><path d="M12 17v4"/></svg>
                 </div>
-                <h5>48-Slide Policy Report</h5>
-                <p>Comprehensive report integrating CX, finance, marketplace, and legal data. Presented to leadership with the recommendation to reverse the cost-cutting direction. Result: +578K in additional revenue in 2024.</p>
+                <h5 data-i18n="p8-d4-t">48-Slide Policy Report</h5>
+                <p data-i18n="p8-d4-d">Comprehensive report integrating CX, finance, marketplace, and legal data. Presented to leadership with the recommendation to reverse the cost-cutting direction. Result: +578K in additional revenue in 2024.</p>
               </div>
             </div>
           </div>
           <div class="project-section">
-            <h4>Tech Stack</h4>
+            <h4 data-i18n="heading-tech-stack">Tech Stack</h4>
             <div class="tech-tags">
               <span class="tag">SQL / BigQuery</span>
               <span class="tag">ACPU Analysis</span>
@@ -400,73 +401,73 @@
       <!-- PROJECT 2: Scale Path - Cart Recovery SaaS -->
       <article class="project-card" id="project-scale-path">
         <div class="project-header">
-          <div class="project-tag">Case Study</div>
-          <h3 class="project-name">AI-Powered Cart Recovery SaaS</h3>
-          <p class="project-subtitle">B2B platform for abandoned cart recovery using AI voice agents, SMS drip campaigns, and automated email sequences with a credit-based billing system</p>
+          <div class="project-tag" data-i18n="case-study">Case Study</div>
+          <h3 class="project-name" data-i18n="p2-name">AI-Powered Cart Recovery SaaS</h3>
+          <p class="project-subtitle" data-i18n="p2-subtitle">B2B platform for abandoned cart recovery using AI voice agents, SMS drip campaigns, and automated email sequences with a credit-based billing system</p>
         </div>
 
         <div class="project-body">
           <!-- Overview -->
           <div class="project-section">
-            <h4>Overview</h4>
-            <p>Built the complete data infrastructure and billing engine for a B2B SaaS that recovers abandoned carts for direct marketing clients. The platform combines AI-powered phone calls (VAPI), SMS drip sequences (Twilio), and email campaigns (ActiveCampaign) into a single automated recovery pipeline. Each client gets a dedicated webhook, a real-time analytics portal, and a credit-based billing system integrated with Stripe.</p>
+            <h4 data-i18n="heading-overview">Overview</h4>
+            <p data-i18n="p2-overview">Built the complete data infrastructure and billing engine for a B2B SaaS that recovers abandoned carts for direct marketing clients. The platform combines AI-powered phone calls (VAPI), SMS drip sequences (Twilio), and email campaigns (ActiveCampaign) into a single automated recovery pipeline. Each client gets a dedicated webhook, a real-time analytics portal, and a credit-based billing system integrated with Stripe.</p>
           </div>
 
           <!-- Key Metrics -->
           <div class="project-section">
-            <h4>Key Metrics</h4>
+            <h4 data-i18n="heading-metrics">Key Metrics</h4>
             <div class="metrics-grid">
               <div class="metric">
                 <span class="metric-value">4,157</span>
-                <span class="metric-label">Abandoned carts received</span>
+                <span class="metric-label" data-i18n="p2-m1">Abandoned carts received</span>
               </div>
               <div class="metric">
                 <span class="metric-value">26,728</span>
-                <span class="metric-label">AI calls executed</span>
+                <span class="metric-label" data-i18n="p2-m2">AI calls executed</span>
               </div>
               <div class="metric">
                 <span class="metric-value">6,870</span>
-                <span class="metric-label">SMS dispatched</span>
+                <span class="metric-label" data-i18n="p2-m3">SMS dispatched</span>
               </div>
               <div class="metric">
                 <span class="metric-value">4,567</span>
-                <span class="metric-label">Emails sent</span>
+                <span class="metric-label" data-i18n="p2-m4">Emails sent</span>
               </div>
               <div class="metric">
                 <span class="metric-value">383</span>
-                <span class="metric-label">Sales recovered</span>
+                <span class="metric-label" data-i18n="p2-m5">Sales recovered</span>
               </div>
               <div class="metric">
                 <span class="metric-value">$92K</span>
-                <span class="metric-label">Revenue recovered</span>
+                <span class="metric-label" data-i18n="p2-m6">Revenue recovered</span>
               </div>
               <div class="metric">
                 <span class="metric-value">6.0%</span>
-                <span class="metric-label">Overall conversion rate</span>
+                <span class="metric-label" data-i18n="p2-m7">Overall conversion rate</span>
               </div>
               <div class="metric">
                 <span class="metric-value">38,280</span>
-                <span class="metric-label">Billing transactions processed</span>
+                <span class="metric-label" data-i18n="p2-m8">Billing transactions processed</span>
               </div>
             </div>
           </div>
 
           <!-- Charts -->
           <div class="project-section">
-            <h4>Growth & Performance</h4>
-            <p class="section-desc">Operational metrics across 5 months of service delivery to 4 B2B clients.</p>
+            <h4 data-i18n="p2-growth">Growth & Performance</h4>
+            <p class="section-desc" data-i18n="p2-growth-desc">Operational metrics across 5 months of service delivery to 4 B2B clients.</p>
 
             <div class="chart-grid">
               <div class="chart-card">
-                <h5 class="chart-title">Channel Volume by Month</h5>
-                <p class="chart-subtitle">AI calls, SMS, and emails executed per month</p>
+                <h5 class="chart-title" data-i18n="p2-ch1-t">Channel Volume by Month</h5>
+                <p class="chart-subtitle" data-i18n="p2-ch1-s">AI calls, SMS, and emails executed per month</p>
                 <div class="chart-wrapper">
                   <canvas id="chartChannelVolume"></canvas>
                 </div>
               </div>
               <div class="chart-card">
-                <h5 class="chart-title">Operational Cost vs Billed (Markup)</h5>
-                <p class="chart-subtitle">Revenue generated through per-client markup system</p>
+                <h5 class="chart-title" data-i18n="p2-ch2-t">Operational Cost vs Billed (Markup)</h5>
+                <p class="chart-subtitle" data-i18n="p2-ch2-s">Revenue generated through per-client markup system</p>
                 <div class="chart-wrapper">
                   <canvas id="chartCostMarkup"></canvas>
                 </div>
@@ -475,15 +476,15 @@
 
             <div class="chart-grid">
               <div class="chart-card">
-                <h5 class="chart-title">Credit Consumption by Channel</h5>
-                <p class="chart-subtitle">How clients consumed credits across channels</p>
+                <h5 class="chart-title" data-i18n="p2-ch3-t">Credit Consumption by Channel</h5>
+                <p class="chart-subtitle" data-i18n="p2-ch3-s">How clients consumed credits across channels</p>
                 <div class="chart-wrapper">
                   <canvas id="chartCreditsByChannel"></canvas>
                 </div>
               </div>
               <div class="chart-card">
-                <h5 class="chart-title">Sales by Call Attempts</h5>
-                <p class="chart-subtitle">Conversion efficiency per number of call attempts</p>
+                <h5 class="chart-title" data-i18n="p2-ch4-t">Sales by Call Attempts</h5>
+                <p class="chart-subtitle" data-i18n="p2-ch4-s">Conversion efficiency per number of call attempts</p>
                 <div class="chart-wrapper">
                   <canvas id="chartSalesByAttempts"></canvas>
                 </div>
@@ -493,10 +494,10 @@
 
           <!-- Tables -->
           <div class="project-section">
-            <h4>Detailed Performance</h4>
+            <h4 data-i18n="heading-detailed-perf">Detailed Performance</h4>
 
             <div class="table-card">
-              <h5 class="table-title">Monthly Operations by Channel</h5>
+              <h5 class="table-title" data-i18n="p2-tb1">Monthly Operations by Channel</h5>
               <div class="table-scroll">
                 <table class="data-table">
                   <thead>
@@ -573,7 +574,7 @@
             </div>
 
             <div class="table-card">
-              <h5 class="table-title">Recovery Performance (from internal dashboard)</h5>
+              <h5 class="table-title" data-i18n="p2-tb2">Recovery Performance (from internal dashboard)</h5>
               <div class="table-scroll">
                 <table class="data-table">
                   <thead>
@@ -635,7 +636,7 @@
             </div>
 
             <div class="table-card">
-              <h5 class="table-title">Conversion by Call Outcome Classification</h5>
+              <h5 class="table-title" data-i18n="p2-tb3">Conversion by Call Outcome Classification</h5>
               <div class="table-scroll">
                 <table class="data-table">
                   <thead>
@@ -683,7 +684,7 @@
             </div>
 
             <div class="table-card">
-              <h5 class="table-title">Billing Engine (PostgreSQL Functions)</h5>
+              <h5 class="table-title" data-i18n="p2-tb4">Billing Engine (PostgreSQL Functions)</h5>
               <div class="table-scroll">
                 <table class="data-table">
                   <thead>
@@ -729,83 +730,83 @@
 
           <!-- Screenshots Gallery -->
           <div class="project-section">
-            <h4>Product Screenshots</h4>
+            <h4 data-i18n="heading-screenshots">Product Screenshots</h4>
             <p class="section-desc">Client-facing portal, internal dashboards, automation workflows, and billing integration.</p>
             <div class="gallery">
               <div class="gallery-item">
                 <img src="img/scalepath-dashboard.png" alt="Scale Path Executive Dashboard" loading="lazy">
-                <span class="gallery-caption">Client Portal: Executive Dashboard with real-time KPIs</span>
+                <span class="gallery-caption" data-i18n="p2-ss1">Client Portal: Executive Dashboard with real-time KPIs</span>
               </div>
               <div class="gallery-item">
                 <img src="img/scalepath-billing.png" alt="Scale Path Billing Portal" loading="lazy">
-                <span class="gallery-caption">Client Portal: Credit-based billing with Stripe integration</span>
+                <span class="gallery-caption" data-i18n="p2-ss2">Client Portal: Credit-based billing with Stripe integration</span>
               </div>
               <div class="gallery-item">
                 <img src="img/scalepath-n8n-calls.png" alt="n8n Call Automation Workflow" loading="lazy">
-                <span class="gallery-caption">n8n Workflow: Automated AI call scheduling with time validation and dual VoIP routing</span>
+                <span class="gallery-caption" data-i18n="p2-ss3">n8n Workflow: Automated AI call scheduling with time validation and dual VoIP routing</span>
               </div>
               <div class="gallery-item">
                 <img src="img/scalepath-n8n-sms.png" alt="n8n SMS Cadence Workflow" loading="lazy">
-                <span class="gallery-caption">n8n Workflow: 5-step SMS drip recovery cadence from BigQuery</span>
+                <span class="gallery-caption" data-i18n="p2-ss4">n8n Workflow: 5-step SMS drip recovery cadence from BigQuery</span>
               </div>
               <div class="gallery-item">
                 <img src="img/scalepath-stripe.png" alt="Stripe Product Configuration" loading="lazy">
-                <span class="gallery-caption">Stripe: $0.01/credit product for seamless billing conversion</span>
+                <span class="gallery-caption" data-i18n="p2-ss5">Stripe: $0.01/credit product for seamless billing conversion</span>
               </div>
             </div>
           </div>
 
           <!-- What I Built -->
           <div class="project-section">
-            <h4>What I Built</h4>
+            <h4 data-i18n="heading-what-built">What I Built</h4>
             <div class="deliverables-grid">
 
               <div class="deliverable">
                 <div class="deliverable-icon">
                   <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
                 </div>
-                <h5>AI Voice Agent System</h5>
-                <p>Built the complete call automation pipeline: scheduled outbound calls via VAPI with time-zone validation, dual VoIP routing, GPT-powered post-call analysis, and automatic outcome classification. 26,728 calls executed with 52.9% contact rate.</p>
+                <h5 data-i18n="p2-d1-t">AI Voice Agent System</h5>
+                <p data-i18n="p2-d1-d">Built the complete call automation pipeline: scheduled outbound calls via VAPI with time-zone validation, dual VoIP routing, GPT-powered post-call analysis, and automatic outcome classification. 26,728 calls executed with 52.9% contact rate.</p>
               </div>
 
               <div class="deliverable">
                 <div class="deliverable-icon">
                   <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 1v22"/><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg>
                 </div>
-                <h5>Credit-Based Billing Engine</h5>
-                <p>Designed the full SaaS monetization layer from scratch. Each operational action (call, SMS, email) fires a PostgreSQL trigger that: (1) looks up the client's negotiated markup percentage, (2) applies it to the raw cost, (3) converts the marked-up value to internal credits (100 credits = $1), (4) debits the client's balance, and (5) logs the full transaction with audit metadata. Stripe handles credit purchases via a $0.01/unit product, enabling seamless top-ups from $10 to $1,000. The system processed 38,280 transactions across 4 clients with zero manual intervention.</p>
+                <h5 data-i18n="p2-d2-t">Credit-Based Billing Engine</h5>
+                <p data-i18n="p2-d2-d">Designed the full SaaS monetization layer from scratch. Each operational action (call, SMS, email) fires a PostgreSQL trigger that: (1) looks up the client's negotiated markup percentage, (2) applies it to the raw cost, (3) converts the marked-up value to internal credits (100 credits = $1), (4) debits the client's balance, and (5) logs the full transaction with audit metadata. Stripe handles credit purchases via a $0.01/unit product, enabling seamless top-ups from $10 to $1,000. The system processed 38,280 transactions across 4 clients with zero manual intervention.</p>
               </div>
 
               <div class="deliverable">
                 <div class="deliverable-icon">
                   <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="3" width="20" height="14" rx="2"/><path d="M8 21h8"/><path d="M12 17v4"/></svg>
                 </div>
-                <h5>Client Portal</h5>
-                <p>Built a real-time client portal with Supabase Auth: executive dashboard with KPIs (leads, contact rate, sales, revenue, conversion vs target), billing page with credit packages, auto-recharge config, payment history, and Stripe card management.</p>
+                <h5 data-i18n="p2-d3-t">Client Portal</h5>
+                <p data-i18n="p2-d3-d">Built a real-time client portal with Supabase Auth: executive dashboard with KPIs (leads, contact rate, sales, revenue, conversion vs target), billing page with credit packages, auto-recharge config, payment history, and Stripe card management.</p>
               </div>
 
               <div class="deliverable">
                 <div class="deliverable-icon">
                   <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 12h-4l-3 9L9 3l-3 9H2"/></svg>
                 </div>
-                <h5>Lead Ingestion & Validation Pipeline</h5>
-                <p>Engineered per-client webhooks that receive abandoned cart payloads, normalize the data, and validate phone numbers via Twilio Lookup API before entering the pipeline. Saved costs by discarding 539 invalid phones that would have wasted SMS and call credits.</p>
+                <h5 data-i18n="p2-d4-t">Lead Ingestion & Validation Pipeline</h5>
+                <p data-i18n="p2-d4-d">Engineered per-client webhooks that receive abandoned cart payloads, normalize the data, and validate phone numbers via Twilio Lookup API before entering the pipeline. Saved costs by discarding 539 invalid phones that would have wasted SMS and call credits.</p>
               </div>
 
               <div class="deliverable">
                 <div class="deliverable-icon">
                   <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
                 </div>
-                <h5>Multi-Channel Recovery Cadence</h5>
-                <p>Orchestrated a 3-channel recovery flow: AI calls for high-intent leads, a 5-step SMS drip sequence for re-engagement, and email follow-ups via ActiveCampaign. Calls convert at ~50%, and 45% of sales close on the first attempt.</p>
+                <h5 data-i18n="p2-d5-t">Multi-Channel Recovery Cadence</h5>
+                <p data-i18n="p2-d5-d">Orchestrated a 3-channel recovery flow: AI calls for high-intent leads, a 5-step SMS drip sequence for re-engagement, and email follow-ups via ActiveCampaign. Calls convert at ~50%, and 45% of sales close on the first attempt.</p>
               </div>
 
               <div class="deliverable">
                 <div class="deliverable-icon">
                   <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 3v18h18"/><path d="M18.7 8l-5.1 5.2-2.8-2.7L7 14.3"/></svg>
                 </div>
-                <h5>Dual Analytics Layer</h5>
-                <p>Created both an internal Metabase dashboard (volumetrics, contact rates, conversion by source/checkout/classification) and a client-facing portal dashboard with real-time metrics. Tracked across 3 checkout platforms (Digistore, CartPanda, Spiffy/Stripe).</p>
+                <h5 data-i18n="p2-d6-t">Dual Analytics Layer</h5>
+                <p data-i18n="p2-d6-d">Created both an internal Metabase dashboard (volumetrics, contact rates, conversion by source/checkout/classification) and a client-facing portal dashboard with real-time metrics. Tracked across 3 checkout platforms (Digistore, CartPanda, Spiffy/Stripe).</p>
               </div>
 
             </div>
@@ -813,48 +814,48 @@
 
           <!-- Architecture -->
           <div class="project-section">
-            <h4>System Architecture</h4>
+            <h4 data-i18n="heading-architecture">System Architecture</h4>
             <div class="architecture">
               <div class="arch-flow">
                 <div class="arch-node">
-                  <span class="arch-label">Client Webhook</span>
-                  <span class="arch-detail">Per-client ingestion</span>
+                  <span class="arch-label" data-i18n="p2-a1-l">Client Webhook</span>
+                  <span class="arch-detail" data-i18n="p2-a1-d">Per-client ingestion</span>
                 </div>
                 <div class="arch-arrow"></div>
                 <div class="arch-node">
-                  <span class="arch-label">Validation</span>
-                  <span class="arch-detail">Twilio Lookup API</span>
+                  <span class="arch-label" data-i18n="p2-a2-l">Validation</span>
+                  <span class="arch-detail" data-i18n="p2-a2-d">Twilio Lookup API</span>
                 </div>
                 <div class="arch-arrow"></div>
                 <div class="arch-node">
-                  <span class="arch-label">BigQuery + Supabase</span>
-                  <span class="arch-detail">Storage & functions</span>
+                  <span class="arch-label" data-i18n="p2-a3-l">BigQuery + Supabase</span>
+                  <span class="arch-detail" data-i18n="p2-a3-d">Storage & functions</span>
                 </div>
                 <div class="arch-arrow"></div>
                 <div class="arch-node">
-                  <span class="arch-label">n8n Orchestration</span>
-                  <span class="arch-detail">Cron + webhooks</span>
+                  <span class="arch-label" data-i18n="p2-a4-l">n8n Orchestration</span>
+                  <span class="arch-detail" data-i18n="p2-a4-d">Cron + webhooks</span>
                 </div>
               </div>
               <div class="arch-flow arch-flow-secondary">
                 <div class="arch-node">
-                  <span class="arch-label">VAPI AI Calls</span>
-                  <span class="arch-detail">26.7K calls, GPT analysis</span>
+                  <span class="arch-label" data-i18n="p2-a5-l">VAPI AI Calls</span>
+                  <span class="arch-detail" data-i18n="p2-a5-d">26.7K calls, GPT analysis</span>
                 </div>
                 <div class="arch-arrow"></div>
                 <div class="arch-node">
-                  <span class="arch-label">Twilio SMS</span>
-                  <span class="arch-detail">5-step drip cadence</span>
+                  <span class="arch-label" data-i18n="p2-a6-l">Twilio SMS</span>
+                  <span class="arch-detail" data-i18n="p2-a6-d">5-step drip cadence</span>
                 </div>
                 <div class="arch-arrow"></div>
                 <div class="arch-node">
-                  <span class="arch-label">Billing Engine</span>
-                  <span class="arch-detail">Triggers + Stripe</span>
+                  <span class="arch-label" data-i18n="p2-a7-l">Billing Engine</span>
+                  <span class="arch-detail" data-i18n="p2-a7-d">Triggers + Stripe</span>
                 </div>
                 <div class="arch-arrow"></div>
                 <div class="arch-node">
-                  <span class="arch-label">Client Portal</span>
-                  <span class="arch-detail">Supabase Auth + Metabase</span>
+                  <span class="arch-label" data-i18n="p2-a8-l">Client Portal</span>
+                  <span class="arch-detail" data-i18n="p2-a8-d">Supabase Auth + Metabase</span>
                 </div>
               </div>
             </div>
@@ -862,7 +863,7 @@
 
           <!-- Tech Stack -->
           <div class="project-section">
-            <h4>Tech Stack</h4>
+            <h4 data-i18n="heading-tech-stack">Tech Stack</h4>
             <div class="tech-tags">
               <span class="tag">PostgreSQL (triggers, functions)</span>
               <span class="tag">Supabase (DB + Auth)</span>
@@ -885,74 +886,74 @@
       <!-- PROJECT 3: Leads Nutra -->
       <article class="project-card" id="project-leads-nutra">
         <div class="project-header">
-          <div class="project-tag">Case Study</div>
-          <h3 class="project-name">SMS Direct Response Pipeline</h3>
-          <p class="project-subtitle">End-to-end data infrastructure for a DTC health product operation targeting the US market</p>
+          <div class="project-tag" data-i18n="case-study">Case Study</div>
+          <h3 class="project-name" data-i18n="p1-name">SMS Direct Response Pipeline</h3>
+          <p class="project-subtitle" data-i18n="p1-subtitle">End-to-end data infrastructure for a DTC health product operation targeting the US market</p>
         </div>
 
         <div class="project-body">
           <!-- Overview -->
           <div class="project-section">
-            <h4>Overview</h4>
-            <p>Designed and built the complete data infrastructure for a direct-response SMS marketing operation. The system manages 170K+ leads across a multi-stage funnel (SMS > VSL > Checkout > AI Voice Recovery), with automated lead scoring, real-time event tracking, and compliance controls.</p>
+            <h4 data-i18n="heading-overview">Overview</h4>
+            <p data-i18n="p1-overview">Designed and built the complete data infrastructure for a direct-response SMS marketing operation. The system manages 170K+ leads across a multi-stage funnel (SMS > VSL > Checkout > AI Voice Recovery), with automated lead scoring, real-time event tracking, and compliance controls.</p>
           </div>
 
           <!-- Key Metrics -->
           <div class="project-section">
-            <h4>Key Metrics</h4>
+            <h4 data-i18n="heading-metrics">Key Metrics</h4>
             <div class="metrics-grid">
               <div class="metric">
                 <span class="metric-value">169,532</span>
-                <span class="metric-label">Total leads in database</span>
+                <span class="metric-label" data-i18n="p1-m1">Total leads in database</span>
               </div>
               <div class="metric">
                 <span class="metric-value">183,384</span>
-                <span class="metric-label">SMS dispatched (8 months)</span>
+                <span class="metric-label" data-i18n="p1-m2">SMS dispatched (8 months)</span>
               </div>
               <div class="metric">
                 <span class="metric-value">105,688</span>
-                <span class="metric-label">Unique leads reached</span>
+                <span class="metric-label" data-i18n="p1-m3">Unique leads reached</span>
               </div>
               <div class="metric">
                 <span class="metric-value">14,648</span>
-                <span class="metric-label">Unique clicks tracked</span>
+                <span class="metric-label" data-i18n="p1-m4">Unique clicks tracked</span>
               </div>
               <div class="metric">
                 <span class="metric-value">13.9%</span>
-                <span class="metric-label">Unique click-through rate</span>
+                <span class="metric-label" data-i18n="p1-m5">Unique click-through rate</span>
               </div>
               <div class="metric">
                 <span class="metric-value">101</span>
-                <span class="metric-label">Confirmed sales</span>
+                <span class="metric-label" data-i18n="p1-m6">Confirmed sales</span>
               </div>
               <div class="metric">
                 <span class="metric-value">$15.3K+</span>
-                <span class="metric-label">Revenue tracked</span>
+                <span class="metric-label" data-i18n="p1-m7">Revenue tracked</span>
               </div>
               <div class="metric">
                 <span class="metric-value">6.5x</span>
-                <span class="metric-label">Overall ROI</span>
+                <span class="metric-label" data-i18n="p1-m8">Overall ROI</span>
               </div>
             </div>
           </div>
 
           <!-- CHARTS SECTION -->
           <div class="project-section">
-            <h4>Growth & Scale</h4>
-            <p class="section-desc">Monthly evolution across 8 months of operation, from cold start to scale.</p>
+            <h4 data-i18n="p1-growth">Growth & Scale</h4>
+            <p class="section-desc" data-i18n="p1-growth-desc">Monthly evolution across 8 months of operation, from cold start to scale.</p>
 
             <!-- Chart Row 1: SMS Volume + Clicks -->
             <div class="chart-grid">
               <div class="chart-card">
-                <h5 class="chart-title">SMS Dispatches vs Clicks</h5>
-                <p class="chart-subtitle">Monthly volume showing campaign scaling</p>
+                <h5 class="chart-title" data-i18n="p1-ch1-t">SMS Dispatches vs Clicks</h5>
+                <p class="chart-subtitle" data-i18n="p1-ch1-s">Monthly volume showing campaign scaling</p>
                 <div class="chart-wrapper">
                   <canvas id="chartDispatches"></canvas>
                 </div>
               </div>
               <div class="chart-card">
-                <h5 class="chart-title">Click-Through Rate (CTR)</h5>
-                <p class="chart-subtitle">Unique CTR per month</p>
+                <h5 class="chart-title" data-i18n="p1-ch2-t">Click-Through Rate (CTR)</h5>
+                <p class="chart-subtitle" data-i18n="p1-ch2-s">Unique CTR per month</p>
                 <div class="chart-wrapper">
                   <canvas id="chartCTR"></canvas>
                 </div>
@@ -962,15 +963,15 @@
             <!-- Chart Row 2: VSL Funnel + Sales -->
             <div class="chart-grid">
               <div class="chart-card">
-                <h5 class="chart-title">VSL Engagement Funnel</h5>
-                <p class="chart-subtitle">User progression through video stages</p>
+                <h5 class="chart-title" data-i18n="p1-ch3-t">VSL Engagement Funnel</h5>
+                <p class="chart-subtitle" data-i18n="p1-ch3-s">User progression through video stages</p>
                 <div class="chart-wrapper">
                   <canvas id="chartVSL"></canvas>
                 </div>
               </div>
               <div class="chart-card">
-                <h5 class="chart-title">Sales & Revenue</h5>
-                <p class="chart-subtitle">Monthly confirmed conversions</p>
+                <h5 class="chart-title" data-i18n="p1-ch4-t">Sales & Revenue</h5>
+                <p class="chart-subtitle" data-i18n="p1-ch4-s">Monthly confirmed conversions</p>
                 <div class="chart-wrapper">
                   <canvas id="chartSales"></canvas>
                 </div>
@@ -980,15 +981,15 @@
             <!-- Chart Row 3: Lead Growth + Score Distribution -->
             <div class="chart-grid">
               <div class="chart-card">
-                <h5 class="chart-title">Cumulative Lead Growth</h5>
-                <p class="chart-subtitle">Database scaling from 0 to 170K+</p>
+                <h5 class="chart-title" data-i18n="p1-ch5-t">Cumulative Lead Growth</h5>
+                <p class="chart-subtitle" data-i18n="p1-ch5-s">Database scaling from 0 to 170K+</p>
                 <div class="chart-wrapper">
                   <canvas id="chartLeadGrowth"></canvas>
                 </div>
               </div>
               <div class="chart-card">
-                <h5 class="chart-title">Lead Score Distribution</h5>
-                <p class="chart-subtitle">Automated scoring across 170K leads</p>
+                <h5 class="chart-title" data-i18n="p1-ch6-t">Lead Score Distribution</h5>
+                <p class="chart-subtitle" data-i18n="p1-ch6-s">Automated scoring across 170K leads</p>
                 <div class="chart-wrapper">
                   <canvas id="chartScoreDist"></canvas>
                 </div>
@@ -998,24 +999,24 @@
 
           <!-- TABLES SECTION -->
           <div class="project-section">
-            <h4>Detailed Performance</h4>
+            <h4 data-i18n="heading-detailed-perf">Detailed Performance</h4>
 
             <!-- Table 1: Monthly Operations -->
             <div class="table-card">
-              <h5 class="table-title">Monthly Operations Summary</h5>
+              <h5 class="table-title" data-i18n="p1-tb1">Monthly Operations Summary</h5>
               <div class="table-scroll">
                 <table class="data-table">
                   <thead>
                     <tr>
-                      <th>Month</th>
-                      <th>SMS Sent</th>
+                      <th data-i18n="th-month">Month</th>
+                      <th data-i18n="th-sms-sent">SMS Sent</th>
                       <th>Cost</th>
-                      <th>Unique Clicks</th>
-                      <th>CTR</th>
-                      <th>VSL Plays</th>
-                      <th>Pitch Views</th>
-                      <th>Sales</th>
-                      <th>Revenue</th>
+                      <th data-i18n="th-unique-clicks">Unique Clicks</th>
+                      <th data-i18n="th-ctr">CTR</th>
+                      <th data-i18n="th-vsl-plays">VSL Plays</th>
+                      <th data-i18n="th-pitch-views">Pitch Views</th>
+                      <th data-i18n="th-sales">Sales</th>
+                      <th data-i18n="th-revenue">Revenue</th>
                     </tr>
                   </thead>
                   <tbody>
@@ -1127,16 +1128,16 @@
 
             <!-- Table 2: Lead Segmentation -->
             <div class="table-card">
-              <h5 class="table-title">Lead Scoring Segmentation</h5>
+              <h5 class="table-title" data-i18n="p1-tb2">Lead Scoring Segmentation</h5>
               <div class="table-scroll">
                 <table class="data-table">
                   <thead>
                     <tr>
-                      <th>Score Range</th>
-                      <th>Label</th>
-                      <th>Leads</th>
-                      <th>% of Total</th>
-                      <th>Strategy</th>
+                      <th data-i18n="th-score-range">Score Range</th>
+                      <th data-i18n="th-label">Label</th>
+                      <th data-i18n="th-leads">Leads</th>
+                      <th data-i18n="th-pct-total">% of Total</th>
+                      <th data-i18n="th-strategy">Strategy</th>
                     </tr>
                   </thead>
                   <tbody>
@@ -1145,42 +1146,42 @@
                       <td>Hot</td>
                       <td>59,776</td>
                       <td>35.3%</td>
-                      <td>Direct offer, priority dispatch</td>
+                      <td data-i18n="p1-hot">Direct offer, priority dispatch</td>
                     </tr>
                     <tr>
                       <td><span class="score-badge score-warm">70-89</span></td>
                       <td>Warm</td>
                       <td>21,476</td>
                       <td>12.7%</td>
-                      <td>Short nurturing before offer</td>
+                      <td data-i18n="p1-warm">Short nurturing before offer</td>
                     </tr>
                     <tr>
                       <td><span class="score-badge score-mid">45-69</span></td>
                       <td>Engaged</td>
                       <td>9,612</td>
                       <td>5.7%</td>
-                      <td>Behavioral nurturing</td>
+                      <td data-i18n="p1-engaged">Behavioral nurturing</td>
                     </tr>
                     <tr>
                       <td><span class="score-badge score-cold">20-44</span></td>
                       <td>Cold</td>
                       <td>44,738</td>
                       <td>26.4%</td>
-                      <td>Re-qualification sequence</td>
+                      <td data-i18n="p1-cold">Re-qualification sequence</td>
                     </tr>
                     <tr>
                       <td><span class="score-badge score-inactive">1-19</span></td>
                       <td>Inactive</td>
                       <td>5,576</td>
                       <td>3.3%</td>
-                      <td>Paused, await re-engagement</td>
+                      <td data-i18n="p1-inactive">Paused, await re-engagement</td>
                     </tr>
                     <tr>
                       <td><span class="score-badge score-blacklist">0</span></td>
                       <td>Blacklist</td>
                       <td>28,354</td>
                       <td>16.7%</td>
-                      <td>Opt-out / never contact</td>
+                      <td data-i18n="p1-blacklist">Opt-out / never contact</td>
                     </tr>
                   </tbody>
                   <tfoot>
@@ -1197,73 +1198,73 @@
 
             <!-- Table 3: Database Structure -->
             <div class="table-card">
-              <h5 class="table-title">Database Infrastructure</h5>
+              <h5 class="table-title" data-i18n="p1-tb3">Database Infrastructure</h5>
               <div class="table-scroll">
                 <table class="data-table">
                   <thead>
                     <tr>
-                      <th>Table</th>
-                      <th>Records</th>
-                      <th>Purpose</th>
+                      <th data-i18n="th-table">Table</th>
+                      <th data-i18n="th-records">Records</th>
+                      <th data-i18n="th-purpose">Purpose</th>
                     </tr>
                   </thead>
                   <tbody>
                     <tr>
                       <td><code>lead_score_audit</code></td>
                       <td>688,829</td>
-                      <td>Score change history with full audit trail</td>
+                      <td data-i18n="p1-db1">Score change history with full audit trail</td>
                     </tr>
                     <tr>
                       <td><code>disparos_sms</code></td>
                       <td>183,384</td>
-                      <td>SMS dispatch records with campaign metadata</td>
+                      <td data-i18n="p1-db2">SMS dispatch records with campaign metadata</td>
                     </tr>
                     <tr>
                       <td><code>leads_nutra</code></td>
                       <td>169,532</td>
-                      <td>Processed leads with scores and groups</td>
+                      <td data-i18n="p1-db3">Processed leads with scores and groups</td>
                     </tr>
                     <tr>
                       <td><code>clicks_link</code></td>
                       <td>29,015</td>
-                      <td>Link click tracking with UTM parameters</td>
+                      <td data-i18n="p1-db4">Link click tracking with UTM parameters</td>
                     </tr>
                     <tr>
                       <td><code>eventos_vsl</code></td>
                       <td>21,100</td>
-                      <td>Video engagement events (play, progress, pitch)</td>
+                      <td data-i18n="p1-db5">Video engagement events (play, progress, pitch)</td>
                     </tr>
                     <tr>
                       <td><code>email_events</code></td>
                       <td>14,859</td>
-                      <td>Email interaction tracking</td>
+                      <td data-i18n="p1-db6">Email interaction tracking</td>
                     </tr>
                     <tr>
                       <td><code>sms_stop</code></td>
                       <td>4,578</td>
-                      <td>Opt-out registry (TCPA compliance)</td>
+                      <td data-i18n="p1-db7">Opt-out registry (TCPA compliance)</td>
                     </tr>
                     <tr>
                       <td><code>ligacoes_status</code></td>
                       <td>3,724</td>
-                      <td>AI voice call outcomes</td>
+                      <td data-i18n="p1-db8">AI voice call outcomes</td>
                     </tr>
                     <tr>
                       <td><code>carrinho_abandonado</code></td>
                       <td>803</td>
-                      <td>Checkout abandonment for recovery</td>
+                      <td data-i18n="p1-db9">Checkout abandonment for recovery</td>
                     </tr>
                     <tr>
                       <td><code>vendas</code></td>
                       <td>101</td>
-                      <td>Confirmed purchase records</td>
+                      <td data-i18n="p1-db10">Confirmed purchase records</td>
                     </tr>
                   </tbody>
                   <tfoot>
                     <tr>
-                      <td><strong>Total (all tables)</strong></td>
+                      <td data-i18n="p1-db-total"><strong>Total (all tables)</strong></td>
                       <td><strong>1.1M+ rows</strong></td>
-                      <td><strong>30+ tables, 14 functions/triggers</strong></td>
+                      <td data-i18n="p1-db-total-purpose"><strong>30+ tables, 14 functions/triggers</strong></td>
                     </tr>
                   </tfoot>
                 </table>
@@ -1274,55 +1275,55 @@
 
           <!-- What I Built -->
           <div class="project-section">
-            <h4>What I Built</h4>
+            <h4 data-i18n="heading-what-built">What I Built</h4>
             <div class="deliverables-grid">
 
               <div class="deliverable">
                 <div class="deliverable-icon">
                   <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 7V4h16v3"/><path d="M9 20h6"/><path d="M12 4v16"/></svg>
                 </div>
-                <h5>Database Architecture</h5>
-                <p>Designed a PostgreSQL schema with 30+ tables covering the full lifecycle: raw leads, processed leads, SMS dispatches, click tracking, VSL events, cart abandonment, sales, opt-outs, and spam monitoring.</p>
+                <h5 data-i18n="p1-d1-t">Database Architecture</h5>
+                <p data-i18n="p1-d1-d">Designed a PostgreSQL schema with 30+ tables covering the full lifecycle: raw leads, processed leads, SMS dispatches, click tracking, VSL events, cart abandonment, sales, opt-outs, and spam monitoring.</p>
               </div>
 
               <div class="deliverable">
                 <div class="deliverable-icon">
                   <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 20V10"/><path d="M18 20V4"/><path d="M6 20v-4"/></svg>
                 </div>
-                <h5>Lead Scoring Engine</h5>
-                <p>Built a dynamic scoring algorithm (0-100 pts) combining static origin data with real-time behavioral signals. Implemented via a central PostgreSQL function called by 6 automated triggers, processing 689K+ score-change events with full audit trail.</p>
+                <h5 data-i18n="p1-d2-t">Lead Scoring Engine</h5>
+                <p data-i18n="p1-d2-d">Built a dynamic scoring algorithm (0-100 pts) combining static origin data with real-time behavioral signals. Implemented via a central PostgreSQL function called by 6 automated triggers, processing 689K+ score-change events with full audit trail.</p>
               </div>
 
               <div class="deliverable">
                 <div class="deliverable-icon">
                   <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 12h-4l-3 9L9 3l-3 9H2"/></svg>
                 </div>
-                <h5>Real-Time Event Pipeline</h5>
-                <p>Engineered a tracking system that captures every user interaction: SMS delivery, link clicks, VSL engagement (play, midpoint, pitch view), checkout initiation, and purchase. Each event updates lead score and group assignment in real time.</p>
+                <h5 data-i18n="p1-d3-t">Real-Time Event Pipeline</h5>
+                <p data-i18n="p1-d3-d">Engineered a tracking system that captures every user interaction: SMS delivery, link clicks, VSL engagement (play, midpoint, pitch view), checkout initiation, and purchase. Each event updates lead score and group assignment in real time.</p>
               </div>
 
               <div class="deliverable">
                 <div class="deliverable-icon">
                   <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="3" width="20" height="14" rx="2"/><path d="M8 21h8"/><path d="M12 17v4"/></svg>
                 </div>
-                <h5>Automated Campaign System</h5>
-                <p>Built n8n workflows for automated SMS campaigns segmented by funnel stage (G0-G4). Includes daily dispatch rules, frequency capping, opt-out compliance (TCPA), and A/B copy rotation. 5 active campaign groups running simultaneously.</p>
+                <h5 data-i18n="p1-d4-t">Automated Campaign System</h5>
+                <p data-i18n="p1-d4-d">Built n8n workflows for automated SMS campaigns segmented by funnel stage (G0-G4). Includes daily dispatch rules, frequency capping, opt-out compliance (TCPA), and A/B copy rotation. 5 active campaign groups running simultaneously.</p>
               </div>
 
               <div class="deliverable">
                 <div class="deliverable-icon">
                   <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
                 </div>
-                <h5>AI Voice Agent Integration</h5>
-                <p>Integrated a VAPI-powered AI voice agent for real-time call recovery of high-intent leads. The system triggers calls within 10 minutes of checkout abandonment, with 3,724 calls executed to 449 unique leads.</p>
+                <h5 data-i18n="p1-d5-t">AI Voice Agent Integration</h5>
+                <p data-i18n="p1-d5-d">Integrated a VAPI-powered AI voice agent for real-time call recovery of high-intent leads. The system triggers calls within 10 minutes of checkout abandonment, with 3,724 calls executed to 449 unique leads.</p>
               </div>
 
               <div class="deliverable">
                 <div class="deliverable-icon">
                   <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 3v18h18"/><path d="M18.7 8l-5.1 5.2-2.8-2.7L7 14.3"/></svg>
                 </div>
-                <h5>Analytics Dashboard</h5>
-                <p>Created Metabase dashboards with 11+ cards tracking funnel performance, lead score distribution, group velocity, conversion rates, frozen/blacklist monitoring, and daily dispatch volume.</p>
+                <h5 data-i18n="p1-d6-t">Analytics Dashboard</h5>
+                <p data-i18n="p1-d6-d">Created Metabase dashboards with 11+ cards tracking funnel performance, lead score distribution, group velocity, conversion rates, frozen/blacklist monitoring, and daily dispatch volume.</p>
               </div>
 
             </div>
@@ -1330,48 +1331,48 @@
 
           <!-- Architecture -->
           <div class="project-section">
-            <h4>System Architecture</h4>
+            <h4 data-i18n="heading-architecture">System Architecture</h4>
             <div class="architecture">
               <div class="arch-flow">
                 <div class="arch-node">
-                  <span class="arch-label">Lead Sources</span>
-                  <span class="arch-detail">3 bases, 170K+ leads</span>
+                  <span class="arch-label" data-i18n="p1-a1-l">Lead Sources</span>
+                  <span class="arch-detail" data-i18n="p1-a1-d">3 bases, 170K+ leads</span>
                 </div>
                 <div class="arch-arrow"></div>
                 <div class="arch-node">
-                  <span class="arch-label">Supabase</span>
-                  <span class="arch-detail">PostgreSQL + 14 functions</span>
+                  <span class="arch-label" data-i18n="p1-a2-l">Supabase</span>
+                  <span class="arch-detail" data-i18n="p1-a2-d">PostgreSQL + 14 functions</span>
                 </div>
                 <div class="arch-arrow"></div>
                 <div class="arch-node">
-                  <span class="arch-label">n8n Workflows</span>
-                  <span class="arch-detail">Orchestration + cron</span>
+                  <span class="arch-label" data-i18n="p1-a3-l">n8n Workflows</span>
+                  <span class="arch-detail" data-i18n="p1-a3-d">Orchestration + cron</span>
                 </div>
                 <div class="arch-arrow"></div>
                 <div class="arch-node">
-                  <span class="arch-label">Twilio SMS</span>
-                  <span class="arch-detail">183K+ dispatches</span>
+                  <span class="arch-label" data-i18n="p1-a4-l">Twilio SMS</span>
+                  <span class="arch-detail" data-i18n="p1-a4-d">183K+ dispatches</span>
                 </div>
               </div>
               <div class="arch-flow arch-flow-secondary">
                 <div class="arch-node">
-                  <span class="arch-label">Click Tracking</span>
-                  <span class="arch-detail">29K+ events</span>
+                  <span class="arch-label" data-i18n="p1-a5-l">Click Tracking</span>
+                  <span class="arch-detail" data-i18n="p1-a5-d">29K+ events</span>
                 </div>
                 <div class="arch-arrow"></div>
                 <div class="arch-node">
-                  <span class="arch-label">VSL Analytics</span>
-                  <span class="arch-detail">21K+ events</span>
+                  <span class="arch-label" data-i18n="p1-a6-l">VSL Analytics</span>
+                  <span class="arch-detail" data-i18n="p1-a6-d">21K+ events</span>
                 </div>
                 <div class="arch-arrow"></div>
                 <div class="arch-node">
-                  <span class="arch-label">Lead Score Engine</span>
-                  <span class="arch-detail">689K+ score updates</span>
+                  <span class="arch-label" data-i18n="p1-a7-l">Lead Score Engine</span>
+                  <span class="arch-detail" data-i18n="p1-a7-d">689K+ score updates</span>
                 </div>
                 <div class="arch-arrow"></div>
                 <div class="arch-node">
-                  <span class="arch-label">AI Voice Agent</span>
-                  <span class="arch-detail">VAPI, 3.7K+ calls</span>
+                  <span class="arch-label" data-i18n="p1-a8-l">AI Voice Agent</span>
+                  <span class="arch-detail" data-i18n="p1-a8-d">VAPI, 3.7K+ calls</span>
                 </div>
               </div>
             </div>
@@ -1379,48 +1380,48 @@
 
           <!-- Funnel Visualization -->
           <div class="project-section">
-            <h4>Funnel Performance</h4>
+            <h4 data-i18n="heading-funnel">Funnel Performance</h4>
             <div class="funnel">
               <div class="funnel-stage" style="--width: 100%">
                 <div class="funnel-bar"></div>
                 <div class="funnel-info">
-                  <span class="funnel-label">SMS Dispatched</span>
-                  <span class="funnel-value">105,688 unique leads</span>
+                  <span class="funnel-label" data-i18n="p1-f1-l">SMS Dispatched</span>
+                  <span class="funnel-value" data-i18n="p1-f1-v">105,688 unique leads</span>
                 </div>
               </div>
               <div class="funnel-stage" style="--width: 72%">
                 <div class="funnel-bar"></div>
                 <div class="funnel-info">
-                  <span class="funnel-label">Clicked</span>
-                  <span class="funnel-value">14,648 (13.9% CTR)</span>
+                  <span class="funnel-label" data-i18n="p1-f2-l">Clicked</span>
+                  <span class="funnel-value" data-i18n="p1-f2-v">14,648 (13.9% CTR)</span>
                 </div>
               </div>
               <div class="funnel-stage" style="--width: 38%">
                 <div class="funnel-bar"></div>
                 <div class="funnel-info">
-                  <span class="funnel-label">VSL Play (unique)</span>
-                  <span class="funnel-value">6,311 (43.1% of clicks)</span>
+                  <span class="funnel-label" data-i18n="p1-f3-l">VSL Play (unique)</span>
+                  <span class="funnel-value" data-i18n="p1-f3-v">6,311 (43.1% of clicks)</span>
                 </div>
               </div>
               <div class="funnel-stage" style="--width: 18%">
                 <div class="funnel-bar"></div>
                 <div class="funnel-info">
-                  <span class="funnel-label">Saw Pitch (unique)</span>
-                  <span class="funnel-value">1,338 (21.2% of plays)</span>
+                  <span class="funnel-label" data-i18n="p1-f4-l">Saw Pitch (unique)</span>
+                  <span class="funnel-value" data-i18n="p1-f4-v">1,338 (21.2% of plays)</span>
                 </div>
               </div>
               <div class="funnel-stage" style="--width: 8%">
                 <div class="funnel-bar"></div>
                 <div class="funnel-info">
-                  <span class="funnel-label">Checkout Initiated</span>
-                  <span class="funnel-value">803</span>
+                  <span class="funnel-label" data-i18n="p1-f5-l">Checkout Initiated</span>
+                  <span class="funnel-value" data-i18n="p1-f5-v">803</span>
                 </div>
               </div>
               <div class="funnel-stage" style="--width: 3%">
                 <div class="funnel-bar"></div>
                 <div class="funnel-info">
-                  <span class="funnel-label">Converted</span>
-                  <span class="funnel-value">101 sales ($15.3K+)</span>
+                  <span class="funnel-label" data-i18n="p1-f6-l">Converted</span>
+                  <span class="funnel-value" data-i18n="p1-f6-v">101 sales ($15.3K+)</span>
                 </div>
               </div>
             </div>
@@ -1428,7 +1429,7 @@
 
           <!-- Tech Stack -->
           <div class="project-section">
-            <h4>Tech Stack</h4>
+            <h4 data-i18n="heading-tech-stack">Tech Stack</h4>
             <div class="tech-tags">
               <span class="tag">PostgreSQL</span>
               <span class="tag">Supabase</span>
@@ -1450,38 +1451,38 @@
       <!-- PROJECT 4: Time Series Forecasting with Prophet -->
       <article class="project-card" id="project-prophet">
         <div class="project-header">
-          <div class="project-tag">Case Study</div>
-          <h3 class="project-name">Time Series Forecasting with Prophet</h3>
-          <p class="project-subtitle">ML-powered demand forecasting model with 38% accuracy improvement for CX workforce planning</p>
+          <div class="project-tag" data-i18n="case-study">Case Study</div>
+          <h3 class="project-name" data-i18n="p6-name">Time Series Forecasting with Prophet</h3>
+          <p class="project-subtitle" data-i18n="p6-subtitle">ML-powered demand forecasting model with 38% accuracy improvement for CX workforce planning</p>
         </div>
         <div class="project-body">
           <div class="project-section">
-            <h4>Overview</h4>
-            <p>Built a machine learning forecasting pipeline to predict daily customer support volume across 8+ channels. Engineered a complex SQL data pipeline (10+ CTEs) aggregating data from BigQuery across bot, chat, ticket, social, phone, and parcels channels. Developed two competing Prophet models, with the tuned version achieving a 38% error reduction — directly feeding into shift scheduling and headcount planning.</p>
+            <h4 data-i18n="heading-overview">Overview</h4>
+            <p data-i18n="p6-overview">Built a machine learning forecasting pipeline to predict daily customer support volume across 8+ channels. Engineered a complex SQL data pipeline (10+ CTEs) aggregating data from BigQuery across bot, chat, ticket, social, phone, and parcels channels. Developed two competing Prophet models, with the tuned version achieving a 38% error reduction — directly feeding into shift scheduling and headcount planning.</p>
           </div>
           <div class="project-section">
-            <h4>Key Metrics</h4>
+            <h4 data-i18n="heading-metrics">Key Metrics</h4>
             <div class="metrics-grid">
               <div class="metric">
                 <span class="metric-value">664</span>
-                <span class="metric-label">Days of historical data processed</span>
+                <span class="metric-label" data-i18n="p6-m1">Days of historical data processed</span>
               </div>
               <div class="metric">
                 <span class="metric-value">8+</span>
-                <span class="metric-label">Support channels aggregated</span>
+                <span class="metric-label" data-i18n="p6-m2">Support channels aggregated</span>
               </div>
               <div class="metric">
                 <span class="metric-value">20.4%</span>
-                <span class="metric-label">Final MAPE (Model B)</span>
+                <span class="metric-label" data-i18n="p6-m3">Final MAPE (Model B)</span>
               </div>
               <div class="metric">
                 <span class="metric-value">-38%</span>
-                <span class="metric-label">Error reduction vs baseline</span>
+                <span class="metric-label" data-i18n="p6-m4">Error reduction vs baseline</span>
               </div>
             </div>
           </div>
           <div class="project-section">
-            <h4>Model Comparison</h4>
+            <h4 data-i18n="p6-model-comp">Model Comparison</h4>
             <div class="chart-grid">
               <div class="chart-card">
                 <h5 class="chart-title">Model Accuracy: MAPE (%)</h5>
@@ -1504,24 +1505,24 @@
                 <table class="data-table">
                   <thead>
                     <tr>
-                      <th>Model</th>
-                      <th>Configuration</th>
-                      <th>RMSE</th>
-                      <th>MAE</th>
-                      <th>MAPE</th>
+                      <th data-i18n="th-model">Model</th>
+                      <th data-i18n="th-config">Configuration</th>
+                      <th data-i18n="th-rmse">RMSE</th>
+                      <th data-i18n="th-mae">MAE</th>
+                      <th data-i18n="th-mape">MAPE</th>
                     </tr>
                   </thead>
                   <tbody>
                     <tr>
-                      <td>Model A (Baseline)</td>
-                      <td>Basic Prophet, multiplicative seasonality</td>
+                      <td data-i18n="p6-model-a">Model A (Baseline)</td>
+                      <td data-i18n="p6-model-a-d">Basic Prophet, multiplicative seasonality</td>
                       <td>794</td>
                       <td>701</td>
                       <td><span class="score-badge score-cold">33.0%</span></td>
                     </tr>
                     <tr class="row-highlight">
-                      <td>Model B (Tuned)</td>
-                      <td>Holidays + MCMC (1000 samples) + tuned priors</td>
+                      <td data-i18n="p6-model-b">Model B (Tuned)</td>
+                      <td data-i18n="p6-model-b-d">Holidays + MCMC (1000 samples) + tuned priors</td>
                       <td>551</td>
                       <td>432</td>
                       <td><span class="score-badge score-hot">20.4%</span></td>
@@ -1529,7 +1530,7 @@
                   </tbody>
                   <tfoot>
                     <tr>
-                      <td colspan="2"><strong>Improvement</strong></td>
+                      <td colspan="2" data-i18n="p6-improvement"><strong>Improvement</strong></td>
                       <td><strong>-30.6%</strong></td>
                       <td><strong>-38.4%</strong></td>
                       <td><strong>-38.2%</strong></td>
@@ -1540,40 +1541,40 @@
             </div>
           </div>
           <div class="project-section">
-            <h4>What I Built</h4>
+            <h4 data-i18n="heading-what-built">What I Built</h4>
             <div class="deliverables-grid">
               <div class="deliverable">
                 <div class="deliverable-icon">
                   <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 7V4h16v3"/><path d="M9 20h6"/><path d="M12 4v16"/></svg>
                 </div>
-                <h5>SQL Data Pipeline (10+ CTEs)</h5>
-                <p>Engineered a complex SQL pipeline in BigQuery aggregating incoming data from 8 channels, with bot flow classification logic to separate sales from support contacts.</p>
+                <h5 data-i18n="p6-d1-t">SQL Data Pipeline (10+ CTEs)</h5>
+                <p data-i18n="p6-d1-d">Engineered a complex SQL pipeline in BigQuery aggregating incoming data from 8 channels, with bot flow classification logic to separate sales from support contacts.</p>
               </div>
               <div class="deliverable">
                 <div class="deliverable-icon">
                   <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 12h-4l-3 9L9 3l-3 9H2"/></svg>
                 </div>
-                <h5>Prophet Model Tuning</h5>
-                <p>Iterated from a baseline Prophet model (MAPE 33%) to a tuned version with Brazilian holidays, MCMC sampling (1,000 chains), adjusted seasonality priors — achieving 20.4% MAPE.</p>
+                <h5 data-i18n="p6-d2-t">Prophet Model Tuning</h5>
+                <p data-i18n="p6-d2-d">Iterated from a baseline Prophet model (MAPE 33%) to a tuned version with Brazilian holidays, MCMC sampling (1,000 chains), adjusted seasonality priors — achieving 20.4% MAPE.</p>
               </div>
               <div class="deliverable">
                 <div class="deliverable-icon">
                   <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 3v18h18"/><path d="M18.7 8l-5.1 5.2-2.8-2.7L7 14.3"/></svg>
                 </div>
-                <h5>Validation Framework</h5>
-                <p>Built a rigorous train/test split validation (last 2 months holdout), evaluating on RMSE, MAE, and MAPE. Analyzed edge cases from the top-10 highest and lowest volume days.</p>
+                <h5 data-i18n="p6-d3-t">Validation Framework</h5>
+                <p data-i18n="p6-d3-d">Built a rigorous train/test split validation (last 2 months holdout), evaluating on RMSE, MAE, and MAPE. Analyzed edge cases from the top-10 highest and lowest volume days.</p>
               </div>
               <div class="deliverable">
                 <div class="deliverable-icon">
                   <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="3" width="20" height="14" rx="2"/><path d="M8 21h8"/><path d="M12 17v4"/></svg>
                 </div>
-                <h5>180-Day Forward Projection</h5>
-                <p>Generated forward projections feeding directly into the WFM tool (Moavi) for shift planning, enabling proactive staffing aligned with predicted demand.</p>
+                <h5 data-i18n="p6-d4-t">180-Day Forward Projection</h5>
+                <p data-i18n="p6-d4-d">Generated forward projections feeding directly into the WFM tool (Moavi) for shift planning, enabling proactive staffing aligned with predicted demand.</p>
               </div>
             </div>
           </div>
           <div class="project-section">
-            <h4>Tech Stack</h4>
+            <h4 data-i18n="heading-tech-stack">Tech Stack</h4>
             <div class="tech-tags">
               <span class="tag">Python</span>
               <span class="tag">Facebook Prophet</span>
@@ -1591,124 +1592,124 @@
       <!-- PROJECT 5: Support Efficiency OKR -->
       <article class="project-card" id="project-incoming-okr">
         <div class="project-header">
-          <div class="project-tag">Case Study</div>
-          <h3 class="project-name">Support Efficiency OKR: Incoming/Pax Reduction</h3>
-          <p class="project-subtitle">Data-driven initiative that reduced customer contact ratio by 27%, exceeding the OKR target by 19%</p>
+          <div class="project-tag" data-i18n="case-study">Case Study</div>
+          <h3 class="project-name" data-i18n="p5-name">Support Efficiency OKR: Incoming/Pax Reduction</h3>
+          <p class="project-subtitle" data-i18n="p5-subtitle">Data-driven initiative that reduced customer contact ratio by 27%, exceeding the OKR target by 19%</p>
         </div>
         <div class="project-body">
           <div class="project-section">
-            <h4>Overview</h4>
-            <p>Led the data analysis for a cross-functional OKR to reduce the customer support contact rate (incoming-per-passenger) from 31% to 28%. Through systematic analysis of self-service channels, marketplace improvements, and communication overhauls, we achieved 22.6% — exceeding the target by 19% and saving ~R$150K per month in operational costs.</p>
+            <h4 data-i18n="heading-overview">Overview</h4>
+            <p data-i18n="p5-overview">Led the data analysis for a cross-functional OKR to reduce the customer support contact rate (incoming-per-passenger) from 31% to 28%. Through systematic analysis of self-service channels, marketplace improvements, and communication overhauls, we achieved 22.6% — exceeding the target by 19% and saving ~R$150K per month in operational costs.</p>
           </div>
           <div class="project-section">
-            <h4>Key Metrics</h4>
+            <h4 data-i18n="heading-metrics">Key Metrics</h4>
             <div class="metrics-grid">
               <div class="metric">
                 <span class="metric-value">31% to 22.6%</span>
-                <span class="metric-label">Incoming/pax ratio reduction</span>
+                <span class="metric-label" data-i18n="p5-m1">Incoming/pax ratio reduction</span>
               </div>
               <div class="metric">
                 <span class="metric-value">28%</span>
-                <span class="metric-label">OKR target (exceeded by 19%)</span>
+                <span class="metric-label" data-i18n="p5-m2">OKR target (exceeded by 19%)</span>
               </div>
               <div class="metric">
                 <span class="metric-value">~R$150K</span>
-                <span class="metric-label">Monthly saving from reduced contacts</span>
+                <span class="metric-label" data-i18n="p5-m3">Monthly saving from reduced contacts</span>
               </div>
             </div>
           </div>
           <div class="project-section">
-            <h4>Results</h4>
+            <h4 data-i18n="heading-results">Results</h4>
             <div class="chart-grid">
               <div class="chart-card">
-                <h5 class="chart-title">Incoming/Pax Ratio: Target vs Achieved</h5>
-                <p class="chart-subtitle">OKR target was 28%, achieved 22.6%</p>
+                <h5 class="chart-title" data-i18n="p5-chart1-title">Incoming/Pax Ratio: Target vs Achieved</h5>
+                <p class="chart-subtitle" data-i18n="p5-chart1-subtitle">OKR target was 28%, achieved 22.6%</p>
                 <div class="chart-wrapper">
                   <canvas id="chartOKRResult"></canvas>
                 </div>
               </div>
               <div class="chart-card">
-                <h5 class="chart-title">OKR Target vs Achieved</h5>
-                <p class="chart-subtitle">Exceeded the 28% target by 19%</p>
+                <h5 class="chart-title" data-i18n="p5-chart2-title">OKR Target vs Achieved</h5>
+                <p class="chart-subtitle" data-i18n="p5-chart2-subtitle">Exceeded the 28% target by 19%</p>
                 <div class="chart-wrapper" style="display: flex; align-items: center; justify-content: center;">
                   <div style="text-align: center;">
                     <span style="font-size: 3rem; font-weight: 700; color: var(--green); font-family: var(--mono);">22.6%</span>
                     <br>
-                    <span style="font-size: 0.85rem; color: var(--text-secondary);">achieved vs 28% target</span>
+                    <span style="font-size: 0.85rem; color: var(--text-secondary);" data-i18n="p5-chart2-label">achieved vs 28% target</span>
                   </div>
                 </div>
               </div>
             </div>
           </div>
           <div class="project-section">
-            <h4>Impact: Before vs After (January baseline)</h4>
+            <h4 data-i18n="heading-impact-ba">Impact: Before vs After (January baseline)</h4>
             <div class="table-card">
               <div class="table-scroll">
                 <table class="data-table">
                   <thead>
                     <tr>
-                      <th>Metric</th>
-                      <th>Pre-OKR</th>
-                      <th>Post-OKR</th>
-                      <th>Change</th>
+                      <th data-i18n="th-metric-impact">Metric</th>
+                      <th data-i18n="th-before">Pre-OKR</th>
+                      <th data-i18n="th-after">Post-OKR</th>
+                      <th data-i18n="th-change-col">Change</th>
                     </tr>
                   </thead>
                   <tbody>
                     <tr class="row-highlight">
-                      <td>Incoming/pax ratio</td>
-                      <td>31%</td>
-                      <td>22.6%</td>
-                      <td><span class="score-badge score-hot">-27%</span></td>
+                      <td data-i18n="p5-ba-r1-m">Incoming/pax ratio</td>
+                      <td data-i18n="p5-ba-r1-b">31%</td>
+                      <td data-i18n="p5-ba-r1-a">22.6%</td>
+                      <td><span class="score-badge score-hot" data-i18n="p5-ba-r1-c">-27%</span></td>
                     </tr>
                     <tr>
-                      <td>OKR target</td>
-                      <td colspan="2" style="text-align: center;">28% target</td>
-                      <td><span class="score-badge score-hot">Exceeded by 19%</span></td>
+                      <td data-i18n="p5-ba-r2-m">OKR target</td>
+                      <td colspan="2" style="text-align: center;" data-i18n="p5-ba-r2-b">28% target</td>
+                      <td><span class="score-badge score-hot" data-i18n="p5-ba-r2-c">Exceeded by 19%</span></td>
                     </tr>
                     <tr class="row-highlight">
-                      <td><strong>Monthly saving</strong></td>
-                      <td colspan="2" style="text-align: center;">Fewer contacts x cost per incoming</td>
-                      <td><span class="score-badge score-hot">~R$150K/month</span></td>
+                      <td data-i18n="p5-ba-r3-m"><strong>Monthly saving</strong></td>
+                      <td colspan="2" style="text-align: center;" data-i18n="p5-ba-r3-b">Fewer contacts x cost per incoming</td>
+                      <td><span class="score-badge score-hot" data-i18n="p5-ba-r3-c">~R$150K/month</span></td>
                     </tr>
                   </tbody>
                 </table>
               </div>
             </div>
-            <p style="margin-top: 16px; color: var(--text-secondary); font-size: 0.9rem;">By reducing incomings, we reduced the need for people, tools, licenses, and overhead — translating to <strong>~R$150K in monthly savings</strong>.</p>
+            <p style="margin-top: 16px; color: var(--text-secondary); font-size: 0.9rem;" data-i18n="p5-impact-note">By reducing incomings, we reduced the need for people, tools, licenses, and overhead — translating to <strong>~R$150K in monthly savings</strong>.</p>
           </div>
 
           <div class="project-section">
-            <h4>Initiative Breakdown</h4>
+            <h4 data-i18n="p5-initiatives">Initiative Breakdown</h4>
             <div class="table-card">
               <div class="table-scroll">
                 <table class="data-table">
                   <thead>
                     <tr>
-                      <th>Initiative</th>
-                      <th>Impact</th>
-                      <th>Detail</th>
+                      <th data-i18n="th-initiative">Initiative</th>
+                      <th data-i18n="th-impact">Impact</th>
+                      <th data-i18n="th-result">Detail</th>
                     </tr>
                   </thead>
                   <tbody>
                     <tr class="row-highlight">
-                      <td>Self-Service Optimization</td>
-                      <td><span class="score-badge score-hot">High</span></td>
-                      <td>Improved self-service channels, reducing need for human support</td>
+                      <td data-i18n="p5-init1">Self-Service Optimization</td>
+                      <td><span class="score-badge score-hot" data-i18n="p5-init1-i">High</span></td>
+                      <td data-i18n="p5-init1-r">Improved self-service channels, reducing need for human support</td>
                     </tr>
                     <tr>
-                      <td>Marketplace Improvements</td>
-                      <td><span class="score-badge score-warm">High</span></td>
-                      <td>Self-service features reducing need for human support</td>
+                      <td data-i18n="p5-init2">Marketplace Improvements</td>
+                      <td><span class="score-badge score-warm" data-i18n="p5-init2-i">High</span></td>
+                      <td data-i18n="p5-init2-r">Self-service features reducing need for human support</td>
                     </tr>
                     <tr>
-                      <td>Communication Overhaul</td>
-                      <td><span class="score-badge score-warm">High</span></td>
-                      <td>Proactive notifications preventing incoming contacts</td>
+                      <td data-i18n="p5-init3">Communication Overhaul</td>
+                      <td><span class="score-badge score-warm" data-i18n="p5-init3-i">High</span></td>
+                      <td data-i18n="p5-init3-r">Proactive notifications preventing incoming contacts</td>
                     </tr>
                     <tr>
-                      <td>Partner Management</td>
-                      <td><span class="score-badge score-mid">Medium</span></td>
-                      <td>Operational partner alignment reducing escalations</td>
+                      <td data-i18n="p5-init4">Partner Management</td>
+                      <td><span class="score-badge score-mid" data-i18n="p5-init4-i">Medium</span></td>
+                      <td data-i18n="p5-init4-r">Operational partner alignment reducing escalations</td>
                     </tr>
                   </tbody>
                 </table>
@@ -1716,33 +1717,33 @@
             </div>
           </div>
           <div class="project-section">
-            <h4>What I Built</h4>
+            <h4 data-i18n="heading-what-built">What I Built</h4>
             <div class="deliverables-grid">
               <div class="deliverable">
                 <div class="deliverable-icon">
                   <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 3v18h18"/><path d="M18.7 8l-5.1 5.2-2.8-2.7L7 14.3"/></svg>
                 </div>
-                <h5>Contact Rate Analytics</h5>
-                <p>Built the analytical framework tracking incoming/pax ratios across channels, identifying the highest-impact self-service opportunities.</p>
+                <h5 data-i18n="p5-d1-t">Contact Rate Analytics</h5>
+                <p data-i18n="p5-d1-d">Built the analytical framework tracking incoming/pax ratios across channels, identifying the highest-impact self-service opportunities.</p>
               </div>
               <div class="deliverable">
                 <div class="deliverable-icon">
                   <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 20V10"/><path d="M18 20V4"/><path d="M6 20v-4"/></svg>
                 </div>
-                <h5>Initiative Impact Measurement</h5>
-                <p>Designed the methodology to measure each initiative's contribution to the overall incoming/pax reduction, proving causation with data.</p>
+                <h5 data-i18n="p5-d2-t">Initiative Impact Measurement</h5>
+                <p data-i18n="p5-d2-d">Designed the methodology to measure each initiative's contribution to the overall incoming/pax reduction, proving causation with data.</p>
               </div>
               <div class="deliverable">
                 <div class="deliverable-icon">
                   <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 12h-4l-3 9L9 3l-3 9H2"/></svg>
                 </div>
-                <h5>Savings Simulation Model</h5>
-                <p>Built a simulation projecting cost savings from reduced incoming, considering agent costs, AHT, and channel distribution to quantify ROI.</p>
+                <h5 data-i18n="p5-d3-t">Savings Simulation Model</h5>
+                <p data-i18n="p5-d3-d">Built a simulation projecting cost savings from reduced incoming, considering agent costs, AHT, and channel distribution to quantify ROI.</p>
               </div>
             </div>
           </div>
           <div class="project-section">
-            <h4>Tech Stack</h4>
+            <h4 data-i18n="heading-tech-stack">Tech Stack</h4>
             <div class="tech-tags">
               <span class="tag">SQL / BigQuery</span>
               <span class="tag">Data Analysis</span>
@@ -1757,77 +1758,77 @@
       <!-- PROJECT 6: Algorithmic Trading Bot Analysis -->
       <article class="project-card" id="project-trading-bot">
         <div class="project-header">
-          <div class="project-tag">Case Study</div>
-          <h3 class="project-name">Algorithmic Trading Bot Analysis</h3>
-          <p class="project-subtitle">Turned a 449% cumulative return into actionable rules: which hours, days, and directions to trade (and when to stop)</p>
+          <div class="project-tag" data-i18n="case-study">Case Study</div>
+          <h3 class="project-name" data-i18n="p3-name">Algorithmic Trading Bot Analysis</h3>
+          <p class="project-subtitle" data-i18n="p3-subtitle">Turned a 449% cumulative return into actionable rules: which hours, days, and directions to trade (and when to stop)</p>
         </div>
         <div class="project-body">
           <div class="project-section">
-            <h4>Overview</h4>
-            <p>A trading robot on WIN$ mini-index futures (B3 exchange) was generating a 449.74% cumulative return over 3.5 years, but the owner had no visibility into <strong>when or why</strong> it performed well. I conducted a full performance audit across 10+ dimensions, uncovering that profitability was concentrated in specific hour-of-day and day-of-week windows. The analysis delivered concrete rules: which time slots to keep the bot active, which to disable, and whether to favor buy or sell operations in each window.</p>
+            <h4 data-i18n="heading-overview">Overview</h4>
+            <p data-i18n="p3-overview">A trading robot on WIN$ mini-index futures (B3 exchange) was generating a 449.74% cumulative return over 3.5 years, but the owner had no visibility into <strong>when or why</strong> it performed well. I conducted a full performance audit across 10+ dimensions, uncovering that profitability was concentrated in specific hour-of-day and day-of-week windows. The analysis delivered concrete rules: which time slots to keep the bot active, which to disable, and whether to favor buy or sell operations in each window.</p>
           </div>
           <div class="project-section">
-            <h4>Key Metrics</h4>
+            <h4 data-i18n="heading-metrics">Key Metrics</h4>
             <div class="metrics-grid">
               <div class="metric">
                 <span class="metric-value">449.7%</span>
-                <span class="metric-label">Cumulative return over backtesting period</span>
+                <span class="metric-label" data-i18n="p3-m1">Cumulative return over backtesting period</span>
               </div>
               <div class="metric">
                 <span class="metric-value">3.5 yrs</span>
-                <span class="metric-label">Trade history analyzed (Apr 2020 - Nov 2023)</span>
+                <span class="metric-label" data-i18n="p3-m2">Trade history analyzed (Apr 2020 - Nov 2023)</span>
               </div>
               <div class="metric">
                 <span class="metric-value">Hour x Day</span>
-                <span class="metric-label">Profit factor heatmap for window optimization</span>
+                <span class="metric-label" data-i18n="p3-m3">Profit factor heatmap for window optimization</span>
               </div>
               <div class="metric">
                 <span class="metric-value">16</span>
-                <span class="metric-label">Visualizations in the final report</span>
+                <span class="metric-label" data-i18n="p3-m4">Visualizations in the final report</span>
               </div>
             </div>
           </div>
           <div class="project-section">
-            <h4>The Problem</h4>
-            <p>The bot was profitable overall but had <strong>hidden inefficiencies</strong>: certain hours were destroying value, some days underperformed, and buy vs sell operations had very different risk profiles. Without this analysis, the bot ran 24/5 with no filters, leaving significant upside on the table and taking unnecessary risk.</p>
+            <h4 data-i18n="p3-problem">The Problem</h4>
+            <p data-i18n="p3-problem-text">The bot was profitable overall but had <strong>hidden inefficiencies</strong>: certain hours were destroying value, some days underperformed, and buy vs sell operations had very different risk profiles. Without this analysis, the bot ran 24/5 with no filters, leaving significant upside on the table and taking unnecessary risk.</p>
           </div>
           <div class="project-section">
-            <h4>Key Findings</h4>
+            <h4 data-i18n="p3-findings">Key Findings</h4>
             <div class="table-card">
               <div class="table-scroll">
                 <table class="data-table">
                   <thead>
                     <tr>
-                      <th>Dimension</th>
-                      <th>Finding</th>
-                      <th>Actionable Rule</th>
+                      <th data-i18n="th-finding">Dimension</th>
+                      <th data-i18n="th-insight">Finding</th>
+                      <th data-i18n="th-action">Actionable Rule</th>
                     </tr>
                   </thead>
                   <tbody>
                     <tr class="row-highlight">
-                      <td>Hour x Day Heatmap</td>
-                      <td>Profit factor varied from &lt;0.5 to &gt;3.0 depending on time slot</td>
-                      <td>Disable bot during unprofitable windows (saved drawdown exposure)</td>
+                      <td data-i18n="p3-find1">Hour x Day Heatmap</td>
+                      <td data-i18n="p3-find1-i">Profit factor varied from &lt;0.5 to &gt;3.0 depending on time slot</td>
+                      <td data-i18n="p3-find1-a">Disable bot during unprofitable windows (saved drawdown exposure)</td>
                     </tr>
                     <tr>
-                      <td>Buy vs Sell</td>
-                      <td>One direction consistently outperformed the other across most periods</td>
-                      <td>Restrict operations to the stronger direction in weak time slots</td>
+                      <td data-i18n="p3-find2">Buy vs Sell</td>
+                      <td data-i18n="p3-find2-i">One direction consistently outperformed the other across most periods</td>
+                      <td data-i18n="p3-find2-a">Restrict operations to the stronger direction in weak time slots</td>
                     </tr>
                     <tr>
-                      <td>Monthly Seasonality</td>
-                      <td>Profit factor heatmap showed degradation in specific quarters</td>
-                      <td>Flag seasonal risk periods for manual oversight</td>
+                      <td data-i18n="p3-find3">Monthly Seasonality</td>
+                      <td data-i18n="p3-find3-i">Profit factor heatmap showed degradation in specific quarters</td>
+                      <td data-i18n="p3-find3-a">Flag seasonal risk periods for manual oversight</td>
                     </tr>
                     <tr>
-                      <td>Consecutive Streaks</td>
-                      <td>Max consecutive losses hit double digits in vulnerable windows</td>
-                      <td>Set position sizing rules tied to streak risk per time slot</td>
+                      <td data-i18n="p3-find4">Consecutive Streaks</td>
+                      <td data-i18n="p3-find4-i">Max consecutive losses hit double digits in vulnerable windows</td>
+                      <td data-i18n="p3-find4-a">Set position sizing rules tied to streak risk per time slot</td>
                     </tr>
                     <tr>
-                      <td>Max Drawdown</td>
-                      <td>Peak-to-trough drawdown concentrated in identifiable periods</td>
-                      <td>Kill-switch thresholds for automated risk control</td>
+                      <td data-i18n="p3-find5">Max Drawdown</td>
+                      <td data-i18n="p3-find5-i">Peak-to-trough drawdown concentrated in identifiable periods</td>
+                      <td data-i18n="p3-find5-a">Kill-switch thresholds for automated risk control</td>
                     </tr>
                   </tbody>
                 </table>
@@ -1835,40 +1836,40 @@
             </div>
           </div>
           <div class="project-section">
-            <h4>What I Built</h4>
+            <h4 data-i18n="heading-what-built">What I Built</h4>
             <div class="deliverables-grid">
               <div class="deliverable">
                 <div class="deliverable-icon">
                   <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 3v18h18"/><path d="M18.7 8l-5.1 5.2-2.8-2.7L7 14.3"/></svg>
                 </div>
-                <h5>Hour x Day Profit Heatmap</h5>
-                <p>The core deliverable: a profit factor matrix for every hour-weekday combination, segmented by buy/sell. This single chart drove the most impactful optimization rules.</p>
+                <h5 data-i18n="p3-d1-t">Hour x Day Profit Heatmap</h5>
+                <p data-i18n="p3-d1-d">The core deliverable: a profit factor matrix for every hour-weekday combination, segmented by buy/sell. This single chart drove the most impactful optimization rules.</p>
               </div>
               <div class="deliverable">
                 <div class="deliverable-icon">
                   <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 12h-4l-3 9L9 3l-3 9H2"/></svg>
                 </div>
-                <h5>Risk Exposure Report</h5>
-                <p>Quantified max drawdown, consecutive loss streaks, and capital exposure per time window. Provided concrete thresholds for automated risk controls.</p>
+                <h5 data-i18n="p3-d2-t">Risk Exposure Report</h5>
+                <p data-i18n="p3-d2-d">Quantified max drawdown, consecutive loss streaks, and capital exposure per time window. Provided concrete thresholds for automated risk controls.</p>
               </div>
               <div class="deliverable">
                 <div class="deliverable-icon">
                   <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 20V10"/><path d="M18 20V4"/><path d="M6 20v-4"/></svg>
                 </div>
-                <h5>Seasonality Analysis</h5>
-                <p>Year-by-month profit factor pivot with conditional formatting, revealing strategy degradation periods and seasonal patterns for proactive adjustment.</p>
+                <h5 data-i18n="p3-d3-t">Seasonality Analysis</h5>
+                <p data-i18n="p3-d3-d">Year-by-month profit factor pivot with conditional formatting, revealing strategy degradation periods and seasonal patterns for proactive adjustment.</p>
               </div>
               <div class="deliverable">
                 <div class="deliverable-icon">
                   <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="3" width="20" height="14" rx="2"/><path d="M8 21h8"/><path d="M12 17v4"/></svg>
                 </div>
-                <h5>16-Chart Jupyter Notebook</h5>
-                <p>Complete analytical notebook with reproducible code. Every chart is interactive and parameterized, allowing the bot owner to re-run the analysis as new data comes in.</p>
+                <h5 data-i18n="p3-d4-t">16-Chart Jupyter Notebook</h5>
+                <p data-i18n="p3-d4-d">Complete analytical notebook with reproducible code. Every chart is interactive and parameterized, allowing the bot owner to re-run the analysis as new data comes in.</p>
               </div>
             </div>
           </div>
           <div class="project-section">
-            <h4>Tech Stack</h4>
+            <h4 data-i18n="heading-tech-stack">Tech Stack</h4>
             <div class="tech-tags">
               <span class="tag">Python</span>
               <span class="tag">Pandas</span>
@@ -1883,83 +1884,83 @@
       <!-- PROJECT 7: B2B Group Conclusion Automation -->
       <article class="project-card" id="project-reimbursement-automation">
         <div class="project-header">
-          <div class="project-tag">Case Study</div>
-          <h3 class="project-name">B2B Group Conclusion Automation</h3>
-          <p class="project-subtitle">Reduced manual group conclusions from 18.2% to 3.4%, cutting daily workload by 84% and eliminating the need for a dedicated analyst</p>
+          <div class="project-tag" data-i18n="case-study">Case Study</div>
+          <h3 class="project-name" data-i18n="p7-name">B2B Group Conclusion Automation</h3>
+          <p class="project-subtitle" data-i18n="p7-subtitle">Reduced manual group conclusions from 18.2% to 3.4%, cutting daily workload by 84% and eliminating the need for a dedicated analyst</p>
         </div>
         <div class="project-body">
           <div class="project-section">
-            <h4>Overview</h4>
-            <p>In B2B operations at a major Brazilian bus transportation company, every travel group with an incident or report got "stuck" and required manual review by the BX team before closure. Analysts had to evaluate each case against the Reimbursement Policy to determine if passengers qualified for vouchers or cash reimbursement. However, many incident groups <strong>didn't qualify for any treatment</strong> yet still consumed the same analyst time as complex cases. By June, these manual conclusions represented <strong>~20% of all company travel groups</strong>. This was one of the team's heaviest demands, pulling consultants away from their core mission of supporting drivers and partners.</p>
+            <h4 data-i18n="heading-overview">Overview</h4>
+            <p data-i18n="p7-overview">In B2B operations at a major Brazilian bus transportation company, every travel group with an incident or report got "stuck" and required manual review by the BX team before closure. Analysts had to evaluate each case against the Reimbursement Policy to determine if passengers qualified for vouchers or cash reimbursement. However, many incident groups <strong>didn't qualify for any treatment</strong> yet still consumed the same analyst time as complex cases. By June, these manual conclusions represented <strong>~20% of all company travel groups</strong>. This was one of the team's heaviest demands, pulling consultants away from their core mission of supporting drivers and partners.</p>
           </div>
           <div class="project-section">
-            <h4>Key Metrics</h4>
+            <h4 data-i18n="heading-metrics">Key Metrics</h4>
             <div class="metrics-grid">
               <div class="metric">
                 <span class="metric-value">183 to 29</span>
-                <span class="metric-label">Daily manual conclusions (before/after)</span>
+                <span class="metric-label" data-i18n="p7-m1">Daily manual conclusions (before/after)</span>
               </div>
               <div class="metric">
                 <span class="metric-value">18.2% to 3.4%</span>
-                <span class="metric-label">Manual conclusion rate</span>
+                <span class="metric-label" data-i18n="p7-m2">Manual conclusion rate</span>
               </div>
               <div class="metric">
                 <span class="metric-value">-84%</span>
-                <span class="metric-label">Reduction in daily workload</span>
+                <span class="metric-label" data-i18n="p7-m3">Reduction in daily workload</span>
               </div>
               <div class="metric">
                 <span class="metric-value">OKR: 16%</span>
-                <span class="metric-label">Target was 16%, achieved 3.4%</span>
+                <span class="metric-label" data-i18n="p7-m4">Target was 16%, achieved 3.4%</span>
               </div>
             </div>
           </div>
           <div class="project-section">
-            <h4>The Problem</h4>
-            <p>From January to June, the team averaged <strong>183 manual conclusions per day</strong>, requiring 1 dedicated analyst full-time plus the rest of the B2B team helping in parallel. At full capacity, <strong>2 full-time consultants</strong> would be needed just for group conclusions. The situation worsened in Q4 holiday peaks, where <strong>4 to 5 consultants</strong> had to be pulled from their regular duties to handle the surge. The team was scaling headcount to handle volume rather than eliminating the root cause.</p>
+            <h4 data-i18n="p7-problem">The Problem</h4>
+            <p data-i18n="p7-problem-text">From January to June, the team averaged <strong>183 manual conclusions per day</strong>, requiring 1 dedicated analyst full-time plus the rest of the B2B team helping in parallel. At full capacity, <strong>2 full-time consultants</strong> would be needed just for group conclusions. The situation worsened in Q4 holiday peaks, where <strong>4 to 5 consultants</strong> had to be pulled from their regular duties to handle the surge. The team was scaling headcount to handle volume rather than eliminating the root cause.</p>
           </div>
           <div class="project-section">
-            <h4>Results</h4>
+            <h4 data-i18n="heading-results">Results</h4>
             <div class="table-card">
               <div class="table-scroll">
                 <table class="data-table">
                   <thead>
                     <tr>
-                      <th>Metric</th>
-                      <th>Before</th>
-                      <th>After</th>
-                      <th>Change</th>
+                      <th data-i18n="th-metric-impact">Metric</th>
+                      <th data-i18n="th-before">Before</th>
+                      <th data-i18n="th-after">After</th>
+                      <th data-i18n="th-change-col">Change</th>
                     </tr>
                   </thead>
                   <tbody>
                     <tr class="row-highlight">
-                      <td>Daily conclusions</td>
-                      <td>183/day avg</td>
-                      <td>29/day avg</td>
-                      <td><span class="score-badge score-hot">-84%</span></td>
+                      <td data-i18n="p7-ba-r1-m">Daily conclusions</td>
+                      <td data-i18n="p7-ba-r1-b">183/day avg</td>
+                      <td data-i18n="p7-ba-r1-a">29/day avg</td>
+                      <td><span class="score-badge score-hot" data-i18n="p7-ba-r1-c">-84%</span></td>
                     </tr>
                     <tr>
-                      <td>Manual conclusion rate</td>
-                      <td>18.2%</td>
-                      <td>3.4%</td>
-                      <td><span class="score-badge score-hot">-81%</span></td>
+                      <td data-i18n="p7-ba-r2-m">Manual conclusion rate</td>
+                      <td data-i18n="p7-ba-r2-b">18.2%</td>
+                      <td data-i18n="p7-ba-r2-a">3.4%</td>
+                      <td><span class="score-badge score-hot" data-i18n="p7-ba-r2-c">-81%</span></td>
                     </tr>
                     <tr>
-                      <td>Dedicated analysts needed</td>
-                      <td>1 fixed + team support</td>
-                      <td>1 part-time only</td>
-                      <td><span class="score-badge score-hot">Eliminated</span></td>
+                      <td data-i18n="p7-ba-r3-m">Dedicated analysts needed</td>
+                      <td data-i18n="p7-ba-r3-b">1 fixed + team support</td>
+                      <td data-i18n="p7-ba-r3-a">1 part-time only</td>
+                      <td><span class="score-badge score-hot" data-i18n="p7-ba-r3-c">Eliminated</span></td>
                     </tr>
                     <tr>
-                      <td>Peak staffing (holidays)</td>
-                      <td>4-5 consultants pulled</td>
-                      <td>Not needed</td>
-                      <td><span class="score-badge score-hot">Eliminated</span></td>
+                      <td data-i18n="p7-ba-r4-m">Peak staffing (holidays)</td>
+                      <td data-i18n="p7-ba-r4-b">4-5 consultants pulled</td>
+                      <td data-i18n="p7-ba-r4-a">Not needed</td>
+                      <td><span class="score-badge score-hot" data-i18n="p7-ba-r4-c">Eliminated</span></td>
                     </tr>
                     <tr class="row-highlight">
-                      <td>OKR target</td>
-                      <td>16% target</td>
-                      <td>3.4% achieved</td>
-                      <td><span class="score-badge score-hot">Exceeded by 79%</span></td>
+                      <td data-i18n="p7-ba-r5-m">OKR target</td>
+                      <td data-i18n="p7-ba-r5-b">16% target</td>
+                      <td data-i18n="p7-ba-r5-a">3.4% achieved</td>
+                      <td><span class="score-badge score-hot" data-i18n="p7-ba-r5-c">Exceeded by 79%</span></td>
                     </tr>
                   </tbody>
                 </table>
@@ -1967,40 +1968,40 @@
             </div>
           </div>
           <div class="project-section">
-            <h4>What I Built</h4>
+            <h4 data-i18n="heading-what-built">What I Built</h4>
             <div class="deliverables-grid">
               <div class="deliverable">
                 <div class="deliverable-icon">
                   <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 20V10"/><path d="M18 20V4"/><path d="M6 20v-4"/></svg>
                 </div>
-                <h5>Volume & Impact Analysis</h5>
-                <p>Quantified the 183/day bottleneck, proved the 2-FTE equivalent cost, and modeled Q4 peak-season impact (4-5 consultants diverted). This data was the foundation for leadership buy-in on the automation investment.</p>
+                <h5 data-i18n="p7-d1-t">Volume & Impact Analysis</h5>
+                <p data-i18n="p7-d1-d">Quantified the 183/day bottleneck, proved the 2-FTE equivalent cost, and modeled Q4 peak-season impact (4-5 consultants diverted). This data was the foundation for leadership buy-in on the automation investment.</p>
               </div>
               <div class="deliverable">
                 <div class="deliverable-icon">
                   <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 7V4h16v3"/><path d="M9 20h6"/><path d="M12 4v16"/></svg>
                 </div>
-                <h5>Policy-to-Automation Mapping</h5>
-                <p>Worked with the internal controls team to map every incident category (delays, cancellations, route changes, downgrades, no-shows) against the Reimbursement Policy, identifying which groups could be auto-resolved vs. which required human review.</p>
+                <h5 data-i18n="p7-d2-t">Policy-to-Automation Mapping</h5>
+                <p data-i18n="p7-d2-d">Worked with the internal controls team to map every incident category (delays, cancellations, route changes, downgrades, no-shows) against the Reimbursement Policy, identifying which groups could be auto-resolved vs. which required human review.</p>
               </div>
               <div class="deliverable">
                 <div class="deliverable-icon">
                   <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="3" width="20" height="14" rx="2"/><path d="M8 21h8"/><path d="M12 17v4"/></svg>
                 </div>
-                <h5>Decision Tree Specification</h5>
-                <p>Delivered the complete automation logic: auto-close groups that don't qualify for treatment, auto-process clear-cut reimbursements, and route only complex multi-incident cases to human review.</p>
+                <h5 data-i18n="p7-d3-t">Decision Tree Specification</h5>
+                <p data-i18n="p7-d3-d">Delivered the complete automation logic: auto-close groups that don't qualify for treatment, auto-process clear-cut reimbursements, and route only complex multi-incident cases to human review.</p>
               </div>
               <div class="deliverable">
                 <div class="deliverable-icon">
                   <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 3v18h18"/><path d="M18.7 8l-5.1 5.2-2.8-2.7L7 14.3"/></svg>
                 </div>
-                <h5>OKR Framework & Tracking</h5>
-                <p>Established the 18.2% baseline, set the 16% OKR target, and built the tracking methodology that ultimately proved we achieved 3.4% — exceeding the target by 79%.</p>
+                <h5 data-i18n="p7-d4-t">OKR Framework & Tracking</h5>
+                <p data-i18n="p7-d4-d">Established the 18.2% baseline, set the 16% OKR target, and built the tracking methodology that ultimately proved we achieved 3.4% — exceeding the target by 79%.</p>
               </div>
             </div>
           </div>
           <div class="project-section">
-            <h4>Tech Stack</h4>
+            <h4 data-i18n="heading-tech-stack">Tech Stack</h4>
             <div class="tech-tags">
               <span class="tag">SQL / BigQuery</span>
               <span class="tag">Process Analysis</span>
@@ -2015,42 +2016,42 @@
       <!-- PROJECT 8: CX Demand Forecast -->
       <article class="project-card" id="project-cx-forecast">
         <div class="project-header">
-          <div class="project-tag">Case Study</div>
-          <h3 class="project-name">CX Demand Forecast & Capacity Planning</h3>
-          <p class="project-subtitle">Data-driven business plan for the CX department of a major Brazilian mobility company</p>
+          <div class="project-tag" data-i18n="case-study">Case Study</div>
+          <h3 class="project-name" data-i18n="p4-name">CX Demand Forecast & Capacity Planning</h3>
+          <p class="project-subtitle" data-i18n="p4-subtitle">Data-driven business plan for the CX department of a major Brazilian mobility company</p>
         </div>
         <div class="project-body">
           <div class="project-section">
-            <h4>Overview</h4>
-            <p>Developed the full 2024 business plan for a CX department handling 8+ support channels at a leading Brazilian transportation tech company. Analyzed historical incoming-per-passenger ratios, built capacity scenarios with multiple average handling time (TMA) assumptions, projected headcount needs, and supported the implementation of a WFM tool (Moavi) for real-time scheduling.</p>
+            <h4 data-i18n="heading-overview">Overview</h4>
+            <p data-i18n="p4-overview">Developed the full 2024 business plan for a CX department handling 8+ support channels at a leading Brazilian transportation tech company. Analyzed historical incoming-per-passenger ratios, built capacity scenarios with multiple average handling time (TMA) assumptions, projected headcount needs, and supported the implementation of a WFM tool (Moavi) for real-time scheduling.</p>
           </div>
           <div class="project-section">
-            <h4>Key Metrics</h4>
+            <h4 data-i18n="heading-metrics">Key Metrics</h4>
             <div class="metrics-grid">
               <div class="metric">
                 <span class="metric-value">-0.56%</span>
-                <span class="metric-label">Incoming/pax variation (YoY)</span>
+                <span class="metric-label" data-i18n="p4-m1">Incoming/pax variation (YoY)</span>
               </div>
               <div class="metric">
                 <span class="metric-value">14.4%</span>
-                <span class="metric-label">Passenger growth planned for 2024</span>
+                <span class="metric-label" data-i18n="p4-m2">Passenger growth planned for 2024</span>
               </div>
               <div class="metric">
                 <span class="metric-value">8+</span>
-                <span class="metric-label">Support channels monitored</span>
+                <span class="metric-label" data-i18n="p4-m3">Support channels monitored</span>
               </div>
               <div class="metric">
                 <span class="metric-value">3</span>
-                <span class="metric-label">TMA capacity scenarios modeled</span>
+                <span class="metric-label" data-i18n="p4-m4">TMA capacity scenarios modeled</span>
               </div>
             </div>
           </div>
           <div class="project-section">
-            <h4>Channel Coverage</h4>
+            <h4 data-i18n="p4-channel-coverage">Channel Coverage</h4>
             <div class="chart-grid">
               <div class="chart-card" style="grid-column: span 2;">
-                <h5 class="chart-title">Support Channel Distribution</h5>
-                <p class="chart-subtitle">Representative incoming volume by channel for demand planning</p>
+                <h5 class="chart-title" data-i18n="p4-chart-title">Support Channel Distribution</h5>
+                <p class="chart-subtitle" data-i18n="p4-chart-subtitle">Representative incoming volume by channel for demand planning</p>
                 <div class="chart-wrapper">
                   <canvas id="chartChannelDist"></canvas>
                 </div>
@@ -2058,40 +2059,40 @@
             </div>
           </div>
           <div class="project-section">
-            <h4>What I Built</h4>
+            <h4 data-i18n="heading-what-built">What I Built</h4>
             <div class="deliverables-grid">
               <div class="deliverable">
                 <div class="deliverable-icon">
                   <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 20V10"/><path d="M18 20V4"/><path d="M6 20v-4"/></svg>
                 </div>
-                <h5>Incoming/Pax Ratio Model</h5>
-                <p>Built an analytical framework correlating support demand to passenger volume, identifying a -0.56% YoY efficiency gain and projecting demand based on 14.4% growth.</p>
+                <h5 data-i18n="p4-d1-t">Incoming/Pax Ratio Model</h5>
+                <p data-i18n="p4-d1-d">Built an analytical framework correlating support demand to passenger volume, identifying a -0.56% YoY efficiency gain and projecting demand based on 14.4% growth.</p>
               </div>
               <div class="deliverable">
                 <div class="deliverable-icon">
                   <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="3" width="20" height="14" rx="2"/><path d="M8 21h8"/><path d="M12 17v4"/></svg>
                 </div>
-                <h5>Capacity Planning Scenarios</h5>
-                <p>Modeled 3 TMA scenarios (optimistic, baseline, conservative) to project headcount requirements, giving leadership a clear range for hiring and budget decisions.</p>
+                <h5 data-i18n="p4-d2-t">Capacity Planning Scenarios</h5>
+                <p data-i18n="p4-d2-d">Modeled 3 TMA scenarios (optimistic, baseline, conservative) to project headcount requirements, giving leadership a clear range for hiring and budget decisions.</p>
               </div>
               <div class="deliverable">
                 <div class="deliverable-icon">
                   <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 12h-4l-3 9L9 3l-3 9H2"/></svg>
                 </div>
-                <h5>Turnover & Ramp Analysis</h5>
-                <p>Quantified the impact of agent turnover on effective capacity, including ramp-up periods for new hires and the compounding cost of attrition on service levels.</p>
+                <h5 data-i18n="p4-d3-t">Turnover & Ramp Analysis</h5>
+                <p data-i18n="p4-d3-d">Quantified the impact of agent turnover on effective capacity, including ramp-up periods for new hires and the compounding cost of attrition on service levels.</p>
               </div>
               <div class="deliverable">
                 <div class="deliverable-icon">
                   <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 7V4h16v3"/><path d="M9 20h6"/><path d="M12 4v16"/></svg>
                 </div>
-                <h5>WFM Implementation Support</h5>
-                <p>Provided the data foundation for implementing Moavi (WFM tool), including channel-level volume forecasts and shift distribution models aligned with demand curves.</p>
+                <h5 data-i18n="p4-d4-t">WFM Implementation Support</h5>
+                <p data-i18n="p4-d4-d">Provided the data foundation for implementing Moavi (WFM tool), including channel-level volume forecasts and shift distribution models aligned with demand curves.</p>
               </div>
             </div>
           </div>
           <div class="project-section">
-            <h4>Tech Stack</h4>
+            <h4 data-i18n="heading-tech-stack">Tech Stack</h4>
             <div class="tech-tags">
               <span class="tag">SQL / BigQuery</span>
               <span class="tag">Data Analysis</span>
@@ -2109,10 +2110,10 @@
   <!-- STACK -->
   <section id="stack" class="section">
     <div class="container">
-      <h2 class="section-title">Tech Stack</h2>
+      <h2 class="section-title" data-i18n="section-stack">Tech Stack</h2>
       <div class="stack-grid">
         <div class="stack-category">
-          <h4>Data & Databases</h4>
+          <h4 data-i18n="stack-cat1">Data & Databases</h4>
           <ul>
             <li>PostgreSQL</li>
             <li>Supabase</li>
@@ -2121,7 +2122,7 @@
           </ul>
         </div>
         <div class="stack-category">
-          <h4>Python & ML</h4>
+          <h4 data-i18n="stack-cat2">Python & ML</h4>
           <ul>
             <li>Pandas / NumPy</li>
             <li>Facebook Prophet</li>
@@ -2130,7 +2131,7 @@
           </ul>
         </div>
         <div class="stack-category">
-          <h4>Automation & Integration</h4>
+          <h4 data-i18n="stack-cat3">Automation & Integration</h4>
           <ul>
             <li>n8n (orchestration)</li>
             <li>REST APIs / Webhooks</li>
@@ -2139,7 +2140,7 @@
           </ul>
         </div>
         <div class="stack-category">
-          <h4>Analytics & BI</h4>
+          <h4 data-i18n="stack-cat4">Analytics & BI</h4>
           <ul>
             <li>Metabase</li>
             <li>Lead scoring models</li>
@@ -2154,12 +2155,12 @@
   <!-- CONTACT -->
   <section id="contact" class="section section-alt">
     <div class="container">
-      <h2 class="section-title">Contact</h2>
-      <p class="contact-text">Interested in working together? Let's talk.</p>
+      <h2 class="section-title" data-i18n="section-contact">Contact</h2>
+      <p class="contact-text" data-i18n="contact-text">Interested in working together? Let's talk.</p>
       <div class="contact-links">
-        <a href="mailto:paulo.coelho.teixeira99@gmail.com" class="btn btn-primary">paulo.coelho.teixeira99@gmail.com</a>
-        <a href="https://github.com/paulocoelhoteixeira99-cpu" class="btn btn-ghost" target="_blank">GitHub</a>
-        <a href="https://www.linkedin.com/in/paulo-teixeira99/" class="btn btn-ghost" target="_blank">LinkedIn</a>
+        <a href="mailto:paulo.coelho.teixeira99@gmail.com" class="btn btn-primary" data-i18n="contact-email">paulo.coelho.teixeira99@gmail.com</a>
+        <a href="https://github.com/paulocoelhoteixeira99-cpu" class="btn btn-ghost" target="_blank" data-i18n="contact-github">GitHub</a>
+        <a href="https://www.linkedin.com/in/paulo-teixeira99/" class="btn btn-ghost" target="_blank" data-i18n="contact-linkedin">LinkedIn</a>
       </div>
     </div>
   </section>
@@ -2167,10 +2168,11 @@
   <!-- FOOTER -->
   <footer class="footer">
     <div class="container">
-      <p>Paulo Vitor Coelho Teixeira &middot; 2026</p>
+      <p data-i18n="footer-text">Paulo Vitor Coelho Teixeira &middot; 2026</p>
     </div>
   </footer>
 
   <script src="charts.js"></script>
+  <script src="i18n.js"></script>
 </body>
 </html>
