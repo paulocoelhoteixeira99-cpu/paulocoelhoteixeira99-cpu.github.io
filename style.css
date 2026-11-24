@@ -208,6 +208,7 @@ strong {
 /* ===== SECTIONS ===== */
 .section {
   padding: 100px 0;
+  scroll-margin-top: 80px;
 }
 
 .section-alt {
@@ -347,6 +348,7 @@ strong {
   border-radius: 16px;
   overflow: hidden;
   margin-bottom: 32px;
+  scroll-margin-top: 80px;
 }
 
 .project-header {

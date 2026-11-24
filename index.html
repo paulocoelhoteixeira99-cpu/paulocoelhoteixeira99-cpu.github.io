@@ -1460,6 +1460,74 @@
             <h4 data-i18n="heading-overview">Overview</h4>
             <p data-i18n="p6-overview">Built a machine learning forecasting pipeline to predict daily customer support volume across 8+ channels. Engineered a complex SQL data pipeline (10+ CTEs) aggregating data from BigQuery across bot, chat, ticket, social, phone, and parcels channels. Developed two competing Prophet models, with the tuned version achieving a 38% error reduction — directly feeding into shift scheduling and headcount planning.</p>
           </div>
+
+          <div class="project-section">
+            <h4 data-i18n="p6-pipeline">Data Pipeline: 10+ CTEs across 9 Channels</h4>
+            <p data-i18n="p6-pipeline-desc">The forecasting model required a single, clean daily time series — but the raw data was scattered across multiple systems. I engineered a SQL pipeline with 10+ chained CTEs that aggregates, classifies, and deduplicates incoming volume from every support channel.</p>
+            <div class="table-card">
+              <h5 class="table-title" data-i18n="p6-tb-channels">Channel Aggregation</h5>
+              <div class="table-scroll">
+                <table class="data-table">
+                  <thead>
+                    <tr>
+                      <th data-i18n="th-channel">Channel</th>
+                      <th data-i18n="th-source-table">Source</th>
+                      <th data-i18n="th-pipeline-role">Pipeline Role</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <td>B2C Bot (WhatsApp + Web)</td>
+                      <td><code>hi.contacts</code></td>
+                      <td data-i18n="p6-ch1-r">Main volume driver — required bot flow classification to separate support from sales</td>
+                    </tr>
+                    <tr>
+                      <td>B2C Chat</td>
+                      <td><code>inter_bx.mi_hi</code></td>
+                      <td data-i18n="p6-ch2-r">Human-attended chats, filtered by status = 'FINALIZADO'</td>
+                    </tr>
+                    <tr>
+                      <td>B2B Bot (Motoristas)</td>
+                      <td><code>hi.contacts</code></td>
+                      <td data-i18n="p6-ch3-r">Driver-facing support, separate department filter</td>
+                    </tr>
+                    <tr>
+                      <td>Tickets</td>
+                      <td><code>hi.tickets</code></td>
+                      <td data-i18n="p6-ch4-r">Excluding BKO tickets to avoid double-counting</td>
+                    </tr>
+                    <tr>
+                      <td>Social Media (DMs)</td>
+                      <td><code>hi.social_chamados</code></td>
+                      <td data-i18n="p6-ch5-r">Private messages filtered from public comments</td>
+                    </tr>
+                    <tr>
+                      <td>Social Media (Comments)</td>
+                      <td><code>gsheets.bx_dados_adicionais</code></td>
+                      <td data-i18n="p6-ch6-r">Public comments via Stilingue integration</td>
+                    </tr>
+                    <tr>
+                      <td>Reclame Aqui</td>
+                      <td><code>gsheets.bx_dados_adicionais</code></td>
+                      <td data-i18n="p6-ch7-r">Brazil's main consumer complaint platform</td>
+                    </tr>
+                    <tr>
+                      <td>Phone (Receptive + Active)</td>
+                      <td><code>pbx.calls</code></td>
+                      <td data-i18n="p6-ch8-r">PBX call logs, split by queue for active vs receptive</td>
+                    </tr>
+                    <tr>
+                      <td>Encomendas (Parcels)</td>
+                      <td><code>inter_bx.mi_hi</code></td>
+                      <td data-i18n="p6-ch9-r">Parcel-related support, separate channel filter</td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+            <p style="margin-top: 16px; color: var(--text-secondary); font-size: 0.9rem;" data-i18n="p6-pipeline-note">The hardest part was the <strong>bot flow classification</strong>: a 150+ line SQL logic using tag combinations (<code>sales_pipeline</code>, <code>sales_overflow</code>, <code>sales_bot</code>, <code>sales_external</code>, <code>pix_anti_fraude</code>) to determine whether each bot interaction was a support contact or a sales flow — preventing sales volume from inflating the support forecast.</p>
+          </div>
+
           <div class="project-section">
             <h4 data-i18n="heading-metrics">Key Metrics</h4>
             <div class="metrics-grid">
@@ -1539,7 +1607,115 @@
                 </table>
               </div>
             </div>
+
+            <div class="table-card">
+              <h5 class="table-title" data-i18n="p6-params">Model Parameters Comparison</h5>
+              <div class="table-scroll">
+                <table class="data-table">
+                  <thead>
+                    <tr>
+                      <th data-i18n="th-parameter">Parameter</th>
+                      <th data-i18n="p6-col-a">Model A (Baseline)</th>
+                      <th data-i18n="p6-col-b">Model B (Tuned)</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <td>Seasonality Mode</td>
+                      <td>Multiplicative</td>
+                      <td>Multiplicative</td>
+                    </tr>
+                    <tr>
+                      <td>Weekly Seasonality</td>
+                      <td>Auto (default)</td>
+                      <td>Fourier order = 3</td>
+                    </tr>
+                    <tr>
+                      <td>Yearly Seasonality</td>
+                      <td>Auto (default)</td>
+                      <td>Fourier order = 12</td>
+                    </tr>
+                    <tr class="row-highlight">
+                      <td data-i18n="p6-param-holidays">Holidays</td>
+                      <td data-i18n="p6-param-none">None</td>
+                      <td data-i18n="p6-param-holidays-b">886 Brazilian holiday entries (prior scale = 45)</td>
+                    </tr>
+                    <tr>
+                      <td>Seasonality Prior Scale</td>
+                      <td>Default (10)</td>
+                      <td>20</td>
+                    </tr>
+                    <tr>
+                      <td>Changepoint Prior Scale</td>
+                      <td>Default (0.05)</td>
+                      <td>0.013</td>
+                    </tr>
+                    <tr class="row-highlight">
+                      <td>MCMC Samples</td>
+                      <td data-i18n="p6-param-map">None (MAP estimation)</td>
+                      <td data-i18n="p6-param-mcmc">1,000 chains via CmdStanPy</td>
+                    </tr>
+                    <tr>
+                      <td>Uncertainty Samples</td>
+                      <td>Default (1,000)</td>
+                      <td>200</td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
           </div>
+
+          <div class="project-section">
+            <h4 data-i18n="p6-edge-cases">Edge Case Analysis</h4>
+            <p data-i18n="p6-edge-desc">Analyzed the top and bottom volume days to understand what drives extremes the model must account for.</p>
+            <div class="chart-grid">
+              <div class="table-card" style="flex: 1;">
+                <h5 class="table-title" data-i18n="p6-top10">Top 5 Highest Volume Days</h5>
+                <div class="table-scroll">
+                  <table class="data-table">
+                    <thead>
+                      <tr>
+                        <th data-i18n="th-date-col">Date</th>
+                        <th>Incoming</th>
+                        <th data-i18n="th-context">Context</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr class="row-highlight"><td>Sep 12, 2022</td><td><strong>6,882</strong></td><td data-i18n="p6-top1">Post-Independence Day holiday surge</td></tr>
+                      <tr><td>Nov 1, 2022</td><td><strong>6,585</strong></td><td data-i18n="p6-top2">Pre-Finados travel peak</td></tr>
+                      <tr><td>Sep 19, 2022</td><td><strong>6,512</strong></td><td data-i18n="p6-top3">Monday after holiday weekend</td></tr>
+                      <tr><td>Sep 9, 2022</td><td><strong>6,454</strong></td><td data-i18n="p6-top4">Independence Day weekend aftermath</td></tr>
+                      <tr><td>Oct 31, 2022</td><td><strong>6,245</strong></td><td data-i18n="p6-top5">Pre-holiday peak</td></tr>
+                    </tbody>
+                  </table>
+                </div>
+              </div>
+              <div class="table-card" style="flex: 1;">
+                <h5 class="table-title" data-i18n="p6-bottom10">Top 5 Lowest Volume Days</h5>
+                <div class="table-scroll">
+                  <table class="data-table">
+                    <thead>
+                      <tr>
+                        <th data-i18n="th-date-col">Date</th>
+                        <th>Incoming</th>
+                        <th data-i18n="th-context">Context</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr class="row-highlight"><td>Jun 4, 2023</td><td><strong>1,393</strong></td><td data-i18n="p6-bot1">Sunday, low season</td></tr>
+                      <tr><td>Feb 25, 2024</td><td><strong>1,419</strong></td><td data-i18n="p6-bot2">Sunday, Carnival weekend</td></tr>
+                      <tr><td>May 28, 2023</td><td><strong>1,435</strong></td><td data-i18n="p6-bot3">Sunday, low season</td></tr>
+                      <tr><td>Jun 25, 2023</td><td><strong>1,438</strong></td><td data-i18n="p6-bot4">Sunday, low season</td></tr>
+                      <tr><td>Jun 3, 2023</td><td><strong>1,464</strong></td><td data-i18n="p6-bot5">Saturday, low season</td></tr>
+                    </tbody>
+                  </table>
+                </div>
+              </div>
+            </div>
+            <p style="margin-top: 16px; color: var(--text-secondary); font-size: 0.9rem;" data-i18n="p6-edge-insight"><strong>Pattern:</strong> all top-5 days cluster in Sep-Nov 2022 (holiday season + operational degradation), while bottom-5 are exclusively weekends in low-season months. This weekly + yearly seasonality is exactly what Model B captures with tuned priors and Brazilian holiday data.</p>
+          </div>
+
           <div class="project-section">
             <h4 data-i18n="heading-what-built">What I Built</h4>
             <div class="deliverables-grid">
@@ -1680,42 +1856,155 @@
 
           <div class="project-section">
             <h4 data-i18n="p5-initiatives">Initiative Breakdown</h4>
+            <p data-i18n="p5-initiatives-desc">I built a Metabase dashboard to track incoming/pax ratios and generate insights, then led recurring rituals with partner areas to drive action. Here are the concrete initiatives and their measured results:</p>
+
             <div class="table-card">
+              <h5 class="table-title" data-i18n="p5-tb-help">Help Center (Central de Ajuda)</h5>
               <div class="table-scroll">
                 <table class="data-table">
                   <thead>
                     <tr>
-                      <th data-i18n="th-initiative">Initiative</th>
-                      <th data-i18n="th-impact">Impact</th>
-                      <th data-i18n="th-result">Detail</th>
+                      <th data-i18n="th-action">Action</th>
+                      <th data-i18n="th-detail">Detail</th>
+                      <th data-i18n="th-measured-result">Measured Result</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <td data-i18n="p5-hc1">Full text reformulation</td>
+                      <td data-i18n="p5-hc1-d">Reviewed and rewrote all Help Center content with BX, Legal, and UX Writers</td>
+                      <td rowspan="4" style="vertical-align: middle;"><span class="score-badge score-hot" data-i18n="p5-hc-result">18% → 14% contact rate<br>= -1,600 incomings/week</span></td>
+                    </tr>
+                    <tr>
+                      <td data-i18n="p5-hc2">UI redesign</td>
+                      <td data-i18n="p5-hc2-d">Complete interface and navigation component overhaul</td>
+                    </tr>
+                    <tr>
+                      <td data-i18n="p5-hc3">Search improvement</td>
+                      <td data-i18n="p5-hc3-d">Search now queries article content, not just titles</td>
+                    </tr>
+                    <tr>
+                      <td data-i18n="p5-hc4">Topic-based ticket opening</td>
+                      <td data-i18n="p5-hc4-d">Last-resort retention: shows relevant help topic before allowing ticket creation</td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+
+            <div class="table-card">
+              <h5 class="table-title" data-i18n="p5-tb-mkt">Marketplace</h5>
+              <div class="table-scroll">
+                <table class="data-table">
+                  <thead>
+                    <tr>
+                      <th data-i18n="th-action">Action</th>
+                      <th data-i18n="th-detail">Detail</th>
+                      <th data-i18n="th-measured-result">Measured Result</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <td data-i18n="p5-mk1">Sale model reinforcement</td>
+                      <td data-i18n="p5-mk1-d">Better visibility of sale model types (logos + info) during purchase flow</td>
+                      <td rowspan="3" style="vertical-align: middle;"><span class="score-badge score-hot" data-i18n="p5-mk-result">16% → 14% incoming share<br>(even as BP pax grew 12.4% → 13.6%)</span></td>
+                    </tr>
+                    <tr>
+                      <td data-i18n="p5-mk2">New BP flow in Help Center</td>
+                      <td data-i18n="p5-mk2-d">Dedicated flow explaining how to differentiate sale models</td>
+                    </tr>
+                    <tr>
+                      <td data-i18n="p5-mk3">Bot API: ticket download</td>
+                      <td data-i18n="p5-mk3-d">Passengers can download tickets via bot, reducing agent derivations</td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+
+            <div class="table-card">
+              <h5 class="table-title" data-i18n="p5-tb-comm">Communication & Operations</h5>
+              <div class="table-scroll">
+                <table class="data-table">
+                  <thead>
+                    <tr>
+                      <th data-i18n="th-area">Area</th>
+                      <th data-i18n="th-action">Action</th>
+                      <th data-i18n="th-detail">Detail</th>
                     </tr>
                   </thead>
                   <tbody>
                     <tr class="row-highlight">
-                      <td data-i18n="p5-init1">Self-Service Optimization</td>
-                      <td><span class="score-badge score-hot" data-i18n="p5-init1-i">High</span></td>
-                      <td data-i18n="p5-init1-r">Improved self-service channels, reducing need for human support</td>
+                      <td data-i18n="p5-area-comm">Communication</td>
+                      <td data-i18n="p5-cm1">New email templates + copy review</td>
+                      <td data-i18n="p5-cm1-d">Redesigned all email layouts; BX + SEO Writers reviewed all communications copy</td>
                     </tr>
                     <tr>
-                      <td data-i18n="p5-init2">Marketplace Improvements</td>
-                      <td><span class="score-badge score-warm" data-i18n="p5-init2-i">High</span></td>
-                      <td data-i18n="p5-init2-r">Self-service features reducing need for human support</td>
+                      <td data-i18n="p5-area-comm">Communication</td>
+                      <td data-i18n="p5-cm2">Automated regulatory notifications</td>
+                      <td data-i18n="p5-cm2-d">Auto-email sent when seizure incidents occur, explaining the situation proactively</td>
+                    </tr>
+                    <tr class="row-highlight">
+                      <td data-i18n="p5-area-quality">Quality</td>
+                      <td data-i18n="p5-op1">Fines for uncovered trips</td>
+                      <td data-i18n="p5-op1-d">Partners fined for "Viagem Descoberta" within 48h — the top incident type generating incoming</td>
                     </tr>
                     <tr>
-                      <td data-i18n="p5-init3">Communication Overhaul</td>
-                      <td><span class="score-badge score-warm" data-i18n="p5-init3-i">High</span></td>
-                      <td data-i18n="p5-init3-r">Proactive notifications preventing incoming contacts</td>
+                      <td data-i18n="p5-area-commercial">Commercial</td>
+                      <td data-i18n="p5-op2">Partner optimization</td>
+                      <td data-i18n="p5-op2-d">Cut high-incident partners; prioritized fixed partners for extra routes</td>
                     </tr>
                     <tr>
-                      <td data-i18n="p5-init4">Partner Management</td>
-                      <td><span class="score-badge score-mid" data-i18n="p5-init4-i">Medium</span></td>
-                      <td data-i18n="p5-init4-r">Operational partner alignment reducing escalations</td>
+                      <td data-i18n="p5-area-routes">Routes</td>
+                      <td data-i18n="p5-op3">Stability measures</td>
+                      <td data-i18n="p5-op3-d">Maintained boarding points for fixed slots; no sleeper-bus downgrades during the period</td>
+                    </tr>
+                    <tr>
+                      <td data-i18n="p5-area-tower">Tower</td>
+                      <td data-i18n="p5-op4">New operational features</td>
+                      <td data-i18n="p5-op4-d">"Unplanned Stop" feature + dubious cancellation list to prevent delays</td>
                     </tr>
                   </tbody>
                 </table>
               </div>
             </div>
           </div>
+
+          <div class="project-section">
+            <h4 data-i18n="p5-saving">Saving Methodology</h4>
+            <p data-i18n="p5-saving-desc">I built a simulation model to translate the incoming reduction into financial impact:</p>
+            <div class="table-card">
+              <div class="table-scroll">
+                <table class="data-table">
+                  <thead>
+                    <tr>
+                      <th data-i18n="th-variable">Variable</th>
+                      <th data-i18n="th-value">Value</th>
+                      <th data-i18n="th-source">Source</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <td data-i18n="p5-sv1">Cost per contact (Jan)</td>
+                      <td><strong>R$3.86</strong></td>
+                      <td data-i18n="p5-sv1-s">Total consultant cost / total incomings in January</td>
+                    </tr>
+                    <tr>
+                      <td data-i18n="p5-sv2">Incoming difference (31% → 22.6%)</td>
+                      <td><strong>38,863 fewer incomings</strong></td>
+                      <td data-i18n="p5-sv2-s">Applied old rate to January pax vs actual volume</td>
+                    </tr>
+                    <tr class="row-highlight">
+                      <td data-i18n="p5-sv3"><strong>Monthly saving</strong></td>
+                      <td><strong>~R$150K</strong></td>
+                      <td data-i18n="p5-sv3-s">38,863 x R$3.86 = R$150K (people, tools, licenses, overhead)</td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+          </div>
+
           <div class="project-section">
             <h4 data-i18n="heading-what-built">What I Built</h4>
             <div class="deliverables-grid">
@@ -1723,22 +2012,29 @@
                 <div class="deliverable-icon">
                   <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 3v18h18"/><path d="M18.7 8l-5.1 5.2-2.8-2.7L7 14.3"/></svg>
                 </div>
-                <h5 data-i18n="p5-d1-t">Contact Rate Analytics</h5>
-                <p data-i18n="p5-d1-d">Built the analytical framework tracking incoming/pax ratios across channels, identifying the highest-impact self-service opportunities.</p>
+                <h5 data-i18n="p5-d1-t">Metabase Tracking Dashboard</h5>
+                <p data-i18n="p5-d1-d">Built a Metabase dashboard with incoming/pax ratio tracking, channel-level breakdowns, and incident-driven views. Generated the insights that directed partner area rituals and prioritized actions by impact.</p>
               </div>
               <div class="deliverable">
                 <div class="deliverable-icon">
                   <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 20V10"/><path d="M18 20V4"/><path d="M6 20v-4"/></svg>
                 </div>
-                <h5 data-i18n="p5-d2-t">Initiative Impact Measurement</h5>
-                <p data-i18n="p5-d2-d">Designed the methodology to measure each initiative's contribution to the overall incoming/pax reduction, proving causation with data.</p>
+                <h5 data-i18n="p5-d2-t">Cross-Team Ritual Leadership</h5>
+                <p data-i18n="p5-d2-d">Led recurring rituals with Infra, Quality, Commercial, Routes, and Tower teams — presenting data-driven insights that changed operational mindset. Each area delivered concrete actions (partner cuts, fines, feature requests) based on the analysis.</p>
               </div>
               <div class="deliverable">
                 <div class="deliverable-icon">
                   <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 12h-4l-3 9L9 3l-3 9H2"/></svg>
                 </div>
                 <h5 data-i18n="p5-d3-t">Savings Simulation Model</h5>
-                <p data-i18n="p5-d3-d">Built a simulation projecting cost savings from reduced incoming, considering agent costs, AHT, and channel distribution to quantify ROI.</p>
+                <p data-i18n="p5-d3-d">Built a simulation translating incoming reduction into financial savings: cost per contact (R$3.86) x 38,863 fewer incomings = ~R$150K/month. This recurring saving also compounds forward as the lower rate persists.</p>
+              </div>
+              <div class="deliverable">
+                <div class="deliverable-icon">
+                  <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="3" width="20" height="14" rx="2"/><path d="M8 21h8"/><path d="M12 17v4"/></svg>
+                </div>
+                <h5 data-i18n="p5-d4-t">Help Center Impact Measurement</h5>
+                <p data-i18n="p5-d4-d">Designed the methodology correlating Help Center improvements to contact rate reduction, proving a direct drop from 18% to 14% — equivalent to ~1,600 fewer incomings per week.</p>
               </div>
             </div>
           </div>
@@ -1746,10 +2042,12 @@
             <h4 data-i18n="heading-tech-stack">Tech Stack</h4>
             <div class="tech-tags">
               <span class="tag">SQL / BigQuery</span>
+              <span class="tag">Metabase</span>
               <span class="tag">Data Analysis</span>
               <span class="tag">OKR Methodology</span>
               <span class="tag">Google Slides</span>
               <span class="tag">Impact Measurement</span>
+              <span class="tag">Cross-Team Facilitation</span>
             </div>
           </div>
         </div>
@@ -1773,6 +2071,14 @@
               <div class="metric">
                 <span class="metric-value">449.7%</span>
                 <span class="metric-label" data-i18n="p3-m1">Cumulative return over backtesting period</span>
+              </div>
+              <div class="metric">
+                <span class="metric-value">R$267K</span>
+                <span class="metric-label" data-i18n="p3-m5">Total cumulative profit (5 contracts)</span>
+              </div>
+              <div class="metric">
+                <span class="metric-value">86.7%</span>
+                <span class="metric-label" data-i18n="p3-m6">Positive months (52 of 60)</span>
               </div>
               <div class="metric">
                 <span class="metric-value">3.5 yrs</span>
@@ -1835,6 +2141,138 @@
               </div>
             </div>
           </div>
+
+          <div class="project-section">
+            <h4 data-i18n="p3-seasonality">Profit Factor Seasonality (Year x Month)</h4>
+            <p data-i18n="p3-seasonality-desc">The heatmap below shows the actual Profit Factor for each month across the full trading period. Values above 1.0 indicate profitable months; below 1.0 means losses exceeded gains. This was the core tool for identifying seasonal risk windows.</p>
+            <div class="table-card">
+              <div class="table-scroll">
+                <table class="data-table">
+                  <thead>
+                    <tr>
+                      <th data-i18n="th-year">Year</th>
+                      <th>Jan</th><th>Feb</th><th>Mar</th><th>Apr</th><th>May</th><th>Jun</th>
+                      <th>Jul</th><th>Aug</th><th>Sep</th><th>Oct</th><th>Nov</th><th>Dec</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <td><strong>2020</strong></td>
+                      <td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td>
+                      <td>-</td><td>-</td><td>-</td>
+                      <td><span class="score-badge score-warm">1.13</span></td>
+                      <td><span class="score-badge score-mid">1.03</span></td>
+                      <td><span class="score-badge score-warm">1.22</span></td>
+                    </tr>
+                    <tr>
+                      <td><strong>2021</strong></td>
+                      <td><span class="score-badge score-warm">1.27</span></td>
+                      <td><span class="score-badge score-warm">1.13</span></td>
+                      <td><span class="score-badge score-hot">1.43</span></td>
+                      <td><span class="score-badge score-mid">1.05</span></td>
+                      <td><span class="score-badge score-warm">1.16</span></td>
+                      <td><span class="score-badge score-warm">1.30</span></td>
+                      <td><span class="score-badge score-hot">1.58</span></td>
+                      <td><span class="score-badge score-warm">1.26</span></td>
+                      <td><span class="score-badge score-warm">1.28</span></td>
+                      <td><span class="score-badge score-warm">1.24</span></td>
+                      <td><span class="score-badge score-cold">0.86</span></td>
+                      <td><span class="score-badge score-warm">1.30</span></td>
+                    </tr>
+                    <tr>
+                      <td><strong>2022</strong></td>
+                      <td><span class="score-badge score-hot">1.48</span></td>
+                      <td><span class="score-badge score-warm">1.19</span></td>
+                      <td><span class="score-badge score-warm">1.14</span></td>
+                      <td><span class="score-badge score-mid">1.01</span></td>
+                      <td><span class="score-badge score-warm">1.16</span></td>
+                      <td><span class="score-badge score-mid">1.06</span></td>
+                      <td><span class="score-badge score-warm">1.18</span></td>
+                      <td><span class="score-badge score-mid">1.07</span></td>
+                      <td><span class="score-badge score-inactive">1.00</span></td>
+                      <td><span class="score-badge score-hot">1.34</span></td>
+                      <td><span class="score-badge score-cold">0.97</span></td>
+                      <td><span class="score-badge score-cold">0.99</span></td>
+                    </tr>
+                    <tr class="row-highlight">
+                      <td><strong>2023</strong></td>
+                      <td><span class="score-badge score-warm">1.14</span></td>
+                      <td><span class="score-badge score-cold">0.98</span></td>
+                      <td><span class="score-badge score-hot">1.34</span></td>
+                      <td><span class="score-badge score-hot">1.36</span></td>
+                      <td><span class="score-badge score-warm">1.30</span></td>
+                      <td><span class="score-badge score-warm">1.25</span></td>
+                      <td><span class="score-badge score-warm">1.26</span></td>
+                      <td><span class="score-badge score-mid">1.02</span></td>
+                      <td><span class="score-badge score-mid">1.02</span></td>
+                      <td><span class="score-badge score-hot">1.36</span></td>
+                      <td><span class="score-badge score-hot">1.37</span></td>
+                      <td><span class="score-badge score-warm">1.14</span></td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+            <p style="margin-top: 16px; color: var(--text-secondary); font-size: 0.9rem;" data-i18n="p3-seasonality-note"><strong>Key pattern:</strong> Nov 2021 (0.86), Nov-Dec 2022 (0.97/0.99), and Feb 2023 (0.98) are the only months with PF below 1.0. The strategy recovered strongly in Q4 2023 (Oct-Nov both 1.36+). Best single month: <strong>Jul 2021 (PF 1.58, R$13,190 profit)</strong>.</p>
+          </div>
+
+          <div class="project-section">
+            <h4 data-i18n="p3-net-profit">Net Profit by Year (R$)</h4>
+            <div class="table-card">
+              <div class="table-scroll">
+                <table class="data-table">
+                  <thead>
+                    <tr>
+                      <th data-i18n="th-year">Year</th>
+                      <th data-i18n="th-net-profit">Net Profit</th>
+                      <th data-i18n="th-best-month">Best Month</th>
+                      <th data-i18n="th-worst-month">Worst Month</th>
+                      <th data-i18n="th-pos-months">Positive Months</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <td><strong>2020</strong></td>
+                      <td>R$5,380</td>
+                      <td data-i18n="p3-np-2020-best">Dec (R$2,290)</td>
+                      <td data-i18n="p3-np-2020-worst">Nov (R$465)</td>
+                      <td>3/3</td>
+                    </tr>
+                    <tr class="row-highlight">
+                      <td><strong>2021</strong></td>
+                      <td><strong>R$94,585</strong></td>
+                      <td data-i18n="p3-np-2021-best">Mar (R$26,805)</td>
+                      <td data-i18n="p3-np-2021-worst">Nov (-R$4,045)</td>
+                      <td>11/12</td>
+                    </tr>
+                    <tr>
+                      <td><strong>2022</strong></td>
+                      <td>R$51,070</td>
+                      <td data-i18n="p3-np-2022-best">Jan (R$15,470)</td>
+                      <td data-i18n="p3-np-2022-worst">Nov (-R$1,360)</td>
+                      <td>9/12</td>
+                    </tr>
+                    <tr>
+                      <td><strong>2023</strong></td>
+                      <td>R$73,295</td>
+                      <td data-i18n="p3-np-2023-best">Nov (R$13,655)</td>
+                      <td data-i18n="p3-np-2023-worst">Feb (-R$370)</td>
+                      <td>11/12</td>
+                    </tr>
+                  </tbody>
+                  <tfoot>
+                    <tr>
+                      <td><strong>Total</strong></td>
+                      <td><strong>R$267,690</strong></td>
+                      <td colspan="2" data-i18n="p3-np-total-note">Best ever: Mar 2021 (R$26,805)</td>
+                      <td><strong>52/60 (86.7%)</strong></td>
+                    </tr>
+                  </tfoot>
+                </table>
+              </div>
+            </div>
+          </div>
+
           <div class="project-section">
             <h4 data-i18n="heading-what-built">What I Built</h4>
             <div class="deliverables-grid">
@@ -2025,6 +2463,49 @@
             <h4 data-i18n="heading-overview">Overview</h4>
             <p data-i18n="p4-overview">Developed the full 2024 business plan for a CX department handling 8+ support channels at a leading Brazilian transportation tech company. Analyzed historical incoming-per-passenger ratios, built capacity scenarios with multiple average handling time (TMA) assumptions, projected headcount needs, and supported the implementation of a WFM tool (Moavi) for real-time scheduling.</p>
           </div>
+
+          <div class="project-section">
+            <h4 data-i18n="p4-context-2023">2023 Closure: Why This Mattered</h4>
+            <p data-i18n="p4-context-p1">The 2023 forecast closed with <strong>-0.56% variation</strong> in the incoming/pax ratio and <strong>2.25% variance</strong> between budgeted and actual incoming. While these numbers seem small, the underlying story was complex — multiple mid-year revisions were needed as passenger volume consistently exceeded projections.</p>
+            <div class="table-card">
+              <h5 class="table-title" data-i18n="p4-tb-events">Key Events That Shaped the 2023 Forecast</h5>
+              <div class="table-scroll">
+                <table class="data-table">
+                  <thead>
+                    <tr>
+                      <th data-i18n="th-period">Period</th>
+                      <th data-i18n="th-event">Event</th>
+                      <th data-i18n="th-impact">Impact</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <td>Jan 2023</td>
+                      <td data-i18n="p4-ev1">Incoming rate reduction from Q4 2022 operational revision</td>
+                      <td data-i18n="p4-ev1-i">BP adjusted in second half, maintaining previous revision history</td>
+                    </tr>
+                    <tr>
+                      <td>Jun 2023</td>
+                      <td data-i18n="p4-ev2">Projection revision: -2 to -4pp in incoming/pax ratio</td>
+                      <td data-i18n="p4-ev2-i">April drop justified a downward revision of the full-year forecast</td>
+                    </tr>
+                    <tr class="row-highlight">
+                      <td>Sep 2023</td>
+                      <td data-i18n="p4-ev3">Passenger volume surged well beyond plan</td>
+                      <td data-i18n="p4-ev3-i">Plan vs Actual: Sep +8.6%, Oct +8.5%, Nov +12.8%, Dec +14.2%</td>
+                    </tr>
+                    <tr class="row-highlight">
+                      <td>Oct-Nov 2023</td>
+                      <td data-i18n="p4-ev4">Operational quality degradation (delays, mechanical failures, ANTT enforcement, heat season)</td>
+                      <td data-i18n="p4-ev4-i">Incoming/pax spiked +2.5pp (Oct) and +1.9pp (Nov)</td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+            <p style="margin-top: 16px; color: var(--text-secondary); font-size: 0.9rem;" data-i18n="p4-context-note">These learnings directly shaped the 2024 BP: I switched from quadrimester to <strong>quarterly analysis</strong> (smoothing seasonal spikes), and built scenario models that could absorb passenger growth variance of up to +24.7%.</p>
+          </div>
+
           <div class="project-section">
             <h4 data-i18n="heading-metrics">Key Metrics</h4>
             <div class="metrics-grid">
@@ -2058,6 +2539,177 @@
               </div>
             </div>
           </div>
+
+          <div class="project-section">
+            <h4 data-i18n="p4-scenarios">Capacity Scenarios</h4>
+            <p data-i18n="p4-scenarios-desc">I modeled three scenarios varying TMA (Average Handling Time) and simultaneous chat windows to give leadership a clear range for hiring and budget decisions.</p>
+            <div class="table-card">
+              <div class="table-scroll">
+                <table class="data-table">
+                  <thead>
+                    <tr>
+                      <th data-i18n="th-scenario">Scenario</th>
+                      <th>TMA</th>
+                      <th data-i18n="th-windows">Chat Windows</th>
+                      <th data-i18n="th-assumption">Assumption</th>
+                      <th data-i18n="th-status">Status</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <td data-i18n="p4-sc1">Scenario 1 (Comfortable)</td>
+                      <td>25:40</td>
+                      <td>4</td>
+                      <td data-i18n="p4-sc1-a">Maintains current TMA with stable workload across all months</td>
+                      <td><span class="score-badge score-mid" data-i18n="p4-sc1-s">Conservative</span></td>
+                    </tr>
+                    <tr class="row-highlight">
+                      <td data-i18n="p4-sc2">Scenario 2 (Target)</td>
+                      <td>22:28</td>
+                      <td>4</td>
+                      <td data-i18n="p4-sc2-a">Challenge: reduce TMA in critical months while maintaining 4 windows</td>
+                      <td><span class="score-badge score-hot" data-i18n="p4-sc2-s">Chosen for BP 2024</span></td>
+                    </tr>
+                    <tr>
+                      <td data-i18n="p4-sc3">Scenario 3 (Aggressive)</td>
+                      <td>25:40</td>
+                      <td>5</td>
+                      <td data-i18n="p4-sc3-a">Accepts higher TMA but increases throughput via additional windows</td>
+                      <td><span class="score-badge score-cold" data-i18n="p4-sc3-s">Alternative</span></td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+            <p style="margin-top: 16px; color: var(--text-secondary); font-size: 0.9rem;" data-i18n="p4-scenarios-note">TMA was calculated using a <strong>Pareto 90/10 rule</strong> — discarding the top 10% most unproductive handling times to avoid outliers skewing the capacity model. The 4-window constraint was maintained to ensure minimum service quality during peak periods.</p>
+          </div>
+
+          <div class="project-section">
+            <h4 data-i18n="p4-drivers">Top Contact Drivers</h4>
+            <p data-i18n="p4-drivers-desc">Identified the main reasons customers reach human support (post-sales, sales, and boarding), which informed the incoming reduction initiatives.</p>
+            <div class="table-card">
+              <div class="table-scroll">
+                <table class="data-table">
+                  <thead>
+                    <tr>
+                      <th data-i18n="th-reason">Reason</th>
+                      <th data-i18n="th-share">% of Human Support</th>
+                      <th data-i18n="th-implication">Implication</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr class="row-highlight">
+                      <td data-i18n="p4-dr1">Delays (Atraso)</td>
+                      <td><strong>13.6%</strong></td>
+                      <td data-i18n="p4-dr1-i">Largest single driver — operational improvement has highest ROI</td>
+                    </tr>
+                    <tr>
+                      <td data-i18n="p4-dr2">Buser-Initiated Changes</td>
+                      <td><strong>7.9%</strong></td>
+                      <td data-i18n="p4-dr2-i">Proactive communication could deflect most of these contacts</td>
+                    </tr>
+                    <tr>
+                      <td data-i18n="p4-dr3">Mechanical Failures</td>
+                      <td><strong>6.9%</strong></td>
+                      <td data-i18n="p4-dr3-i">Partner fleet quality directly impacts support volume</td>
+                    </tr>
+                    <tr>
+                      <td data-i18n="p4-dr4">Rebooking (Remarcacao)</td>
+                      <td><strong>6.5%</strong></td>
+                      <td data-i18n="p4-dr4-i">Self-service rebooking feature could reduce this significantly</td>
+                    </tr>
+                    <tr>
+                      <td data-i18n="p4-dr5">Reimbursement (Ressarcimento)</td>
+                      <td><strong>5.4%</strong></td>
+                      <td data-i18n="p4-dr5-i">Linked to the Voucher Policy project — better vouchers = fewer contacts</td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+            <p style="margin-top: 16px; color: var(--text-secondary); font-size: 0.9rem;" data-i18n="p4-drivers-note">These 5 reasons account for <strong>40.3% of all human support contacts</strong>. This analysis directly fed into the Support Efficiency OKR project, where we reduced the incoming/pax ratio from 31% to 22.6%.</p>
+          </div>
+
+          <div class="project-section">
+            <h4 data-i18n="p4-productivity">Productivity & Pause Analysis</h4>
+            <p data-i18n="p4-productivity-desc">To build accurate capacity models, I measured real agent productivity including all types of non-productive time.</p>
+            <div class="table-card">
+              <h5 class="table-title" data-i18n="p4-tb-pauses">Agent Pause Time Breakdown (Weekly)</h5>
+              <div class="table-scroll">
+                <table class="data-table">
+                  <thead>
+                    <tr>
+                      <th data-i18n="th-pause-type">Pause Type</th>
+                      <th data-i18n="th-avg-time">Avg. Duration</th>
+                      <th data-i18n="th-frequency">Freq./Week</th>
+                      <th data-i18n="th-weekly-total">Weekly Total</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <td data-i18n="p4-pause1">Bathroom</td>
+                      <td>8 min</td>
+                      <td>3x</td>
+                      <td>24 min</td>
+                    </tr>
+                    <tr>
+                      <td data-i18n="p4-pause2">Training</td>
+                      <td>26 min</td>
+                      <td>1x</td>
+                      <td>26 min</td>
+                    </tr>
+                    <tr>
+                      <td data-i18n="p4-pause3">Feedback</td>
+                      <td>34 min</td>
+                      <td>1x</td>
+                      <td>34 min</td>
+                    </tr>
+                    <tr>
+                      <td data-i18n="p4-pause4">Team Meeting</td>
+                      <td>22 min</td>
+                      <td>1x</td>
+                      <td>22 min</td>
+                    </tr>
+                  </tbody>
+                  <tfoot>
+                    <tr>
+                      <td colspan="3"><strong>Total</strong></td>
+                      <td><strong>106 min (~1.76h = ~5% of work time)</strong></td>
+                    </tr>
+                  </tfoot>
+                </table>
+              </div>
+            </div>
+          </div>
+
+          <div class="project-section">
+            <h4 data-i18n="p4-moavi">WFM Tool: Moavi Integration</h4>
+            <p data-i18n="p4-moavi-desc">The forecast data fed directly into Moavi, a Workforce Management tool that optimizes agent scheduling based on projected demand.</p>
+            <div class="deliverables-grid">
+              <div class="deliverable">
+                <div class="deliverable-icon">
+                  <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 20V10"/><path d="M18 20V4"/><path d="M6 20v-4"/></svg>
+                </div>
+                <h5 data-i18n="p4-moavi1-t">Automated Channel Feed</h5>
+                <p data-i18n="p4-moavi1-d">Monthly incoming volume automatically sent to Moavi for all channels: B2C, B2B, Ticket, Reclame Aqui, Social Media, and Jira.</p>
+              </div>
+              <div class="deliverable">
+                <div class="deliverable-icon">
+                  <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 12h-4l-3 9L9 3l-3 9H2"/></svg>
+                </div>
+                <h5 data-i18n="p4-moavi2-t">Day/Hour Volume Curves</h5>
+                <p data-i18n="p4-moavi2-d">Moavi's algorithm analyzes volume by day and hour across weekday, Saturday, and Sunday patterns to distribute agent schedules and maintain linear workload.</p>
+              </div>
+              <div class="deliverable">
+                <div class="deliverable-icon">
+                  <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="3" width="20" height="14" rx="2"/><path d="M8 21h8"/><path d="M12 17v4"/></svg>
+                </div>
+                <h5 data-i18n="p4-moavi3-t">Plan vs Actual Tracking</h5>
+                <p data-i18n="p4-moavi3-d">Integrated with time-tracking to compare planned vs actual attendance, flagging CLT compliance issues and enabling real-time schedule adjustments.</p>
+              </div>
+            </div>
+          </div>
+
           <div class="project-section">
             <h4 data-i18n="heading-what-built">What I Built</h4>
             <div class="deliverables-grid">
